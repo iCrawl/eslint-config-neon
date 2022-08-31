@@ -449,12 +449,7 @@ module.exports = {
 		],
 		"no-useless-return": 2,
 		"no-var": 2,
-		"no-void": [
-			2,
-			{
-				allowAsStatement: true,
-			},
-		],
+		"no-void": 0,
 		"no-warning-comments": [
 			1,
 			{
