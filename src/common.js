@@ -70,7 +70,7 @@ module.exports = {
 			},
 		],
 		"comma-style": [2, "last"],
-		complexity: [2, 20],
+		complexity: 0,
 		"computed-property-spacing": [2, "never"],
 		"consistent-return": 2,
 		"consistent-this": [2, "self"],
@@ -148,7 +148,7 @@ module.exports = {
 		"import/no-internal-modules": 0,
 		"import/no-mutable-exports": 2,
 		"import/no-named-as-default": 2,
-		"import/no-named-as-default-member": 2,
+		"import/no-named-as-default-member": 0,
 		"import/no-named-default": 2,
 		"import/no-named-export": 0,
 		"import/no-namespace": 0,
@@ -157,7 +157,7 @@ module.exports = {
 		"import/no-relative-parent-imports": 0,
 		"import/no-restricted-paths": 0,
 		"import/no-self-import": 2,
-		"import/no-unassigned-import": 2,
+		"import/no-unassigned-import": 0,
 		"import/no-unresolved": 0,
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
@@ -278,7 +278,7 @@ module.exports = {
 		"no-array-constructor": 2,
 		"no-async-promise-executor": 2,
 		"no-await-in-loop": 0,
-		"no-bitwise": 2,
+		"no-bitwise": 0,
 		"no-caller": 2,
 		"no-case-declarations": 2,
 		"no-class-assign": 2,
@@ -534,7 +534,7 @@ module.exports = {
 		radix: 2,
 		"require-atomic-updates": 2,
 		"require-await": 0,
-		"require-unicode-regexp": 2,
+		"require-unicode-regexp": 0,
 		"require-yield": 2,
 		"rest-spread-spacing": [2, "never"],
 		semi: [2, "always"],
@@ -650,6 +650,15 @@ module.exports = {
 		"unicorn/numeric-separators-style": [
 			2,
 			{
+				hexadecimal: {
+					onlyIfContainsSeparator: true,
+				},
+				binary: {
+					onlyIfContainsSeparator: true,
+				},
+				octal: {
+					onlyIfContainsSeparator: true,
+				},
 				number: {
 					groupLength: 3,
 					minimumDigits: 0,
@@ -690,19 +699,7 @@ module.exports = {
 		"unicorn/prefer-ternary": 0,
 		"unicorn/prefer-top-level-await": 0,
 		"unicorn/prefer-type-error": 2,
-		"unicorn/prevent-abbreviations": [
-			2,
-			{
-				checkProperties: false,
-				replacements: {
-					args: false,
-					pkg: false,
-					props: false,
-					ref: false,
-					rel: false,
-				},
-			},
-		],
+		"unicorn/prevent-abbreviations": 0,
 		"unicorn/relative-url-style": [2, "never"],
 		"unicorn/require-array-join-separator": 2,
 		"unicorn/require-number-to-fixed-digits-argument": 2,

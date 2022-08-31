@@ -41,7 +41,7 @@ module.exports = {
 		],
 		"n/callback-return": 2,
 		"n/exports-style": 0,
-		"n/file-extension-in-import": 0,
+		"n/file-extension-in-import": [2, "always"],
 		"n/global-require": 2,
 		"n/handle-callback-err": 2,
 		"n/no-callback-literal": 2,

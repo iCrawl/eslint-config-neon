@@ -8,7 +8,7 @@ module.exports = {
 		},
 	],
 	parser: "@typescript-eslint/parser",
-	plugins: ["@typescript-eslint", "import", "jsdoc", "n", "typescript-sort-keys"],
+	plugins: ["@typescript-eslint", "import", "jsdoc", "n", "tsdoc", "typescript-sort-keys"],
 	rules: {
 		"@typescript-eslint/adjacent-overload-signatures": 2,
 		"@typescript-eslint/array-type": [
@@ -101,12 +101,7 @@ module.exports = {
 				allowSingleExtends: true,
 			},
 		],
-		"@typescript-eslint/no-explicit-any": [
-			2,
-			{
-				ignoreRestArgs: true,
-			},
-		],
+		"@typescript-eslint/no-explicit-any": 0,
 		"@typescript-eslint/no-extra-non-null-assertion": 2,
 		"@typescript-eslint/no-extraneous-class": 2,
 		"@typescript-eslint/no-floating-promises": [
@@ -159,7 +154,7 @@ module.exports = {
 		],
 		"@typescript-eslint/no-non-null-asserted-nullish-coalescing": 2,
 		"@typescript-eslint/no-non-null-asserted-optional-chain": 2,
-		"@typescript-eslint/no-non-null-assertion": 2,
+		"@typescript-eslint/no-non-null-assertion": 0,
 		"@typescript-eslint/no-parameter-properties": 0,
 		"@typescript-eslint/no-require-imports": 2,
 		"@typescript-eslint/no-this-alias": [
@@ -241,21 +236,11 @@ module.exports = {
 			},
 		],
 		"@typescript-eslint/unified-signatures": 2,
+
+		"tsdoc/syntax": 1,
 		"typescript-sort-keys/interface": 2,
 		"typescript-sort-keys/string-enum": 2,
-
 		"import/no-dynamic-require": 0,
-		"import/order": [
-			2,
-			{
-				alphabetize: {
-					caseInsensitive: false,
-					order: "asc",
-				},
-				groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-				"newlines-between": "never",
-			},
-		],
 
 		// Eslint compatability
 		"@typescript-eslint/brace-style": [
@@ -321,7 +306,7 @@ module.exports = {
 		],
 		"@typescript-eslint/no-throw-literal": 2,
 		"@typescript-eslint/no-unused-expressions": 2,
-		"@typescript-eslint/no-unused-vars": 2,
+		"@typescript-eslint/no-unused-vars": 0,
 		"@typescript-eslint/no-use-before-define": [
 			2,
 			{
