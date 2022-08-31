@@ -4,4 +4,4 @@ try {
 	console.error(error);
 }
 
-module.exports = require("./src/common.cjs");
+module.exports = require("./src/common.js");

@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint src --ext cjs --fix",
@@ -10,7 +10,7 @@
 		"update": "yarn upgrade-interactive"
 	},
 	"type": "commonjs",
-	"main": "./common.cjs",
+	"main": "./common.js",
 	"keywords": [
 		"eslint",
 		"config",
