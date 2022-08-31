@@ -463,8 +463,8 @@ module.exports = {
 		"object-curly-newline": [
 			2,
 			{
-				ExportDeclaration: "always",
-				ImportDeclaration: "always",
+				ExportDeclaration: "never",
+				ImportDeclaration: "never",
 				ObjectExpression: {
 					minProperties: 1,
 					multiline: true,
