@@ -1,0 +1,62 @@
+{
+	"name": "eslint-config-neon",
+	"version": "0.1.0",
+	"description": "The ultimate ESLint shareable config",
+	"scripts": {
+		"lint": "prettier --check . && eslint src --ext cjs --fix",
+		"format": "prettier --write . && eslint src --ext cjs --fix",
+		"fmt": "yarn format",
+		"postinstall": "is-ci || husky install",
+		"update": "yarn upgrade-interactive"
+	},
+	"type": "commonjs",
+	"main": "./common.cjs",
+	"keywords": [
+		"eslint",
+		"config",
+		"typescript",
+		"eslintconfig",
+		"lint",
+		"linter",
+		"validate"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/iCrawl/eslint-config-neon.git"
+	},
+	"bugs": {
+		"url": "https://github.com/iCrawl/eslint-config-neon/issues"
+	},
+	"author": "iCrawl <icrawltogo@gmail.com>",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"@next/eslint-plugin-next": "^12.2.5",
+		"@rushstack/eslint-patch": "^1.1.4",
+		"@typescript-eslint/eslint-plugin": "^5.36.1",
+		"@typescript-eslint/parser": "^5.36.1",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-cypress": "^2.12.1",
+		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
+		"eslint-plugin-jest": "^27.0.1",
+		"eslint-plugin-jsdoc": "^39.3.6",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-lodash": "^7.4.0",
+		"eslint-plugin-n": "^15.2.5",
+		"eslint-plugin-promise": "^6.0.1",
+		"eslint-plugin-react": "^7.31.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-typescript-sort-keys": "^2.1.0",
+		"eslint-plugin-unicorn": "^43.0.2"
+	},
+	"devDependencies": {
+		"eslint": "^8.23.0",
+		"husky": "^8.0.1",
+		"is-ci": "^3.0.1",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.2"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"packageManager": "yarn@3.2.3"
+}
