@@ -605,12 +605,7 @@ module.exports = {
 		"unicorn/no-array-for-each": 1,
 		"unicorn/no-array-method-this-argument": 2,
 		"unicorn/no-array-push-push": 0,
-		"unicorn/no-array-reduce": [
-			"error",
-			{
-				allowSimpleOperations: true,
-			},
-		],
+		"unicorn/no-array-reduce": 0,
 		"unicorn/no-await-expression-member": 0,
 		"unicorn/no-console-spaces": 0,
 		"unicorn/no-document-cookie": 2,
