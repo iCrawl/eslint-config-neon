@@ -350,7 +350,7 @@ module.exports = {
 		],
 		"no-negated-condition": 2,
 		"no-nested-ternary": 0,
-		"no-new": 2,
+		"no-new": 0,
 		"no-new-func": 2,
 		"no-new-object": 2,
 		"no-new-symbol": 2,
@@ -728,6 +728,6 @@ module.exports = {
 		yoda: [2, "never"],
 	},
 	settings: {
-		"import/extensions": [".js", ".mjs", ".cjs", ".jsx", ".ts", ".mts", ".cts", ".tsx", ".mtsx", ".ctsx"],
+		"import/extensions": [".js", ".mjs", ".cjs", ".jsx", ".ts", ".mts", ".cts", ".tsx"],
 	},
 };

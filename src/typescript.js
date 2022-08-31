@@ -385,8 +385,12 @@ module.exports = {
 		jsdoc: {
 			mode: "typescript",
 		},
-		node: {
-			tryExtensions: [".ts", ".mts", ".cts", ".tsx", ".mtsx", ".ctsx", ".js", ".mjs", ".cjs", ".json"],
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".mts", ".cts", "tsx"],
+		},
+		"import/resolvers": {
+			typescript: true,
+			node: true,
 		},
 	},
 };
