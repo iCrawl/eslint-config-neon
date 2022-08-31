@@ -323,7 +323,14 @@ module.exports = {
 		"@typescript-eslint/require-await": 0,
 		"@typescript-eslint/semi": [2, "always"],
 		"@typescript-eslint/space-before-blocks": [2, "always"],
-		"@typescript-eslint/space-before-function-paren": [2, "always"],
+		"@typescript-eslint/space-before-function-paren": [
+			2,
+			{
+				anonymous: "always",
+				named: "never",
+				asyncArrow: "always",
+			},
+		],
 		"@typescript-eslint/space-infix-ops": [2, { int32Hint: true }],
 
 		// Disable eslint rules implemented in @typescript-eslint
