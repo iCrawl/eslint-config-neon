@@ -137,13 +137,7 @@ module.exports = {
 			2,
 			{
 				checksConditionals: true,
-				checksVoidReturn: {
-					arguments: true,
-					attributes: false,
-					properties: true,
-					returns: true,
-					variables: true,
-				},
+				checksVoidReturn: false,
 			},
 		],
 		"@typescript-eslint/no-namespace": [
@@ -371,6 +365,7 @@ module.exports = {
 		"space-before-function-paren": 0,
 		"space-infix-ops": 0,
 
+		"jsdoc/check-tag-names": 0,
 		"jsdoc/require-property-type": 0,
 		"no-undef": 0,
 		"n/global-require": 0,

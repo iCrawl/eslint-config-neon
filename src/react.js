@@ -10,7 +10,7 @@ module.exports = {
 		"react/default-props-match-prop-types": 2,
 		"react/destructuring-assignment": 0,
 		"react/display-name": 0,
-		"react/forbid-component-props": 2,
+		"react/forbid-component-props": 0,
 		"react/forbid-dom-props": 0,
 		"react/forbid-elements": 0,
 		"react/forbid-foreign-prop-types": 0,
