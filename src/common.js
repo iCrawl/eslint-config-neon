@@ -301,7 +301,7 @@ module.exports = {
 		"no-duplicate-case": 2,
 		"no-duplicate-imports": 0,
 		"no-else-return": 0,
-		"no-empty": 2,
+		"no-empty": 0,
 		"no-empty-character-class": 2,
 		"no-empty-pattern": 2,
 		"no-eq-null": 2,

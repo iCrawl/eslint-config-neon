@@ -297,13 +297,7 @@ module.exports = {
 			},
 		],
 		"@typescript-eslint/no-restricted-imports": 0,
-		"@typescript-eslint/no-shadow": [
-			2,
-			{
-				builtinGlobals: false,
-				hoist: "all",
-			},
-		],
+		"@typescript-eslint/no-shadow": 0,
 		"@typescript-eslint/no-throw-literal": 2,
 		"@typescript-eslint/no-unused-expressions": 2,
 		"@typescript-eslint/no-unused-vars": 0,
