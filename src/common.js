@@ -15,22 +15,10 @@ module.exports = {
 	plugins: ["import", "jsdoc", "unicorn", "promise"],
 	rules: {
 		"accessor-pairs": 2,
-		"array-bracket-newline": [
-			2,
-			{
-				minItems: 1,
-				multiline: true,
-			},
-		],
+		"array-bracket-newline": [2, { multiline: true }],
 		"array-bracket-spacing": [2, "never"],
 		"array-callback-return": 2,
-		"array-element-newline": [
-			2,
-			{
-				minItems: 1,
-				multiline: true,
-			},
-		],
+		"array-element-newline": [2, { multiline: true }],
 		"arrow-body-style": [2, "as-needed"],
 		"arrow-parens": [2, "always"],
 		"arrow-spacing": [
@@ -460,21 +448,7 @@ module.exports = {
 		"no-whitespace-before-property": 2,
 		"no-with": 2,
 		"nonblock-statement-body-position": [2, "below"],
-		"object-curly-newline": [
-			2,
-			{
-				ExportDeclaration: "never",
-				ImportDeclaration: "never",
-				ObjectExpression: {
-					minProperties: 1,
-					multiline: true,
-				},
-				ObjectPattern: {
-					minProperties: 1,
-					multiline: true,
-				},
-			},
-		],
+		"object-curly-newline": [2, { multiline: true }],
 		"object-curly-spacing": [2, "always"],
 		"object-property-newline": [
 			2,
