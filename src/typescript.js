@@ -252,6 +252,9 @@ module.exports = {
 				functions: "always-multiline",
 				imports: "always-multiline",
 				objects: "always-multiline",
+				enums: "always-multiline",
+				generics: "never",
+				tuples: "never",
 			},
 		],
 		"@typescript-eslint/comma-spacing": [
