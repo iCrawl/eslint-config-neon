@@ -1,6 +1,7 @@
 module.exports = {
 	overrides: [
 		{
+			files: ["*.ts"],
 			parser: "@typescript-eslint/parser",
 			plugins: ["@angular-eslint", "@typescript-eslint"],
 			rules: {
