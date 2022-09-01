@@ -616,7 +616,7 @@ module.exports = {
 		"unicorn/no-invalid-remove-event-listener": 2,
 		"unicorn/no-keyword-prefix": 0,
 		"unicorn/no-lonely-if": 2,
-		"unicorn/no-nested-ternary": 2,
+		"unicorn/no-nested-ternary": 0,
 		"unicorn/no-new-array": 2,
 		"unicorn/no-new-buffer": 2,
 		"unicorn/no-null": 0,
