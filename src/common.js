@@ -14,7 +14,7 @@ module.exports = {
 	},
 	plugins: ["import", "jsdoc", "unicorn", "promise"],
 	rules: {
-		"accessor-pairs": 2,
+		"accessor-pairs": 0,
 		"array-bracket-newline": [2, { multiline: true }],
 		"array-bracket-spacing": [2, "never"],
 		"array-callback-return": 2,
