@@ -103,7 +103,7 @@ module.exports = {
 		],
 		"@typescript-eslint/no-explicit-any": 0,
 		"@typescript-eslint/no-extra-non-null-assertion": 2,
-		"@typescript-eslint/no-extraneous-class": 2,
+		"@typescript-eslint/no-extraneous-class": 0,
 		"@typescript-eslint/no-floating-promises": [
 			2,
 			{

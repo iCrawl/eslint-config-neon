@@ -3,7 +3,8 @@ module.exports = {
 		{
 			files: ["*.ts"],
 			parser: "@typescript-eslint/parser",
-			plugins: ["@angular-eslint", "@typescript-eslint"],
+			plugins: ["@angular-eslint", "@angular-eslint/template", "@typescript-eslint"],
+			processor: "@angular-eslint/template/extract-inline-html",
 			rules: {
 				"@angular-eslint/component-class-suffix": 2,
 				"@angular-eslint/contextual-decorator": 2,
