@@ -365,6 +365,8 @@ module.exports = {
 		"space-before-function-paren": 0,
 		"space-infix-ops": 0,
 
+		"default-case": 0,
+		"default-case-last": 0,
 		"jsdoc/check-tag-names": 0,
 		"jsdoc/require-property-type": 0,
 		"no-undef": 0,
