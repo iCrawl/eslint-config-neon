@@ -20,5 +20,6 @@ module.exports = {
 		"@next/next/no-title-in-document-head": 2,
 		"@next/next/no-typos": 2,
 		"@next/next/no-unwanted-polyfillio": 2,
+		"import/extensions": 0,
 	},
 };

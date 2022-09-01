@@ -34,6 +34,7 @@ module.exports = {
 				"@angular-eslint/use-injectable-provided-in": 2,
 				"@angular-eslint/use-lifecycle-interface": 2,
 				"@angular-eslint/use-pipe-transform-interface": 2,
+				"import/extensions": 0,
 			},
 		},
 		{
