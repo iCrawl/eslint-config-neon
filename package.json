@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.13",
+	"version": "0.1.14",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint . --ext js --fix",
@@ -32,6 +32,9 @@
 	"author": "iCrawl <icrawltogo@gmail.com>",
 	"license": "Apache-2.0",
 	"dependencies": {
+		"@angular-eslint/eslint-plugin": "^14.0.3",
+		"@angular-eslint/eslint-plugin-template": "^14.0.3",
+		"@angular-eslint/template-parser": "^14.0.3",
 		"@next/eslint-plugin-next": "^12.2.5",
 		"@rushstack/eslint-patch": "^1.1.4",
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
