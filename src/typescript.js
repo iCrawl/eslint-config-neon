@@ -8,7 +8,7 @@ module.exports = {
 		},
 	],
 	parser: "@typescript-eslint/parser",
-	plugins: ["@typescript-eslint", "import", "jsdoc", "n", "tsdoc", "typescript-sort-keys"],
+	plugins: ["@typescript-eslint", "deprecation", "import", "jsdoc", "n", "tsdoc", "typescript-sort-keys"],
 	rules: {
 		"@typescript-eslint/adjacent-overload-signatures": 2,
 		"@typescript-eslint/array-type": [
@@ -208,7 +208,6 @@ module.exports = {
 		],
 		"@typescript-eslint/restrict-plus-operands": 2,
 		"@typescript-eslint/restrict-template-expressions": 0,
-		"no-return-await": 0,
 		"@typescript-eslint/return-await": [2, "in-try-catch"],
 		"@typescript-eslint/sort-type-union-intersection-members": 2,
 		"@typescript-eslint/strict-boolean-expressions": 0,
@@ -231,10 +230,11 @@ module.exports = {
 		],
 		"@typescript-eslint/unified-signatures": 2,
 
+		"deprecation/deprecation": 1,
+		"import/no-dynamic-require": 0,
 		"tsdoc/syntax": 1,
 		"typescript-sort-keys/interface": 2,
 		"typescript-sort-keys/string-enum": 2,
-		"import/no-dynamic-require": 0,
 
 		// Eslint compatability
 		"@typescript-eslint/brace-style": [
@@ -353,6 +353,7 @@ module.exports = {
 		"no-magic-numbers": 0,
 		"no-redeclare": 0,
 		"no-restricted-imports": 0,
+		"no-return-await": 0,
 		"no-shadow": 0,
 		"no-throw-literal": 0,
 		"no-unused-expressions": 0,
