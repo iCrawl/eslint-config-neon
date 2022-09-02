@@ -1180,6 +1180,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-rxjs: ^5.0.2
     eslint-plugin-rxjs-angular: ^2.0.0
+    eslint-plugin-svelte3: ^4.0.0
     eslint-plugin-tsdoc: ^0.2.16
     eslint-plugin-typescript-sort-keys: ^2.1.0
     eslint-plugin-unicorn: ^43.0.2
@@ -1447,6 +1448,16 @@ __metadata:
     eslint: ^8.0.0
     typescript: ^4.0.0
   checksum: c1f2a3b26f3a154351fb24e209d9850c1b7454249695fdafe911932da2ff307728c6ba8116bbe8a1a036e804ea0daddae1167dd7c2ea13d491f3745447d1e506
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-svelte3@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "eslint-plugin-svelte3@npm:4.0.0"
+  peerDependencies:
+    eslint: ">=8.0.0"
+    svelte: ^3.2.0
+  checksum: 5e9ddddedee44ac099290cda6e86f412c6f4f2cbdeee860eb2b617c66d3cca7699638c6191ed55c4a7651b57b8387202f62b5b0e0417219c59cdd084dcab4e07
   languageName: node
   linkType: hard
 
