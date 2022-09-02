@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.23",
+	"version": "0.1.24",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint . --ext js --fix",
@@ -50,6 +50,8 @@
 		"eslint-plugin-promise": "^6.0.1",
 		"eslint-plugin-react": "^7.31.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-rxjs": "^5.0.2",
+		"eslint-plugin-rxjs-angular": "^2.0.0",
 		"eslint-plugin-tsdoc": "^0.2.16",
 		"eslint-plugin-typescript-sort-keys": "^2.1.0",
 		"eslint-plugin-unicorn": "^43.0.2"
