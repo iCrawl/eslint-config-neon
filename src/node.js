@@ -89,5 +89,6 @@ module.exports = {
 			},
 		],
 		"unicorn/prefer-node-protocol": 2,
+		"unicorn/require-post-message-target-origin": 0,
 	},
 };
