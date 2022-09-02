@@ -12,7 +12,7 @@ module.exports = {
 		"rxjs/no-create": 2,
 		"rxjs/no-cyclic-action": 2,
 		"rxjs/no-explicit-generics": 0,
-		"rxjs/no-exposed-subjects": 2,
+		"rxjs/no-exposed-subjects": 0,
 		"rxjs/no-finnish": 0,
 		"rxjs/no-ignored-error": 0,
 		"rxjs/no-ignored-notifier": 2,
