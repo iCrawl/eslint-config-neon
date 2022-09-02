@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.27",
+	"version": "0.1.28",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint . --ext js --fix",
