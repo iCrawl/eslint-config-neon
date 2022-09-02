@@ -382,7 +382,7 @@ module.exports = {
 		"sonarjs/no-one-iteration-loop": 2,
 		"sonarjs/no-use-of-empty-return-value": 2,
 		"sonarjs/non-existent-operator": 2,
-		"sonarjs/elseif-without-else": 2,
+		"sonarjs/elseif-without-else": 0,
 		"sonarjs/max-switch-cases": 0,
 		"sonarjs/no-collapsible-if": 2,
 		"sonarjs/no-collection-size-mischeck": 2,
