@@ -364,6 +364,7 @@ module.exports = {
 		"space-infix-ops": 0,
 
 		// Additional rules
+		"consistent-return": 0,
 		"default-case": 0,
 		"default-case-last": 0,
 		"deprecation/deprecation": 1,

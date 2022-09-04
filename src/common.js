@@ -272,7 +272,7 @@ module.exports = {
 		"no-class-assign": 2,
 		"no-compare-neg-zero": 2,
 		"no-cond-assign": 2,
-		"no-confusing-arrow": 2,
+		"no-confusing-arrow": 0,
 		"no-console": 0,
 		"no-const-assign": 2,
 		"no-constant-condition": 0,
