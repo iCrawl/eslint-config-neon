@@ -15,7 +15,7 @@
 	"main": "./common.js",
 	"files": [
 		"*.js",
-		"**/*.js"
+		"src/*.js"
 	],
 	"keywords": [
 		"eslint",
