@@ -13,6 +13,10 @@
 	},
 	"type": "commonjs",
 	"main": "./common.js",
+	"files": [
+		"*.js",
+		"src/*.js"
+	],
 	"keywords": [
 		"eslint",
 		"config",
