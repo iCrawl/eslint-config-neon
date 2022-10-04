@@ -442,7 +442,7 @@ module.exports = {
 			1,
 			{
 				location: "start",
-				terms: ["TODO", "todo", "@toto"],
+				terms: ["todo", "@todo"],
 			},
 		],
 		"no-whitespace-before-property": 2,
