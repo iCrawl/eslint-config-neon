@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
 	plugins: ["react"],
 	rules: {
 		"react/jsx-boolean-value": [2, "never"],
