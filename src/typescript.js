@@ -107,8 +107,8 @@ module.exports = {
 		"@typescript-eslint/no-floating-promises": [
 			2,
 			{
-				ignoreIIFE: true,
 				ignoreVoid: true,
+				ignoreIIFE: true,
 			},
 		],
 		"@typescript-eslint/no-for-in-array": 2,
@@ -367,7 +367,6 @@ module.exports = {
 		"consistent-return": 0,
 		"default-case": 0,
 		"default-case-last": 0,
-		"deprecation/deprecation": 1,
 		"import/no-dynamic-require": 0,
 		"jsdoc/check-tag-names": 0,
 		"jsdoc/require-property-type": 0,

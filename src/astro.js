@@ -13,7 +13,6 @@ module.exports = {
 			},
 			parser: "astro-eslint-parser",
 			rules: {
-				"deprecation/deprecation": 0,
 				"react/jsx-key": 0,
 				"react/no-unknown-property": 0,
 				"react/self-closing-comp": 0,
