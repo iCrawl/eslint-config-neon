@@ -10,6 +10,8 @@
 
 ## Installation
 
+neon comes as a complete package, none of the configs require any additional dependecies.
+
 ```sh-session
 npm install eslint eslint-config-neon
 yarn add eslint eslint-config-neon
