@@ -121,7 +121,7 @@ module.exports = {
 		"import/no-commonjs": 0,
 		"import/no-cycle": [2, { maxDepth: 4, ignoreExternal: true, allowUnsafeDynamicCyclicDependency: true }],
 		"import/no-default-export": 0,
-		"import/no-deprecated": 1,
+		"import/no-deprecated": 0,
 		"import/no-duplicates": 2,
 		"import/no-dynamic-require": 2,
 		"import/no-extraneous-dependencies": [

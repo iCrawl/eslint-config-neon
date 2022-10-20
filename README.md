@@ -32,6 +32,7 @@ This package includes the following configurations:
 - [`neon/jsx-a11y`](./src/jsx-a11y.js) – for usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)) and want to include [accessibility checks](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y).
 - [`neon/module`](./src/module.js) – for usage with ESM modules.
 - [`neon/next`](./src/next.js) – for usage with [Next.js](https://nextjs.org/).
+- [`neon/no-deprecated`](./src/no-deprecated.js) - for reporting deprecated APIs (very slow on big repos, especially monorepos).
 - [`neon/node`](./src/node.js) – for usage with Node.js.
 - [`neon/prettier`](./src/prettier.js) – for usage with [Prettier](https://prettier.io/).
 - [`neon/react`](./src/react.js) – for usage with [React](https://reactjs.org/).
