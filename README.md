@@ -64,7 +64,6 @@ This package includes the following configurations:
 ```json
 {
 	"root": true,
-	"root": true,
 	"extends": ["neon/common", "neon/node", "neon/typescript", "neon/prettier"],
 	"parserOptions": {
 		"project": "./tsconfig.json"
