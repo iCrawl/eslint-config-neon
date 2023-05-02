@@ -368,6 +368,7 @@ module.exports = {
 		"default-case": 0,
 		"default-case-last": 0,
 		"import/no-dynamic-require": 0,
+		"import/no-unresolved": [2, { commonjs: true, caseSensitive: true }],
 		"jsdoc/check-tag-names": 0,
 		"jsdoc/require-property-type": 0,
 		"no-undef": 0,
@@ -419,11 +420,16 @@ module.exports = {
 			mode: "typescript",
 		},
 		"import/parsers": {
-			"@typescript-eslint/parser": [".ts", ".mts", ".cts", "tsx"],
+			"@typescript-eslint/parser": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"],
 		},
 		"import/resolvers": {
-			typescript: true,
-			node: true,
+			typescript: {
+				alwaysTryTypes: true,
+				project: ["tsconfig.eslint.json", "apps/*/tsconfig.eslint.json", "packages/*/tsconfig.eslint.json"],
+			},
+			node: {
+				extensions: [".js", ".jsx"],
+			},
 		},
 	},
 };

@@ -11,7 +11,7 @@ module.exports = {
 		"@next/next/no-document-import-in-page": 2,
 		"@next/next/no-duplicate-head": 2,
 		"@next/next/no-head-import-in-document": 2,
-		"@next/next/no-html-link-for-pages": 1,
+		"@next/next/no-html-link-for-pages": [1, "src/app/"],
 		"@next/next/no-img-element": 1,
 		"@next/next/no-page-custom-font": 1,
 		"@next/next/no-script-component-in-head": 2,

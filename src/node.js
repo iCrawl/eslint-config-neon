@@ -2,7 +2,7 @@ module.exports = {
 	env: {
 		node: true,
 	},
-	plugins: ["n", "unicorn"],
+	plugins: ["import", "n", "unicorn"],
 	rules: {
 		"no-restricted-globals": [
 			"error",
@@ -39,6 +39,7 @@ module.exports = {
 				message: "Import clearImmediate from `node:timers` instead",
 			},
 		],
+		"import/no-unresolved": [2, { commonjs: true, caseSensitive: true }],
 		"n/callback-return": 2,
 		"n/exports-style": 0,
 		"n/file-extension-in-import": 0,
@@ -90,5 +91,12 @@ module.exports = {
 		],
 		"unicorn/prefer-node-protocol": 2,
 		"unicorn/require-post-message-target-origin": 0,
+	},
+	settings: {
+		"import/resolvers": {
+			node: {
+				extensions: [".js", ".jsx"],
+			},
+		},
 	},
 };
