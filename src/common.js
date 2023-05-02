@@ -218,7 +218,13 @@ module.exports = {
 		"jsdoc/require-throws": 0,
 		"jsdoc/require-yields": 0,
 		"jsdoc/require-yields-check": 0,
-		"jsdoc/tag-lines": [2, "never"],
+		"jsdoc/tag-lines": [
+			2,
+			"never",
+			{
+				startLines: 1,
+			},
+		],
 		"jsdoc/valid-types": 2,
 		"jsx-quotes": [2, "prefer-single"],
 		"key-spacing": [
