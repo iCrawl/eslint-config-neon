@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.46",
+	"version": "0.1.47",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint . --ext js",
@@ -36,10 +36,10 @@
 	"author": "iCrawl <icrawltogo@gmail.com>",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@angular-eslint/eslint-plugin": "^15.2.1",
-		"@angular-eslint/eslint-plugin-template": "^15.2.1",
-		"@angular-eslint/template-parser": "^15.2.1",
-		"@next/eslint-plugin-next": "^13.3.4",
+		"@angular-eslint/eslint-plugin": "^16.0.1",
+		"@angular-eslint/eslint-plugin-template": "^16.0.1",
+		"@angular-eslint/template-parser": "^16.0.1",
+		"@next/eslint-plugin-next": "^13.4.1",
 		"@rushstack/eslint-patch": "^1.2.0",
 		"@typescript-eslint/eslint-plugin": "^5.59.2",
 		"@typescript-eslint/parser": "^5.59.2",
@@ -50,10 +50,10 @@
 		"eslint-plugin-cypress": "^2.13.3",
 		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
 		"eslint-plugin-jest": "^27.2.1",
-		"eslint-plugin-jsdoc": "^43.1.1",
+		"eslint-plugin-jsdoc": "^43.2.0",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-lodash": "^7.4.0",
-		"eslint-plugin-mdx": "^2.0.5",
+		"eslint-plugin-mdx": "^2.1.0",
 		"eslint-plugin-n": "^15.7.0",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.32.2",
@@ -64,12 +64,12 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-plugin-tsdoc": "^0.2.17",
 		"eslint-plugin-typescript-sort-keys": "^2.3.0",
-		"eslint-plugin-unicorn": "^46.0.0",
+		"eslint-plugin-unicorn": "^47.0.0",
 		"eslint-plugin-vue": "^9.11.0",
-		"vue-eslint-parser": "^9.1.1"
+		"vue-eslint-parser": "^9.2.1"
 	},
 	"devDependencies": {
-		"eslint": "^8.39.0",
+		"eslint": "^8.40.0",
 		"husky": "^8.0.3",
 		"is-ci": "^3.0.1",
 		"pinst": "^3.0.0",
