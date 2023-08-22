@@ -2,13 +2,9 @@ const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("@ty
 
 const plugins = (old = true) =>
 	old
-		? ["@typescript-eslint", "import", "jsdoc", "n", "sonarjs", "tsdoc", "typescript-sort-keys"]
+		? ["@typescript-eslint", "sonarjs", "tsdoc", "typescript-sort-keys"]
 		: {
 				"@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
-				import: require("eslint-plugin-import"),
-				jsdoc: require("eslint-plugin-jsdoc"),
-				// eslint-disable-next-line id-length
-				n: require("eslint-plugin-n"),
 				sonarjs: require("eslint-plugin-sonarjs"),
 				tsdoc: require("eslint-plugin-tsdoc"),
 				"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),

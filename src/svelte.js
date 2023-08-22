@@ -1,5 +1,4 @@
-const plugins = (old = true) =>
-	old ? ["import", "svelte3"] : { import: require("eslint-plugin-import"), svelte3: require("eslint-plugin-svelte3") };
+const plugins = (old = true) => (old ? ["svelte3"] : { svelte3: require("eslint-plugin-svelte3") });
 
 const svelteRules = {
 	"import/first": 0,

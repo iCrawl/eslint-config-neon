@@ -2,11 +2,10 @@ const globals = require("globals");
 
 const plugins = (old = true) =>
 	old
-		? ["import", "n", "unicorn"]
+		? ["n"]
 		: {
-				import: require("eslint-plugin-import"),
+				// eslint-disable-next-line id-length
 				n: require("eslint-plugin-n"),
-				unicorn: require("eslint-plugin-unicorn"),
 		  };
 
 const rules = {

@@ -1,7 +1,5 @@
 const globals = require("globals");
 
-const plugins = (old = true) => (old ? ["unicorn"] : { unicorn: require("eslint-plugin-unicorn") });
-
 const rules = {
 	"unicorn/prefer-dom-node-append": 2,
 	"unicorn/prefer-dom-node-dataset": 2,
@@ -17,7 +15,6 @@ module.exports = {
 		env: {
 			browser: true,
 		},
-		plugins: plugins(),
 		rules,
 	},
 	/** @type {import('eslint').Linter.FlatConfig} */
@@ -28,7 +25,6 @@ module.exports = {
 					...globals.browser,
 				},
 			},
-			plugins: plugins(false),
 			rules,
 		},
 	],

@@ -1,10 +1,6 @@
 const astroPlugin = require("eslint-plugin-astro");
 
-const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("@typescript-eslint/parser"));
-
 const astroParser = (old = true) => (old ? "astro-eslint-parser" : require("astro-eslint-parser"));
-
-const plugins = (old = true) => (old ? ["react"] : { react: require("eslint-plugin-react") });
 
 const astroPlugins = (old = true) => (old ? ["astro"] : { astro: astroPlugin });
 
@@ -18,10 +14,8 @@ module.exports = {
 	/** @type {import('eslint').Linter.Config} */
 	default: {
 		parserOptions: {
-			parser: parser(),
 			extraFileExtensions: [".astro"],
 		},
-		plugins: plugins(),
 		overrides: [
 			{
 				files: ["**/*.astro"],
@@ -44,12 +38,10 @@ module.exports = {
 				globals: {
 					...astroPlugin.environments.astro.globals,
 				},
-				parser: parser(false),
 				parserOptions: {
 					extraFileExtensions: [".astro"],
 				},
 			},
-			plugins: plugins(false),
 		},
 		{
 			languageOptions: {

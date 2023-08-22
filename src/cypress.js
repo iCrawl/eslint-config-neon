@@ -2,10 +2,9 @@ const cypress = require("eslint-plugin-cypress");
 
 const plugins = (old = true) =>
 	old
-		? ["cypress", "import"]
+		? ["cypress"]
 		: {
 				cypress,
-				import: require("eslint-plugin-import"),
 		  };
 
 const rules = {

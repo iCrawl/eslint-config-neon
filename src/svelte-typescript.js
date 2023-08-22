@@ -1,5 +1,3 @@
-const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("@typescript-eslint/parser"));
-
 const settings = {
 	"svelte3/typescript": true,
 };
@@ -7,7 +5,6 @@ const settings = {
 module.exports = {
 	/** @type {import('eslint').Linter.Config} */
 	default: {
-		parser: parser(),
 		parserOptions: {
 			extraFileExtensions: [".svelte"],
 		},
@@ -17,7 +14,6 @@ module.exports = {
 	flat: [
 		{
 			languageOptions: {
-				parser: parser(false),
 				parserOptions: {
 					extraFileExtensions: [".svelte"],
 				},

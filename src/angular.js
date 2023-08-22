@@ -1,18 +1,15 @@
 const plugins = (old = true) =>
 	old
-		? ["@angular-eslint", "@angular-eslint/template", "@typescript-eslint"]
+		? ["@angular-eslint", "@angular-eslint/template"]
 		: {
 				"@angular-eslint": require("@angular-eslint/eslint-plugin"),
 				"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
-				"@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
 		  };
 
 const templatePlugins = (old = true) =>
 	old
 		? ["@angular-eslint/template"]
 		: { "@angular-eslint/template": require("@angular-eslint/eslint-plugin-template") };
-
-const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("@typescript-eslint/parser"));
 
 const templateParser = (old = true) =>
 	old ? "@angular-eslint/template-parser" : require("@angular-eslint/template-parser");
@@ -79,7 +76,6 @@ module.exports = {
 		overrides: [
 			{
 				files: ["**/*.ts"],
-				parser: parser(),
 				plugins: plugins(),
 				processor: "@angular-eslint/template/extract-inline-html",
 				rules,
@@ -117,9 +113,6 @@ module.exports = {
 	/** @type {import('eslint').Linter.FlatConfig} */
 	flat: [
 		{
-			languageOptions: {
-				parser: parser(false),
-			},
 			plugins: plugins(false),
 			processor: "@angular-eslint/template/extract-inline-html",
 			rules,
