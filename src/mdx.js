@@ -22,7 +22,7 @@ module.exports = {
 	default: {
 		overrides: [
 			{
-				files: ["*.{md,mdx}"],
+				files: ["**/*.{md,mdx}"],
 				plugins: plugins(),
 				parser: parser(),
 				parserOptions: {
@@ -41,7 +41,6 @@ module.exports = {
 	/** @type {import('eslint').Linter.FlatConfig} */
 	flat: [
 		{
-			files: ["*.{md,mdx}"],
 			languageOptions: {
 				parser: parser(false),
 				parserOptions: {
@@ -54,8 +53,15 @@ module.exports = {
 			settings,
 		},
 		{
-			files: ["**/*.{md,mdx}/**"],
-			...mdxPlugin.configs["code-blocks"],
+			languageOptions: {
+				parserOptions: {
+					...mdxPlugin.configs["code-blocks"].parserOptions,
+				},
+			},
+			plugins: plugins(false),
+			rules: {
+				...mdxPlugin.configs["code-blocks"].rules,
+			},
 		},
 	],
 };

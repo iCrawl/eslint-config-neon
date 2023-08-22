@@ -78,14 +78,14 @@ module.exports = {
 	default: {
 		overrides: [
 			{
-				files: ["*.ts"],
+				files: ["**/*.ts"],
 				parser: parser(),
 				plugins: plugins(),
 				processor: "@angular-eslint/template/extract-inline-html",
 				rules,
 			},
 			{
-				files: ["*.html"],
+				files: ["**/*.html"],
 				parser: templateParser(),
 				plugins: templatePlugins(),
 				rules: {
@@ -117,7 +117,6 @@ module.exports = {
 	/** @type {import('eslint').Linter.FlatConfig} */
 	flat: [
 		{
-			files: ["*.ts"],
 			languageOptions: {
 				parser: parser(false),
 			},
@@ -126,7 +125,6 @@ module.exports = {
 			rules,
 		},
 		{
-			files: ["*.html"],
 			languageOptions: {
 				parser: templateParser(false),
 			},

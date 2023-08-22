@@ -7,6 +7,7 @@ const plugins = (old = true) =>
 				"@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
 				import: require("eslint-plugin-import"),
 				jsdoc: require("eslint-plugin-jsdoc"),
+				// eslint-disable-next-line id-length
 				n: require("eslint-plugin-n"),
 				sonarjs: require("eslint-plugin-sonarjs"),
 				tsdoc: require("eslint-plugin-tsdoc"),
@@ -442,7 +443,7 @@ module.exports = {
 	default: {
 		overrides: [
 			{
-				files: ["*.ts", "*.tsx"],
+				files: ["**/*.ts", "**/*.tsx"],
 				parser: parser(),
 				plugins: plugins(),
 				rules,
@@ -453,7 +454,6 @@ module.exports = {
 	/** @type {import('eslint').Linter.FlatConfig} */
 	flat: [
 		{
-			files: ["*.ts", "*.tsx"],
 			languageOptions: {
 				parser: parser(false),
 			},

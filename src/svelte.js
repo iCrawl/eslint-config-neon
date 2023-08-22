@@ -15,7 +15,7 @@ module.exports = {
 		plugins: plugins(),
 		overrides: [
 			{
-				files: ["*.svelte"],
+				files: ["**/*.svelte"],
 				processor: "svelte3/svelte3",
 				rules: svelteRules,
 			},
@@ -27,7 +27,7 @@ module.exports = {
 			plugins: plugins(false),
 		},
 		{
-			files: ["*.svelte"],
+			plugins: plugins(false),
 			processor: "svelte3/svelte3",
 			rules: svelteRules,
 		},

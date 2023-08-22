@@ -730,12 +730,17 @@ module.exports = {
 			},
 			languageOptions: {
 				globals: {
-					...globals.es2015,
+					...globals.es2021,
 				},
-				ecmaVersion: 2_022,
+				ecmaVersion: "latest",
 				sourceType: "module",
 				parserOptions: {
 					requireConfigFile: false,
+					ecmaFeatures: {
+						globalReturn: false,
+						impliedStrict: true,
+						jsx: true,
+					},
 				},
 			},
 			plugins: plugins(false),

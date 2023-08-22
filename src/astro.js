@@ -24,7 +24,7 @@ module.exports = {
 		plugins: plugins(),
 		overrides: [
 			{
-				files: ["*.astro"],
+				files: ["**/*.astro"],
 				plugins: astroPlugins(),
 				env: {
 					"astro/astro": true,
@@ -52,7 +52,6 @@ module.exports = {
 			plugins: plugins(false),
 		},
 		{
-			files: ["*.astro"],
 			languageOptions: {
 				parser: astroParser(false),
 			},
