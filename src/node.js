@@ -116,7 +116,7 @@ module.exports = {
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			languageOptions: {

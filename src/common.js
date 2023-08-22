@@ -540,7 +540,13 @@ const rules = {
 			words: true,
 		},
 	],
-	"spaced-comment": [2, "always"],
+	"spaced-comment": [
+		2,
+		"always",
+		{
+			markers: ["/"],
+		},
+	],
 	strict: [2, "never"],
 	"switch-colon-spacing": [
 		2,
@@ -722,7 +728,7 @@ module.exports = {
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			linterOptions: {

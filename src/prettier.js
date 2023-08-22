@@ -13,7 +13,7 @@ module.exports = {
 	default: {
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			rules,

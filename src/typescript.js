@@ -403,13 +403,6 @@ const rules = {
 	"sonarjs/prefer-object-literal": 2,
 	"sonarjs/prefer-single-boolean-return": 2,
 	"sonarjs/prefer-while": 2,
-	"spaced-comment": [
-		2,
-		"always",
-		{
-			markers: ["/"],
-		},
-	],
 	"tsdoc/syntax": 1,
 	"typescript-sort-keys/interface": 2,
 	"typescript-sort-keys/string-enum": 2,
@@ -447,7 +440,7 @@ module.exports = {
 		],
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			languageOptions: {

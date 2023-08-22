@@ -91,7 +91,7 @@ module.exports = {
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			plugins: plugins(false),

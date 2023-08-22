@@ -38,7 +38,7 @@ module.exports = {
 			},
 		],
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			languageOptions: {

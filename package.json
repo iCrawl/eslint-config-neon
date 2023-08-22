@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.1.52",
+	"version": "0.1.53",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"lint": "prettier --check . && eslint *.js",
@@ -54,7 +54,7 @@
 		"eslint-plugin-jsdoc": "^46.5.0",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-mdx": "^2.2.0",
-		"eslint-plugin-n": "^16.0.1",
+		"eslint-plugin-n": "^16.0.2",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-react-hooks": "^4.6.0",

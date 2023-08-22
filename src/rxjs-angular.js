@@ -12,7 +12,7 @@ module.exports = {
 		plugins: plugins(),
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig} */
+	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			plugins: plugins(false),
