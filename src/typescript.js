@@ -153,7 +153,6 @@ const rules = {
 	"@typescript-eslint/no-non-null-asserted-nullish-coalescing": 2,
 	"@typescript-eslint/no-non-null-asserted-optional-chain": 2,
 	"@typescript-eslint/no-non-null-assertion": 0,
-	"@typescript-eslint/no-parameter-properties": 0,
 	"@typescript-eslint/no-require-imports": 2,
 	"@typescript-eslint/no-this-alias": [
 		2,
@@ -213,7 +212,7 @@ const rules = {
 	"@typescript-eslint/restrict-plus-operands": 2,
 	"@typescript-eslint/restrict-template-expressions": 0,
 	"@typescript-eslint/return-await": [2, "in-try-catch"],
-	"@typescript-eslint/sort-type-union-intersection-members": 2,
+	"@typescript-eslint/sort-type-constituents": 2,
 	"@typescript-eslint/strict-boolean-expressions": 0,
 	"@typescript-eslint/switch-exhaustiveness-check": 2,
 	"@typescript-eslint/triple-slash-reference": [
@@ -277,7 +276,6 @@ const rules = {
 	"@typescript-eslint/lines-between-class-members": [2, "always"],
 	"@typescript-eslint/no-array-constructor": 2,
 	"@typescript-eslint/no-dupe-class-members": 2,
-	"@typescript-eslint/no-duplicate-imports": 0,
 	"@typescript-eslint/no-extra-parens": 2,
 	"@typescript-eslint/no-extra-semi": 2,
 	"@typescript-eslint/no-implied-eval": 2,
