@@ -413,16 +413,16 @@ const settings = {
 		mode: "typescript",
 	},
 	"import/parsers": {
-		"@typescript-eslint/parser": [".ts", ".tsx", ".js", ".jsx", ".json", ".node"],
+		"@typescript-eslint/parser": [".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs"],
 	},
 	"import/resolvers": {
 		typescript: {
 			alwaysTryTypes: true,
 			project: ["tsconfig.eslint.json", "apps/*/tsconfig.eslint.json", "packages/*/tsconfig.eslint.json"],
-			extensions: [".js", ".jsx", ".ts", ".tsx"],
+			extensions: [".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs"],
 		},
 		node: {
-			extensions: [".js", ".jsx", ".ts", ".tsx"],
+			extensions: [".js", ".jsx", ".mjs", ".cjs"],
 		},
 	},
 };

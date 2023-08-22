@@ -103,7 +103,7 @@ const rules = {
 	"implicit-arrow-linebreak": [2, "beside"],
 	"import/default": 0,
 	"import/dynamic-import-chunkname": 0,
-	"import/export": 2,
+	"import/export": 0,
 	"import/exports-last": 0,
 	"import/extensions": [2, "always", { ignorePackages: true }],
 	"import/first": 2,
