@@ -1,1 +1,1 @@
-module.exports = require("./src/svelte.js");
+module.exports = require("./src/svelte.js").default;

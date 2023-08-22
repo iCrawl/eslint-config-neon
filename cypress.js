@@ -1,1 +1,1 @@
-module.exports = require("./src/cypress.js");
+module.exports = require("./src/cypress.js").default;

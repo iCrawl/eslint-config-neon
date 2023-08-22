@@ -1,1 +1,1 @@
-module.exports = require("./src/jsx-a11y.js");
+module.exports = require("./src/jsx-a11y.js").default;

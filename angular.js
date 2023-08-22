@@ -1,1 +1,1 @@
-module.exports = require("./src/angular.js");
+module.exports = require("./src/angular.js").default;

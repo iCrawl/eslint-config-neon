@@ -1,1 +1,1 @@
-module.exports = require("./src/next.js");
+module.exports = require("./src/next.js").default;

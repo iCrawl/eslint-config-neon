@@ -1,1 +1,1 @@
-module.exports = require("./src/no-deprecated.js");
+module.exports = require("./src/no-deprecated.js").default;

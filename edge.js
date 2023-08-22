@@ -1,1 +1,1 @@
-module.exports = require("./src/edge.js");
+module.exports = require("./src/edge.js").default;

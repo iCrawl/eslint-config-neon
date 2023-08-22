@@ -1,1 +1,1 @@
-module.exports = require("./src/astro.js");
+module.exports = require("./src/astro.js").default;

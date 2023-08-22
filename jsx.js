@@ -1,1 +1,1 @@
-module.exports = require("./src/jsx.js");
+module.exports = require("./src/jsx.js").default;

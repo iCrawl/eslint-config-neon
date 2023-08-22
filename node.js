@@ -1,1 +1,1 @@
-module.exports = require("./src/node.js");
+module.exports = require("./src/node.js").default;

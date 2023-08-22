@@ -1,7 +1,5 @@
 try {
 	require("@rushstack/eslint-patch/modern-module-resolution");
-} catch (error) {
-	console.error(error);
-}
+} catch {}
 
-module.exports = require("./src/common.js");
+module.exports = require("./src/common.js").default;

@@ -1,1 +1,1 @@
-module.exports = require("./src/browser.js");
+module.exports = require("./src/browser.js").default;

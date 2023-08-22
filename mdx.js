@@ -1,1 +1,1 @@
-module.exports = require("./src/mdx.js");
+module.exports = require("./src/mdx.js").default;

@@ -1,1 +1,1 @@
-module.exports = require("./src/rxjs.js");
+module.exports = require("./src/rxjs.js").default;
