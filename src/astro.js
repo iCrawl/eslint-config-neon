@@ -35,9 +35,7 @@ module.exports = {
 	flat: [
 		{
 			languageOptions: {
-				globals: {
-					...astroPlugin.environments.astro.globals,
-				},
+				globals: astroPlugin.environments.astro.globals,
 				parserOptions: {
 					extraFileExtensions: [".astro"],
 				},

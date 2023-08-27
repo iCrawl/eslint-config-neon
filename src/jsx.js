@@ -105,17 +105,40 @@ const rules = {
 	"react/jsx-wrap-multilines": 0,
 };
 
+const settings = {
+	"import/extensions": [".js", ".jsx"],
+	"import/resolver": {
+		node: {
+			extensions: [".js", ".jsx"],
+		},
+	},
+};
+
 module.exports = {
 	/** @type {import('eslint').Linter.Config} */
 	default: {
+		parserOptions: {
+			ecmaFeatures: {
+				jsx: true,
+			},
+		},
 		plugins: plugins(),
 		rules,
+		settings,
 	},
 	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
+			languageOptions: {
+				parserOptions: {
+					ecmaFeatures: {
+						jsx: true,
+					},
+				},
+			},
 			plugins: plugins(false),
 			rules,
+			settings,
 		},
 	],
 };

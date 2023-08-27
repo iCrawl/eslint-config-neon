@@ -1,5 +1,3 @@
-const globals = require("globals");
-
 const plugins = (old = true) =>
 	old
 		? ["import", "jsdoc", "unicorn", "promise"]
@@ -105,7 +103,7 @@ const rules = {
 	"import/dynamic-import-chunkname": 0,
 	"import/export": 0,
 	"import/exports-last": 0,
-	"import/extensions": [2, "always", { ignorePackages: true }],
+	"import/extensions": [2, "ignorePackages"],
 	"import/first": 2,
 	"import/group-exports": 0,
 	"import/max-dependencies": 0,
@@ -116,7 +114,7 @@ const rules = {
 	"import/no-amd": 2,
 	"import/no-anonymous-default-export": 0,
 	"import/no-commonjs": 0,
-	"import/no-cycle": [2, { maxDepth: 4, ignoreExternal: true, allowUnsafeDynamicCyclicDependency: true }],
+	"import/no-cycle": 0,
 	"import/no-default-export": 0,
 	"import/no-deprecated": 0,
 	"import/no-duplicates": 2,
@@ -705,7 +703,12 @@ const rules = {
 };
 
 const settings = {
-	"import/extensions": [".js", ".mjs", ".cjs", ".jsx", ".ts", ".mts", ".cts", ".tsx"],
+	"import/extensions": [".js"],
+	"import/resolver": {
+		node: {
+			extensions: [".js"],
+		},
+	},
 };
 
 module.exports = {
@@ -718,7 +721,6 @@ module.exports = {
 			ecmaFeatures: {
 				globalReturn: false,
 				impliedStrict: true,
-				jsx: true,
 			},
 			ecmaVersion: 2_022,
 			requireConfigFile: false,
@@ -735,9 +737,6 @@ module.exports = {
 				reportUnusedDisableDirectives: true,
 			},
 			languageOptions: {
-				globals: {
-					...globals.es2021,
-				},
 				ecmaVersion: "latest",
 				sourceType: "module",
 				parserOptions: {
@@ -745,7 +744,6 @@ module.exports = {
 					ecmaFeatures: {
 						globalReturn: false,
 						impliedStrict: true,
-						jsx: true,
 					},
 				},
 			},

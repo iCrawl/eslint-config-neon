@@ -21,9 +21,7 @@ module.exports = {
 	flat: [
 		{
 			languageOptions: {
-				globals: {
-					...globals.browser,
-				},
+				globals: globals.browser,
 			},
 			rules,
 		},

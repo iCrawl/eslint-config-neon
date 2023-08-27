@@ -30,9 +30,7 @@ module.exports = {
 	flat: [
 		{
 			languageOptions: {
-				globals: {
-					...cypress.environments.globals.globals,
-				},
+				globals: cypress.environments.globals.globals,
 			},
 			plugins: plugins(false),
 			rules,

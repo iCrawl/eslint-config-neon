@@ -1,11 +1,12 @@
-const globals = require("globals");
+// eslint-disable-next-line id-length
+const n = require("eslint-plugin-n");
 
 const plugins = (old = true) =>
 	old
 		? ["n"]
 		: {
 				// eslint-disable-next-line id-length
-				n: require("eslint-plugin-n"),
+				n,
 		  };
 
 const rules = {
@@ -98,35 +99,33 @@ const rules = {
 	"unicorn/require-post-message-target-origin": 0,
 };
 
-const settings = {
-	"import/resolvers": {
-		node: {
-			extensions: [".js", ".jsx"],
-		},
-	},
-};
-
 module.exports = {
 	/** @type {import('eslint').Linter.Config} */
 	default: {
 		env: {
 			node: true,
 		},
+		parserOptions: {
+			ecmaFeatures: {
+				globalReturn: true,
+			},
+		},
 		plugins: plugins(),
 		rules,
-		settings,
 	},
 	/** @type {import('eslint').Linter.FlatConfig[]} */
 	flat: [
 		{
 			languageOptions: {
-				globals: {
-					...globals.node,
+				globals: n.configs["recommended-module"].globals,
+				parserOptions: {
+					ecmaFeatures: {
+						globalReturn: true,
+					},
 				},
 			},
 			plugins: plugins(false),
 			rules,
-			settings,
 		},
 	],
 };
