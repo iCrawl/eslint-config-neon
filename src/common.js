@@ -103,7 +103,7 @@ const rules = {
 	"import/dynamic-import-chunkname": 0,
 	"import/export": 0,
 	"import/exports-last": 0,
-	"import/extensions": [2, "ignorePackages"],
+	"import/extensions": 0,
 	"import/first": 2,
 	"import/group-exports": 0,
 	"import/max-dependencies": 0,
