@@ -5,7 +5,7 @@ const plugins = (old = true) =>
 		? ["mdx"]
 		: {
 				mdx: mdxPlugin,
-		  };
+			};
 
 const parser = (old = true) => (old ? "eslint-mdx" : require("eslint-mdx"));
 

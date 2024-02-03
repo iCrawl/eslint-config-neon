@@ -3,7 +3,7 @@ const plugins = (old = true) =>
 		? ["react"]
 		: {
 				react: require("eslint-plugin-react"),
-		  };
+			};
 
 const rules = {
 	"react/jsx-boolean-value": [2, "never"],

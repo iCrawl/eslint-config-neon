@@ -6,7 +6,7 @@ const plugins = (old = true) =>
 				jsdoc: require("eslint-plugin-jsdoc"),
 				unicorn: require("eslint-plugin-unicorn"),
 				promise: require("eslint-plugin-promise"),
-		  };
+			};
 
 const rules = {
 	"accessor-pairs": 0,

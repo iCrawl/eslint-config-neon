@@ -3,7 +3,7 @@ const plugins = (old = true) =>
 		? ["jsx-a11y"]
 		: {
 				"jsx-a11y": require("eslint-plugin-jsx-a11y"),
-		  };
+			};
 
 const rules = {
 	"jsx-a11y/alt-text": 2,

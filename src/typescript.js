@@ -8,7 +8,7 @@ const plugins = (old = true) =>
 				sonarjs: require("eslint-plugin-sonarjs"),
 				tsdoc: require("eslint-plugin-tsdoc"),
 				"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),
-		  };
+			};
 
 const rules = {
 	"@typescript-eslint/adjacent-overload-signatures": 2,

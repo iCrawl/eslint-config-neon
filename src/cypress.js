@@ -5,7 +5,7 @@ const plugins = (old = true) =>
 		? ["cypress"]
 		: {
 				cypress,
-		  };
+			};
 
 const rules = {
 	"cypress/assertion-before-screenshot": 2,

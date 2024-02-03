@@ -4,7 +4,7 @@ const plugins = (old = true) =>
 		: {
 				"@angular-eslint": require("@angular-eslint/eslint-plugin"),
 				"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
-		  };
+			};
 
 const templatePlugins = (old = true) =>
 	old

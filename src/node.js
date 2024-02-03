@@ -7,7 +7,7 @@ const plugins = (old = true) =>
 		: {
 				// eslint-disable-next-line id-length
 				n,
-		  };
+			};
 
 const rules = {
 	"no-restricted-globals": [
