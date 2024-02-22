@@ -1,5 +1,8 @@
-const common = require("./flat/common.js");
-const node = require("./flat/node.js");
-const prettier = require("./flat/prettier.js");
+// @ts-check
 
-module.exports = [...common, ...node, ...prettier];
+import tseslint from 'typescript-eslint';
+import common from './flat/common.js';
+import node from './flat/node.js';
+import prettier from './flat/prettier.js';
+
+export default tseslint.config(...common, ...node, ...prettier)

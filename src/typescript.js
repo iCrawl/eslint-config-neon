@@ -1,10 +1,10 @@
-const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("@typescript-eslint/parser"));
+const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("typescript-eslint").parser);
 
 const plugins = (old = true) =>
 	old
 		? ["@typescript-eslint", "sonarjs", "tsdoc", "typescript-sort-keys"]
 		: {
-				"@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
+				"@typescript-eslint": require("typescript-eslint").plugin,
 				sonarjs: require("eslint-plugin-sonarjs"),
 				tsdoc: require("eslint-plugin-tsdoc"),
 				"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),
