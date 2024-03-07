@@ -122,7 +122,7 @@ module.exports = {
 				parser: templateParser(false),
 			},
 			plugins: templatePlugins(false),
-			rules: templateRules(false),
+			rules: templateRules,
 		},
 	],
 };
