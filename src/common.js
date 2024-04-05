@@ -109,11 +109,9 @@ const rules = {
 	"import/max-dependencies": 0,
 	"import/named": 0,
 	"import/namespace": 0,
-	// TODO: wait for fix
-	// "import/newline-after-import": 2,
+	"import/newline-after-import": 2,
 	"import/no-absolute-path": 2,
-	// TODO: wait for fix
-	// "import/no-amd": 2,
+	"import/no-amd": 2,
 	"import/no-anonymous-default-export": 0,
 	"import/no-commonjs": 0,
 	"import/no-cycle": 0,
