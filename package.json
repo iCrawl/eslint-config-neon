@@ -18,8 +18,8 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/esm/common.d.mts",
-				"default": "./dist/esm/common.mjs"
+				"types": "./dist/esm/index.d.mts",
+				"default": "./dist/esm/index.mjs"
 			}
 		},
 		"./angular": {
