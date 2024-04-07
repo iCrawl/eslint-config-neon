@@ -44,9 +44,23 @@ This package includes the following configurations:
 - [`eslint-config-neon/vue`](./src/vue.ts) – for usage with [Vue](https://vuejs.org/).
 - [`eslint-config-neon/vue-typescript`](./src/vue-typescript.ts) – for usage with [Vue](https://vuejs.org/) and [TypeScript](http://typescriptlang.org/).
 
-### Configuration
+### Notes
 
 It is important to note that this package only exports [ESLint Flat Config][]! This means that you _have_ to use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs` to use this package. See the ESLint documentation on flat config for more information.
+
+Instead of importing from `eslint-config-neon`, you can also import each individual config from subpaths, e.g.
+
+```ts
+import common from "eslint-config-neon/common";
+```
+
+instead of
+
+```ts
+import { common } from "eslint-config-neon";
+```
+
+### Configuration
 
 ```js
 import { common, typescript, prettier } from "eslint-config-neon";
