@@ -1,4 +1,8 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-jsx-a11y is not typed
+import eslintPluginJsxA11y from "eslint-plugin-jsx-a11y";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"jsx-a11y/alt-text": 2,
 	"jsx-a11y/anchor-has-content": 2,
 	"jsx-a11y/anchor-is-valid": 2,
@@ -78,12 +82,13 @@ const rules = {
 	"jsx-a11y/tabindex-no-positive": 2,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			"jsx-a11y": require("eslint-plugin-jsx-a11y"),
+			"jsx-a11y": eslintPluginJsxA11y,
 		},
 		rules,
 	},
 ];
+
+export default config;

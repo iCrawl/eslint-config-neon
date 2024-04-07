@@ -1,6 +1,8 @@
-const cypress = require("eslint-plugin-cypress");
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-cypress is not typed
+import cypress from "eslint-plugin-cypress";
 
-const rules = {
+const rules: TSESLint.FlatConfig.Rules = {
 	"cypress/assertion-before-screenshot": 2,
 	"cypress/no-assigning-return-values": 2,
 	"cypress/no-async-tests": 2,
@@ -10,8 +12,7 @@ const rules = {
 	"import/unambiguous": 0,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
 			globals: cypress.environments.globals.globals,
@@ -22,3 +23,5 @@ module.exports = [
 		rules,
 	},
 ];
+
+export default config;

@@ -1,4 +1,8 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-react is not typed
+import eslintPluginReact from "eslint-plugin-react";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"react/jsx-boolean-value": [2, "never"],
 	"react/jsx-child-element-spacing": 0,
 	"react/jsx-closing-bracket-location": [2, "line-aligned"],
@@ -98,7 +102,7 @@ const rules = {
 	"react/jsx-wrap-multilines": 0,
 };
 
-const settings = {
+const settings: TSESLint.FlatConfig.Settings = {
 	"import/extensions": [".js", ".jsx"],
 	"import/resolver": {
 		node: {
@@ -107,8 +111,7 @@ const settings = {
 	},
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
 			parserOptions: {
@@ -118,9 +121,11 @@ module.exports = [
 			},
 		},
 		plugins: {
-			react: require("eslint-plugin-react"),
+			react: eslintPluginReact,
 		},
 		rules,
 		settings,
 	},
 ];
+
+export default config;

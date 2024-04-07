@@ -1,4 +1,11 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+// import eslintPluginSonarjs from "eslint-plugin-sonarjs";
+import eslintPluginTsdoc from "eslint-plugin-tsdoc";
+// @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
+import eslintPluginTypescriptSortKeys from "eslint-plugin-typescript-sort-keys";
+import tseslint from "typescript-eslint";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"@typescript-eslint/adjacent-overload-signatures": 2,
 	"@typescript-eslint/array-type": [
 		2,
@@ -360,43 +367,43 @@ const rules = {
 	"jsdoc/require-property-type": 0,
 	"no-undef": 0,
 	"n/global-require": 0,
-	"sonarjs/no-all-duplicated-branches": 2,
-	"sonarjs/no-element-overwrite": 2,
-	"sonarjs/no-empty-collection": 2,
-	"sonarjs/no-extra-arguments": 2,
-	"sonarjs/no-identical-conditions": 2,
-	"sonarjs/no-identical-expressions": 2,
-	"sonarjs/no-ignored-return": 2,
-	"sonarjs/no-one-iteration-loop": 2,
-	"sonarjs/no-use-of-empty-return-value": 2,
-	"sonarjs/non-existent-operator": 2,
-	"sonarjs/elseif-without-else": 0,
-	"sonarjs/max-switch-cases": 0,
-	"sonarjs/no-collapsible-if": 2,
-	"sonarjs/no-collection-size-mischeck": 2,
-	"sonarjs/no-duplicate-string": 0,
-	"sonarjs/no-duplicated-branches": 2,
-	"sonarjs/no-gratuitous-expressions": 2,
-	"sonarjs/no-identical-functions": 2,
-	"sonarjs/no-inverted-boolean-check": 2,
-	"sonarjs/no-nested-switch": 2,
-	"sonarjs/no-nested-template-literals": 0,
-	"sonarjs/no-redundant-boolean": 2,
-	"sonarjs/no-redundant-jump": 2,
-	"sonarjs/no-same-line-conditional": 2,
-	"sonarjs/no-small-switch": 0,
-	"sonarjs/no-unused-collection": 2,
-	"sonarjs/no-useless-catch": 0,
-	"sonarjs/prefer-immediate-return": 2,
-	"sonarjs/prefer-object-literal": 2,
-	"sonarjs/prefer-single-boolean-return": 2,
-	"sonarjs/prefer-while": 2,
+	// "sonarjs/no-all-duplicated-branches": 2,
+	// "sonarjs/no-element-overwrite": 2,
+	// "sonarjs/no-empty-collection": 2,
+	// "sonarjs/no-extra-arguments": 2,
+	// "sonarjs/no-identical-conditions": 2,
+	// "sonarjs/no-identical-expressions": 2,
+	// "sonarjs/no-ignored-return": 2,
+	// "sonarjs/no-one-iteration-loop": 2,
+	// "sonarjs/no-use-of-empty-return-value": 2,
+	// "sonarjs/non-existent-operator": 2,
+	// "sonarjs/elseif-without-else": 0,
+	// "sonarjs/max-switch-cases": 0,
+	// "sonarjs/no-collapsible-if": 2,
+	// "sonarjs/no-collection-size-mischeck": 2,
+	// "sonarjs/no-duplicate-string": 0,
+	// "sonarjs/no-duplicated-branches": 2,
+	// "sonarjs/no-gratuitous-expressions": 2,
+	// "sonarjs/no-identical-functions": 2,
+	// "sonarjs/no-inverted-boolean-check": 2,
+	// "sonarjs/no-nested-switch": 2,
+	// "sonarjs/no-nested-template-literals": 0,
+	// "sonarjs/no-redundant-boolean": 2,
+	// "sonarjs/no-redundant-jump": 2,
+	// "sonarjs/no-same-line-conditional": 2,
+	// "sonarjs/no-small-switch": 0,
+	// "sonarjs/no-unused-collection": 2,
+	// "sonarjs/no-useless-catch": 0,
+	// "sonarjs/prefer-immediate-return": 2,
+	// "sonarjs/prefer-object-literal": 2,
+	// "sonarjs/prefer-single-boolean-return": 2,
+	// "sonarjs/prefer-while": 2,
 	"tsdoc/syntax": 1,
 	"typescript-sort-keys/interface": 2,
 	"typescript-sort-keys/string-enum": 2,
 };
 
-const settings = {
+const settings: TSESLint.FlatConfig.Settings = {
 	jsdoc: {
 		mode: "typescript",
 	},
@@ -416,19 +423,21 @@ const settings = {
 	},
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
+	//
+	...tseslint.configs.recommended,
 	{
-		languageOptions: {
-			parser: require("typescript-eslint").parser,
-		},
 		plugins: {
-			"@typescript-eslint": require("typescript-eslint").plugin,
-			sonarjs: require("eslint-plugin-sonarjs"),
-			tsdoc: require("eslint-plugin-tsdoc"),
-			"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),
+			// TODO [V9 UPDATE]
+			// sonarjs: eslintPluginSonarjs,
+			// @ts-expect-error eslint-plugin-tsdoc needs to be updated to v9
+			// TODO [V9 UPDATE]
+			tsdoc: eslintPluginTsdoc,
+			"typescript-sort-keys": eslintPluginTypescriptSortKeys,
 		},
 		rules,
 		settings,
 	},
-];
+);
+
+export default config;

@@ -1,6 +1,7 @@
-const globals = require("globals");
+import type { TSESLint } from "@typescript-eslint/utils";
+import globals from "globals";
 
-const rules = {
+const rules: TSESLint.FlatConfig.Rules = {
 	"unicorn/prefer-dom-node-append": 2,
 	"unicorn/prefer-dom-node-dataset": 2,
 	"unicorn/prefer-dom-node-remove": 2,
@@ -9,8 +10,7 @@ const rules = {
 	"unicorn/prefer-modern-dom-apis": 2,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
 			globals: globals.browser,
@@ -18,3 +18,5 @@ module.exports = [
 		rules,
 	},
 ];
+
+export default config;

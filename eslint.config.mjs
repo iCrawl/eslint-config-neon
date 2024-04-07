@@ -1,8 +1,25 @@
 // @ts-check
 
-import tseslint from "typescript-eslint";
-import common from "./src/common.js";
-import node from "./src/node.js";
-import prettier from "./src/prettier.js";
+import common from "./dist/esm/common.mjs";
+import node from "./dist/esm/node.mjs";
+import prettier from "./dist/esm/prettier.mjs";
+import typescript from "./dist/esm/typescript.mjs";
 
-export default tseslint.config(...common, ...node, ...prettier);
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
+const config = [
+	...common,
+	...node,
+	...typescript,
+	{
+		languageOptions: {
+			parserOptions: {
+				project: "./tsconfig.json",
+			},
+		},
+	},
+	...prettier,
+];
+
+export default config;

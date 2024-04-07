@@ -1,8 +1,11 @@
-const jsx = require("./jsx.js");
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-react is not typed
+import eslintPluginReact from "eslint-plugin-react";
+// @ts-expect-error eslint-plugin-react-hooks is not typed
+import eslintPluginReactHooks from "eslint-plugin-react-hooks";
+import jsx from "./jsx.js";
 
-const rules = {
-	...jsx.rules,
-
+const rules: TSESLint.FlatConfig.Rules = {
 	"react/boolean-prop-naming": 2,
 	"react/button-has-type": 2,
 	"react/default-props-match-prop-types": 2,
@@ -73,20 +76,22 @@ const rules = {
 	"react-hooks/rules-of-hooks": 2,
 };
 
-const settings = {
+const settings: TSESLint.FlatConfig.Settings = {
 	react: {
 		version: "detect",
 	},
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
+	...jsx,
 	{
 		plugins: {
-			react: require("eslint-plugin-react"),
-			"react-hooks": require("eslint-plugin-react-hooks"),
+			react: eslintPluginReact,
+			"react-hooks": eslintPluginReactHooks,
 		},
 		rules,
 		settings,
 	},
 ];
+
+export default config;

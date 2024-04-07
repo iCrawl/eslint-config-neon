@@ -49,13 +49,13 @@ This package includes the following configurations:
 It is important to note that this package only exports [ESLint Flat Config][]! This means that you _have_ to use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs` to use this package. See the ESLint documentation on flat config for more information.
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		languageOptions: {
 			project: "./tsconfig.json",
@@ -69,14 +69,14 @@ module.exports = [
 <br>
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		languageOptions: {
 			project: "./tsconfig.json",
@@ -95,17 +95,17 @@ module.exports = [
 React:
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/browser"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/react"),
-	...require("eslint-config-neon/edge"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/browser")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/react")),
+	...(await import("eslint-config-neon/edge")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		settings: {
 			react: {
@@ -128,18 +128,18 @@ module.exports = [
 Next:
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/browser"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/react"),
-	...require("eslint-config-neon/next"),
-	...require("eslint-config-neon/edge"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/browser")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/react")),
+	...(await import("eslint-config-neon/next")),
+	...(await import("eslint-config-neon/edge")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		settings: {
 			react: {
@@ -168,17 +168,17 @@ module.exports = [
 <br>
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/browser"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/react"),
-	...require("eslint-config-neon/astro"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/browser")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/react")),
+	...(await import("eslint-config-neon/astro")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		settings: {
 			react: {
@@ -206,17 +206,17 @@ module.exports = [
 <br>
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/browser"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/vue"),
-	...require("eslint-config-neon/vue-typescript"),
-	...require("eslint-config-neon/prettier"),
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/browser")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/vue")),
+	...(await import("eslint-config-neon/vue-typescript")),
+	...(await import("eslint-config-neon/prettier")),
 	{
 		languageOptions: {
 			parserOptions: {
@@ -235,24 +235,24 @@ module.exports = [
 <br>
 
 ```js
-module.exports = [
+export default [
 	{
 		ignore: ["**/dist/*"],
 	},
 	{
 		files: ["*.ts"],
-		...require("eslint-config-neon/common"),
-		...require("eslint-config-neon/browser"),
-		...require("eslint-config-neon/node"),
-		...require("eslint-config-neon/typescript"),
-		...require("eslint-config-neon/angular"),
-		...require("eslint-config-neon/rxjs"),
-		...require("eslint-config-neon/rxjs-angular"),
-		...require("eslint-config-neon/prettier"),
+		...(await import("eslint-config-neon/common")),
+		...(await import("eslint-config-neon/browser")),
+		...(await import("eslint-config-neon/node")),
+		...(await import("eslint-config-neon/typescript")),
+		...(await import("eslint-config-neon/angular")),
+		...(await import("eslint-config-neon/rxjs")),
+		...(await import("eslint-config-neon/rxjs-angular")),
+		...(await import("eslint-config-neon/prettier")),
 	},
 	{
 		files: ["*.html"],
-		...require("eslint-config-neon/angular"),
+		...(await import("eslint-config-neon/angular")),
 	},
 	{
 		languageOptions: {
@@ -272,11 +272,11 @@ module.exports = [
 Prettier and neon are already compatible. Just add it as the last config in your `extends` configuration, e.g.
 
 ```js
-module.exports = [
-	...require("eslint-config-neon/common"),
-	...require("eslint-config-neon/node"),
-	...require("eslint-config-neon/typescript"),
-	...require("eslint-config-neon/prettier"),
+export default [
+	...(await import("eslint-config-neon/common")),
+	...(await import("eslint-config-neon/node")),
+	...(await import("eslint-config-neon/typescript")),
+	...(await import("eslint-config-neon/prettier")),
 ];
 ```
 

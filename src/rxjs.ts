@@ -1,4 +1,8 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-rxjs is not typed
+import eslintPluginRxjs from "eslint-plugin-rxjs";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"rxjs/ban-observables": 0,
 	"rxjs/ban-operators": 0,
 	"rxjs/finnish": 2,
@@ -40,12 +44,13 @@ const rules = {
 	"rxjs/throw-error": 2,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			rxjs: require("eslint-plugin-rxjs"),
+			rxjs: eslintPluginRxjs,
 		},
 		rules,
 	},
 ];
+
+export default config;

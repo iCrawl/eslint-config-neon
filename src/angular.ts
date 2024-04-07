@@ -1,4 +1,11 @@
-const rules = {
+// @ts-expect-error angular-eslint is not typed
+import angularEslintPlugin from "@angular-eslint/eslint-plugin";
+// @ts-expect-error angular-eslint is not typed
+import angularEslintTemplatePlugin from "@angular-eslint/eslint-plugin-template";
+import angularParser from "@angular-eslint/template-parser";
+import type { TSESLint } from "@typescript-eslint/utils";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"@angular-eslint/component-class-suffix": 2,
 	"@angular-eslint/contextual-decorator": 2,
 	"@angular-eslint/contextual-lifecycle": 2,
@@ -30,7 +37,7 @@ const rules = {
 	"import/extensions": 0,
 };
 
-const templateRules = {
+const templateRules: TSESLint.FlatConfig.Rules = {
 	"@angular-eslint/template/accessibility-alt-text": 2,
 	"@angular-eslint/template/accessibility-elements-content": 2,
 	"@angular-eslint/template/accessibility-label-has-associated-control": 1,
@@ -54,23 +61,24 @@ const templateRules = {
 	"@angular-eslint/template/use-track-by-function": 2,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			"@angular-eslint": require("@angular-eslint/eslint-plugin"),
-			"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
+			"@angular-eslint": angularEslintPlugin,
+			"@angular-eslint/template": angularEslintTemplatePlugin,
 		},
 		processor: "@angular-eslint/template/extract-inline-html",
 		rules,
 	},
 	{
 		languageOptions: {
-			parser: require("@angular-eslint/template-parser"),
+			parser: angularParser,
 		},
 		plugins: {
-			"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
+			"@angular-eslint/template": angularEslintTemplatePlugin,
 		},
 		rules: templateRules,
 	},
 ];
+
+export default config;

@@ -1,8 +1,12 @@
-try {
-	require("@rushstack/eslint-patch/modern-module-resolution");
-} catch {}
+import type { TSESLint } from "@typescript-eslint/utils";
+import eslintPluginImport from "eslint-plugin-import";
+import eslintPluginJsdoc from "eslint-plugin-jsdoc";
+// @ts-expect-error eslint-plugin-unicorn is not typed
+import eslintPluginUnicorn from "eslint-plugin-unicorn";
+// TODO [V9 UPDATE]
+// import eslintPluginPromise from "eslint-plugin-promise";
 
-const rules = {
+const rules: TSESLint.FlatConfig.Rules = {
 	"accessor-pairs": 0,
 	"array-bracket-newline": [2, { multiline: true }],
 	"array-bracket-spacing": [2, "never"],
@@ -484,10 +488,10 @@ const rules = {
 	"prefer-rest-params": 2,
 	"prefer-spread": 2,
 	"prefer-template": 0,
-	"promise/param-names": 2,
-	"promise/prefer-await-to-callbacks": 1,
-	"promise/prefer-await-to-then": 2,
-	"promise/valid-params": 2,
+	// "promise/param-names": 2,
+	// "promise/prefer-await-to-callbacks": 1,
+	// "promise/prefer-await-to-then": 2,
+	// "promise/valid-params": 2,
 	"quote-props": [
 		2,
 		"as-needed",
@@ -696,7 +700,7 @@ const rules = {
 	yoda: [2, "never"],
 };
 
-const settings = {
+const settings: TSESLint.FlatConfig.Settings = {
 	"import/extensions": [".js"],
 	"import/resolver": {
 		node: {
@@ -705,8 +709,7 @@ const settings = {
 	},
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		linterOptions: {
 			reportUnusedDisableDirectives: true,
@@ -723,12 +726,16 @@ module.exports = [
 			},
 		},
 		plugins: {
-			import: require("eslint-plugin-import"),
-			jsdoc: require("eslint-plugin-jsdoc"),
-			unicorn: require("eslint-plugin-unicorn"),
-			promise: require("eslint-plugin-promise"),
+			import: eslintPluginImport,
+			// @ts-expect-error eslint-plugin-jsdoc needs to be updated to v9
+			jsdoc: eslintPluginJsdoc,
+			unicorn: eslintPluginUnicorn,
+			// TODO [V9 UPDATE]
+			// promise: eslintPluginPromise,
 		},
 		rules,
 		settings,
 	},
 ];
+
+export default config;

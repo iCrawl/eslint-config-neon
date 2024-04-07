@@ -3,132 +3,160 @@
 	"version": "0.1.62",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
-		"lint": "prettier --check . && eslint src",
-		"format": "prettier --write . && eslint src --fix",
+		"build": "tsup && yarn fix-mts-types",
+		"fix-mts-types": "tsx scripts/fix-tsup-type-files.ts",
+		"lint": "yarn build && prettier --check . && eslint src",
+		"format": "yarn build && prettier --write . && eslint src --fix",
 		"fmt": "yarn format",
+		"prepack": "yarn build",
 		"update": "yarn upgrade-interactive"
 	},
-	"type": "commonjs",
-	"main": "src/common.js",
+	"type": "module",
+	"main": "dist/cjs/common.cjs",
+	"module": "dist/esm/common.mjs",
+	"types": "dist/cjs/common.d.ts",
 	"exports": {
 		".": {
-			"require": {
-				"default": "./src/common.js"
+			"import": {
+				"types": "./dist/esm/common.d.mts",
+				"default": "./dist/esm/common.mjs"
 			}
 		},
 		"./angular": {
-			"require": {
-				"default": "./src/angular.js"
+			"import": {
+				"types": "./dist/esm/angular.d.mts",
+				"default": "./dist/esm/angular.mjs"
 			}
 		},
 		"./astro": {
-			"require": {
-				"default": "./src/astro.js"
+			"import": {
+				"types": "./dist/esm/astro.d.mts",
+				"default": "./dist/esm/astro.mjs"
 			}
 		},
 		"./browser": {
-			"require": {
-				"default": "./src/browser.js"
+			"import": {
+				"types": "./dist/esm/browser.d.mts",
+				"default": "./dist/esm/browser.mjs"
 			}
 		},
 		"./common": {
-			"require": {
-				"default": "./src/common.js"
+			"import": {
+				"types": "./dist/esm/common.d.mts",
+				"default": "./dist/esm/common.mjs"
 			}
 		},
 		"./cypress": {
-			"require": {
-				"default": "./src/cypress.js"
+			"import": {
+				"types": "./dist/esm/cypress.d.mts",
+				"default": "./dist/esm/cypress.mjs"
 			}
 		},
 		"./edge": {
-			"require": {
-				"default": "./src/edge.js"
+			"import": {
+				"types": "./dist/esm/edge.d.mts",
+				"default": "./dist/esm/edge.mjs"
 			}
 		},
 		"./jsx-a11y": {
-			"require": {
-				"default": "./src/jsx-a11y.js"
+			"import": {
+				"types": "./dist/esm/jsx-a11y.d.mts",
+				"default": "./dist/esm/jsx-a11y.mjs"
 			}
 		},
 		"./jsx": {
-			"require": {
-				"default": "./src/jsx.js"
+			"import": {
+				"types": "./dist/esm/jsx.d.mts",
+				"default": "./dist/esm/jsx.mjs"
 			}
 		},
 		"./mdx": {
-			"require": {
-				"default": "./src/mdx.js"
+			"import": {
+				"types": "./dist/esm/mdx.d.mts",
+				"default": "./dist/esm/mdx.mjs"
 			}
 		},
 		"./module": {
-			"require": {
-				"default": "./src/module.js"
+			"import": {
+				"types": "./dist/esm/module.d.mts",
+				"default": "./dist/esm/module.mjs"
 			}
 		},
 		"./next": {
-			"require": {
-				"default": "./src/next.js"
+			"import": {
+				"types": "./dist/esm/next.d.mts",
+				"default": "./dist/esm/next.mjs"
 			}
 		},
 		"./no-deprecated": {
-			"require": {
-				"default": "./src/no-deprecated.js"
+			"import": {
+				"types": "./dist/esm/no-deprecated.d.mts",
+				"default": "./dist/esm/no-deprecated.mjs"
 			}
 		},
 		"./node": {
-			"require": {
-				"default": "./src/node.js"
+			"import": {
+				"types": "./dist/esm/node.d.mts",
+				"default": "./dist/esm/node.mjs"
 			}
 		},
 		"./prettier": {
-			"require": {
-				"default": "./src/prettier.js"
+			"import": {
+				"types": "./dist/esm/prettier.d.mts",
+				"default": "./dist/esm/prettier.mjs"
 			}
 		},
 		"./react": {
-			"require": {
-				"default": "./src/react.js"
+			"import": {
+				"types": "./dist/esm/react.d.mts",
+				"default": "./dist/esm/react.mjs"
 			}
 		},
 		"./rxjs-angular": {
-			"require": {
-				"default": "./src/rxjs-angular.js"
+			"import": {
+				"types": "./dist/esm/rxjs-angular.d.mts",
+				"default": "./dist/esm/rxjs-angular.mjs"
 			}
 		},
 		"./rxjs": {
-			"require": {
-				"default": "./src/rxjs.js"
+			"import": {
+				"types": "./dist/esm/rxjs.d.mts",
+				"default": "./dist/esm/rxjs.mjs"
 			}
 		},
 		"./svelte-typescript": {
-			"require": {
-				"default": "./src/svelte-typescript.js"
+			"import": {
+				"types": "./dist/esm/svelte-typescript.d.mts",
+				"default": "./dist/esm/svelte-typescript.mjs"
 			}
 		},
 		"./svelte": {
-			"require": {
-				"default": "./src/svelte.js"
+			"import": {
+				"types": "./dist/esm/svelte.d.mts",
+				"default": "./dist/esm/svelte.mjs"
 			}
 		},
 		"./typescript": {
-			"require": {
-				"default": "./src/typescript.js"
+			"import": {
+				"types": "./dist/esm/typescript.d.mts",
+				"default": "./dist/esm/typescript.mjs"
 			}
 		},
 		"./vue-typescript": {
-			"require": {
-				"default": "./src/vue-typescript.js"
+			"import": {
+				"types": "./dist/esm/vue-typescript.d.mts",
+				"default": "./dist/esm/vue-typescript.mjs"
 			}
 		},
 		"./vue": {
-			"require": {
-				"default": "./src/vue.js"
+			"import": {
+				"types": "./dist/esm/vue.d.mts",
+				"default": "./dist/esm/vue.mjs"
 			}
 		}
 	},
 	"files": [
-		"src/"
+		"dist/"
 	],
 	"keywords": [
 		"eslint",
@@ -153,7 +181,6 @@
 		"@angular-eslint/eslint-plugin-template": "^17.3.0",
 		"@angular-eslint/template-parser": "^17.3.0",
 		"@next/eslint-plugin-next": "^14.1.4",
-		"@rushstack/eslint-patch": "^1.10.1",
 		"@typescript-eslint/eslint-plugin": "^7.5.0",
 		"@typescript-eslint/parser": "^7.5.0",
 		"astro-eslint-parser": "^0.17.0",
@@ -183,8 +210,13 @@
 		"vue-eslint-parser": "^9.4.2"
 	},
 	"devDependencies": {
+		"@sapphire/node-utilities": "^1.0.2",
+		"@types/eslint": "^8.56.7",
+		"@types/eslint-scope": "^3.7.7",
 		"eslint": "^9.0.0",
 		"prettier": "^3.2.5",
+		"tsup": "^8.0.2",
+		"tsx": "^4.7.2",
 		"typescript": "^5.4.4"
 	},
 	"engines": {

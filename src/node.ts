@@ -1,8 +1,9 @@
-// eslint-disable-next-line id-length
-const n = require("eslint-plugin-n");
-const globals = require("globals");
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-n is not typed
+import n from "eslint-plugin-n"; // eslint-disable-line id-length
+import globals from "globals";
 
-const rules = {
+const rules: TSESLint.FlatConfig.Rules = {
 	"no-restricted-globals": [
 		"error",
 		{
@@ -92,8 +93,7 @@ const rules = {
 	"unicorn/require-post-message-target-origin": 0,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
 			globals: {
@@ -107,9 +107,10 @@ module.exports = [
 			},
 		},
 		plugins: {
-			// eslint-disable-next-line id-length
-			n,
+			n, // eslint-disable-line id-length
 		},
 		rules,
 	},
 ];
+
+export default config;

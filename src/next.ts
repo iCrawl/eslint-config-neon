@@ -1,4 +1,8 @@
-const rules = {
+// @ts-expect-error eslint-plugin-next is not typed
+import eslintPluginNext from "@next/eslint-plugin-next";
+import type { TSESLint } from "@typescript-eslint/utils";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"@next/next/google-font-display": 1,
 	"@next/next/google-font-preconnect": 1,
 	"@next/next/inline-script-id": 2,
@@ -21,12 +25,13 @@ const rules = {
 	"import/extensions": 0,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			"@next/next": require("@next/eslint-plugin-next"),
+			"@next/next": eslintPluginNext,
 		},
 		rules,
 	},
 ];
+
+export default config;

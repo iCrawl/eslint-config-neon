@@ -1,4 +1,6 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"import/extensions": 0,
 	"no-restricted-globals": 0,
 	"n/prefer-global/buffer": [2, "always"],
@@ -10,9 +12,10 @@ const rules = {
 	"n/prefer-global/url-search-params": [2, "always"],
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		rules,
 	},
 ];
+
+export default config;

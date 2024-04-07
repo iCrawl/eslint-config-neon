@@ -1,4 +1,9 @@
-const rules = {
+import type { TSESLint } from "@typescript-eslint/utils";
+// @ts-expect-error eslint-plugin-vue is not typed
+import eslintPluginVue from "eslint-plugin-vue";
+import vueEslintParser from "vue-eslint-parser";
+
+const rules: TSESLint.FlatConfig.Rules = {
 	"vue/array-bracket-newline": [2, { multiline: true }],
 	"vue/array-bracket-spacing": [2, "never"],
 	"vue/arrow-spacing": [
@@ -296,18 +301,19 @@ const rules = {
 	"vue/valid-v-text": 2,
 };
 
-const vueRules = {
+const vueRules: TSESLint.FlatConfig.Rules = {
 	indent: 0,
 };
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
-			parser: require("vue-eslint-parser"),
+			// @ts-expect-error vue-eslint-parser needs to be updated to v9
+			// TODO [V9 UPDATE]
+			parser: vueEslintParser,
 		},
 		plugins: {
-			vue: require("eslint-plugin-vue"),
+			vue: eslintPluginVue,
 		},
 		rules,
 	},
@@ -315,3 +321,5 @@ module.exports = [
 		rules: vueRules,
 	},
 ];
+
+export default config;
