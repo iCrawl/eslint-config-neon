@@ -20,138 +20,230 @@
 			"import": {
 				"types": "./dist/esm/index.d.mts",
 				"default": "./dist/esm/index.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/index.d.cts",
+				"default": "./dist/cjs/index.cjs"
 			}
 		},
 		"./angular": {
 			"import": {
 				"types": "./dist/esm/angular.d.mts",
 				"default": "./dist/esm/angular.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/angular.d.cts",
+				"default": "./dist/cjs/angular.cjs"
 			}
 		},
 		"./astro": {
 			"import": {
 				"types": "./dist/esm/astro.d.mts",
 				"default": "./dist/esm/astro.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/astro.d.cts",
+				"default": "./dist/cjs/astro.cjs"
 			}
 		},
 		"./browser": {
 			"import": {
 				"types": "./dist/esm/browser.d.mts",
 				"default": "./dist/esm/browser.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/browser.d.cts",
+				"default": "./dist/cjs/browser.cjs"
 			}
 		},
 		"./common": {
 			"import": {
 				"types": "./dist/esm/common.d.mts",
 				"default": "./dist/esm/common.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/common.d.cts",
+				"default": "./dist/cjs/common.cjs"
 			}
 		},
 		"./cypress": {
 			"import": {
 				"types": "./dist/esm/cypress.d.mts",
 				"default": "./dist/esm/cypress.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/cypress.d.cts",
+				"default": "./dist/cjs/cypress.cjs"
 			}
 		},
 		"./edge": {
 			"import": {
 				"types": "./dist/esm/edge.d.mts",
 				"default": "./dist/esm/edge.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/edge.d.cts",
+				"default": "./dist/cjs/edge.cjs"
 			}
 		},
 		"./jsx-a11y": {
 			"import": {
 				"types": "./dist/esm/jsx-a11y.d.mts",
 				"default": "./dist/esm/jsx-a11y.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/jsx-a11y.d.cts",
+				"default": "./dist/cjs/jsx-a11y.cjs"
 			}
 		},
 		"./jsx": {
 			"import": {
 				"types": "./dist/esm/jsx.d.mts",
 				"default": "./dist/esm/jsx.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/jsx.d.cts",
+				"default": "./dist/cjs/jsx.cjs"
 			}
 		},
 		"./mdx": {
 			"import": {
 				"types": "./dist/esm/mdx.d.mts",
 				"default": "./dist/esm/mdx.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/mdx.d.cts",
+				"default": "./dist/cjs/mdx.cjs"
 			}
 		},
 		"./module": {
 			"import": {
 				"types": "./dist/esm/module.d.mts",
 				"default": "./dist/esm/module.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/module.d.cts",
+				"default": "./dist/cjs/module.cjs"
 			}
 		},
 		"./next": {
 			"import": {
 				"types": "./dist/esm/next.d.mts",
 				"default": "./dist/esm/next.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/next.d.cts",
+				"default": "./dist/cjs/next.cjs"
 			}
 		},
 		"./no-deprecated": {
 			"import": {
 				"types": "./dist/esm/no-deprecated.d.mts",
 				"default": "./dist/esm/no-deprecated.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/no-deprecated.d.cts",
+				"default": "./dist/cjs/no-deprecated.cjs"
 			}
 		},
 		"./node": {
 			"import": {
 				"types": "./dist/esm/node.d.mts",
 				"default": "./dist/esm/node.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/node.d.cts",
+				"default": "./dist/cjs/node.cjs"
 			}
 		},
 		"./prettier": {
 			"import": {
 				"types": "./dist/esm/prettier.d.mts",
 				"default": "./dist/esm/prettier.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/prettier.d.cts",
+				"default": "./dist/cjs/prettier.cjs"
 			}
 		},
 		"./react": {
 			"import": {
 				"types": "./dist/esm/react.d.mts",
 				"default": "./dist/esm/react.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/react.d.cts",
+				"default": "./dist/cjs/react.cjs"
 			}
 		},
 		"./rxjs-angular": {
 			"import": {
 				"types": "./dist/esm/rxjs-angular.d.mts",
 				"default": "./dist/esm/rxjs-angular.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/rxjs-angular.d.cts",
+				"default": "./dist/cjs/rxjs-angular.cjs"
 			}
 		},
 		"./rxjs": {
 			"import": {
 				"types": "./dist/esm/rxjs.d.mts",
 				"default": "./dist/esm/rxjs.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/rxjs.d.cts",
+				"default": "./dist/cjs/rxjs.cjs"
 			}
 		},
 		"./svelte-typescript": {
 			"import": {
 				"types": "./dist/esm/svelte-typescript.d.mts",
 				"default": "./dist/esm/svelte-typescript.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/svelte-typescript.d.cts",
+				"default": "./dist/cjs/svelte-typescript.cjs"
 			}
 		},
 		"./svelte": {
 			"import": {
 				"types": "./dist/esm/svelte.d.mts",
 				"default": "./dist/esm/svelte.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/svelte.d.cts",
+				"default": "./dist/cjs/svelte.cjs"
 			}
 		},
 		"./typescript": {
 			"import": {
 				"types": "./dist/esm/typescript.d.mts",
 				"default": "./dist/esm/typescript.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/typescript.d.cts",
+				"default": "./dist/cjs/typescript.cjs"
 			}
 		},
 		"./vue-typescript": {
 			"import": {
 				"types": "./dist/esm/vue-typescript.d.mts",
 				"default": "./dist/esm/vue-typescript.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/vue-typescript.d.cts",
+				"default": "./dist/cjs/vue-typescript.cjs"
 			}
 		},
 		"./vue": {
 			"import": {
 				"types": "./dist/esm/vue.d.mts",
 				"default": "./dist/esm/vue.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/vue.d.cts",
+				"default": "./dist/cjs/vue.cjs"
 			}
 		}
 	},
