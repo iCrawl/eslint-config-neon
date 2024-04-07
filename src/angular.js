@@ -1,19 +1,3 @@
-const plugins = (old = true) =>
-	old
-		? ["@angular-eslint", "@angular-eslint/template"]
-		: {
-				"@angular-eslint": require("@angular-eslint/eslint-plugin"),
-				"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
-			};
-
-const templatePlugins = (old = true) =>
-	old
-		? ["@angular-eslint/template"]
-		: { "@angular-eslint/template": require("@angular-eslint/eslint-plugin-template") };
-
-const templateParser = (old = true) =>
-	old ? "@angular-eslint/template-parser" : require("@angular-eslint/template-parser");
-
 const rules = {
 	"@angular-eslint/component-class-suffix": 2,
 	"@angular-eslint/contextual-decorator": 2,
@@ -70,59 +54,23 @@ const templateRules = {
 	"@angular-eslint/template/use-track-by-function": 2,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		overrides: [
-			{
-				files: ["**/*.ts"],
-				plugins: plugins(),
-				processor: "@angular-eslint/template/extract-inline-html",
-				rules,
-			},
-			{
-				files: ["**/*.html"],
-				parser: templateParser(),
-				plugins: templatePlugins(),
-				rules: {
-					"@angular-eslint/template/accessibility-alt-text": 2,
-					"@angular-eslint/template/accessibility-elements-content": 2,
-					"@angular-eslint/template/accessibility-label-has-associated-control": 1,
-					"@angular-eslint/template/accessibility-table-scope": 2,
-					"@angular-eslint/template/accessibility-valid-aria": 2,
-					"@angular-eslint/template/banana-in-box": 2,
-					"@angular-eslint/template/button-has-type": 2,
-					"@angular-eslint/template/click-events-have-key-events": 2,
-					"@angular-eslint/template/conditional-complexity": 0,
-					"@angular-eslint/template/cyclomatic-complexity": 0,
-					"@angular-eslint/template/eqeqeq": 2,
-					"@angular-eslint/template/i18n": 0,
-					"@angular-eslint/template/mouse-events-have-key-events": 2,
-					"@angular-eslint/template/no-any": 0,
-					"@angular-eslint/template/no-autofocus": 2,
-					"@angular-eslint/template/no-call-expression": 2,
-					"@angular-eslint/template/no-distracting-elements": 2,
-					"@angular-eslint/template/no-duplicate-attributes": 2,
-					"@angular-eslint/template/no-negated-async": 2,
-					"@angular-eslint/template/no-positive-tabindex": 2,
-					"@angular-eslint/template/use-track-by-function": 2,
-				},
-			},
-		],
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins: {
+			"@angular-eslint": require("@angular-eslint/eslint-plugin"),
+			"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
+		},
+		processor: "@angular-eslint/template/extract-inline-html",
+		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-			processor: "@angular-eslint/template/extract-inline-html",
-			rules,
+	{
+		languageOptions: {
+			parser: require("@angular-eslint/template-parser"),
 		},
-		{
-			languageOptions: {
-				parser: templateParser(false),
-			},
-			plugins: templatePlugins(false),
-			rules: templateRules,
+		plugins: {
+			"@angular-eslint/template": require("@angular-eslint/eslint-plugin-template"),
 		},
-	],
-};
+		rules: templateRules,
+	},
+];

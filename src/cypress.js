@@ -1,12 +1,5 @@
 const cypress = require("eslint-plugin-cypress");
 
-const plugins = (old = true) =>
-	old
-		? ["cypress"]
-		: {
-				cypress,
-			};
-
 const rules = {
 	"cypress/assertion-before-screenshot": 2,
 	"cypress/no-assigning-return-values": 2,
@@ -17,23 +10,15 @@ const rules = {
 	"import/unambiguous": 0,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		env: {
-			"cypress/globals": true,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		languageOptions: {
+			globals: cypress.environments.globals.globals,
 		},
-		plugins: plugins(),
+		plugins: {
+			cypress,
+		},
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			languageOptions: {
-				globals: cypress.environments.globals.globals,
-			},
-			plugins: plugins(false),
-			rules,
-		},
-	],
-};
+];

@@ -1,10 +1,3 @@
-const plugins = (old = true) =>
-	old
-		? ["jsx-a11y"]
-		: {
-				"jsx-a11y": require("eslint-plugin-jsx-a11y"),
-			};
-
 const rules = {
 	"jsx-a11y/alt-text": 2,
 	"jsx-a11y/anchor-has-content": 2,
@@ -85,17 +78,12 @@ const rules = {
 	"jsx-a11y/tabindex-no-positive": 2,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		plugins: plugins(),
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins: {
+			"jsx-a11y": require("eslint-plugin-jsx-a11y"),
+		},
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-			rules,
-		},
-	],
-};
+];

@@ -1,12 +1,6 @@
-const plugins = (old = true) =>
-	old
-		? ["import", "jsdoc", "unicorn", "promise"]
-		: {
-				import: require("eslint-plugin-import"),
-				jsdoc: require("eslint-plugin-jsdoc"),
-				unicorn: require("eslint-plugin-unicorn"),
-				promise: require("eslint-plugin-promise"),
-			};
+try {
+	require("@rushstack/eslint-patch/modern-module-resolution");
+} catch {}
 
 const rules = {
 	"accessor-pairs": 0,
@@ -711,45 +705,30 @@ const settings = {
 	},
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		env: {
-			es6: true,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		linterOptions: {
+			reportUnusedDisableDirectives: true,
 		},
-		parserOptions: {
-			ecmaFeatures: {
-				globalReturn: false,
-				impliedStrict: true,
-			},
-			ecmaVersion: 2_022,
-			requireConfigFile: false,
+		languageOptions: {
+			ecmaVersion: "latest",
 			sourceType: "module",
+			parserOptions: {
+				requireConfigFile: false,
+				ecmaFeatures: {
+					globalReturn: false,
+					impliedStrict: true,
+				},
+			},
 		},
-		plugins: plugins(),
+		plugins: {
+			import: require("eslint-plugin-import"),
+			jsdoc: require("eslint-plugin-jsdoc"),
+			unicorn: require("eslint-plugin-unicorn"),
+			promise: require("eslint-plugin-promise"),
+		},
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			linterOptions: {
-				reportUnusedDisableDirectives: true,
-			},
-			languageOptions: {
-				ecmaVersion: "latest",
-				sourceType: "module",
-				parserOptions: {
-					requireConfigFile: false,
-					ecmaFeatures: {
-						globalReturn: false,
-						impliedStrict: true,
-					},
-				},
-			},
-			plugins: plugins(false),
-			rules,
-			settings,
-		},
-	],
-};
+];

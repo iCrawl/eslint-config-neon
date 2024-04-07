@@ -1,15 +1,3 @@
-const parser = (old = true) => (old ? "@typescript-eslint/parser" : require("typescript-eslint").parser);
-
-const plugins = (old = true) =>
-	old
-		? ["@typescript-eslint", "sonarjs", "tsdoc", "typescript-sort-keys"]
-		: {
-				"@typescript-eslint": require("typescript-eslint").plugin,
-				sonarjs: require("eslint-plugin-sonarjs"),
-				tsdoc: require("eslint-plugin-tsdoc"),
-				"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),
-			};
-
 const rules = {
 	"@typescript-eslint/adjacent-overload-signatures": 2,
 	"@typescript-eslint/array-type": [
@@ -428,28 +416,19 @@ const settings = {
 	},
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		overrides: [
-			{
-				files: ["**/*.ts", "**/*.tsx"],
-				parser: parser(),
-				plugins: plugins(),
-				rules,
-			},
-		],
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		languageOptions: {
+			parser: require("typescript-eslint").parser,
+		},
+		plugins: {
+			"@typescript-eslint": require("typescript-eslint").plugin,
+			sonarjs: require("eslint-plugin-sonarjs"),
+			tsdoc: require("eslint-plugin-tsdoc"),
+			"typescript-sort-keys": require("eslint-plugin-typescript-sort-keys"),
+		},
+		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			languageOptions: {
-				parser: parser(false),
-			},
-			plugins: plugins(false),
-			rules,
-			settings,
-		},
-	],
-};
+];

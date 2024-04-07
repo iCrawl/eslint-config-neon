@@ -1,5 +1,3 @@
-const plugins = (old = true) => (old ? ["@next/next"] : { "@next/next": require("@next/eslint-plugin-next") });
-
 const rules = {
 	"@next/next/google-font-display": 1,
 	"@next/next/google-font-preconnect": 1,
@@ -23,17 +21,12 @@ const rules = {
 	"import/extensions": 0,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		plugins: plugins(),
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins: {
+			"@next/next": require("@next/eslint-plugin-next"),
+		},
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-			rules,
-		},
-	],
-};
+];

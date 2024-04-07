@@ -1,10 +1,5 @@
 const jsx = require("./jsx.js");
 
-const plugins = (old = true) =>
-	old
-		? ["react", "react-hooks"]
-		: { react: require("eslint-plugin-react"), "react-hooks": require("eslint-plugin-react-hooks") };
-
 const rules = {
 	...jsx.rules,
 
@@ -84,19 +79,14 @@ const settings = {
 	},
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		plugins: plugins(),
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins: {
+			react: require("eslint-plugin-react"),
+			"react-hooks": require("eslint-plugin-react-hooks"),
+		},
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-			rules,
-			settings,
-		},
-	],
-};
+];

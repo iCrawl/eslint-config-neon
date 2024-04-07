@@ -1,5 +1,3 @@
-const plugins = (old = true) => (old ? ["rxjs"] : { rxjs: require("eslint-plugin-rxjs") });
-
 const rules = {
 	"rxjs/ban-observables": 0,
 	"rxjs/ban-operators": 0,
@@ -42,17 +40,12 @@ const rules = {
 	"rxjs/throw-error": 2,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		plugins: plugins(),
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins: {
+			rxjs: require("eslint-plugin-rxjs"),
+		},
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-			rules,
-		},
-	],
-};
+];

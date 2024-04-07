@@ -1,10 +1,3 @@
-const plugins = (old = true) =>
-	old
-		? ["react"]
-		: {
-				react: require("eslint-plugin-react"),
-			};
-
 const rules = {
 	"react/jsx-boolean-value": [2, "never"],
 	"react/jsx-child-element-spacing": 0,
@@ -114,31 +107,20 @@ const settings = {
 	},
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		parserOptions: {
-			ecmaFeatures: {
-				jsx: true,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
 			},
 		},
-		plugins: plugins(),
+		plugins: {
+			react: require("eslint-plugin-react"),
+		},
 		rules,
 		settings,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			languageOptions: {
-				parserOptions: {
-					ecmaFeatures: {
-						jsx: true,
-					},
-				},
-			},
-			plugins: plugins(false),
-			rules,
-			settings,
-		},
-	],
-};
+];

@@ -1,4 +1,4 @@
-const plugins = (old = true) => (old ? ["svelte3"] : { svelte3: require("eslint-plugin-svelte3") });
+const plugins = { svelte3: require("eslint-plugin-svelte3") };
 
 const svelteRules = {
 	"import/first": 0,
@@ -8,27 +8,14 @@ const svelteRules = {
 	"import/prefer-default-export": 0,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		plugins: plugins(),
-		overrides: [
-			{
-				files: ["**/*.svelte"],
-				processor: "svelte3/svelte3",
-				rules: svelteRules,
-			},
-		],
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		plugins,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			plugins: plugins(false),
-		},
-		{
-			plugins: plugins(false),
-			processor: "svelte3/svelte3",
-			rules: svelteRules,
-		},
-	],
-};
+	{
+		plugins,
+		processor: "svelte3/svelte3",
+		rules: svelteRules,
+	},
+];

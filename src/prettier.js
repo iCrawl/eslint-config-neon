@@ -8,15 +8,9 @@ const rules = {
 	"no-inline-comments": 0,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			rules,
-		},
-	],
-};
+];

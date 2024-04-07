@@ -3,20 +3,132 @@
 	"version": "0.1.62",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
-		"lint": "prettier --check . && eslint *.js",
-		"format": "prettier --write . && eslint *.js --fix",
+		"lint": "prettier --check . && eslint src",
+		"format": "prettier --write . && eslint src --fix",
 		"fmt": "yarn format",
-		"postinstall": "is-ci || husky install",
-		"prepack": "pinst --disable",
-		"postpack": "pinst --enable",
 		"update": "yarn upgrade-interactive"
 	},
 	"type": "commonjs",
-	"main": "./common.js",
+	"main": "src/common.js",
+	"exports": {
+		".": {
+			"require": {
+				"default": "./src/common.js"
+			}
+		},
+		"./angular": {
+			"require": {
+				"default": "./src/angular.js"
+			}
+		},
+		"./astro": {
+			"require": {
+				"default": "./src/astro.js"
+			}
+		},
+		"./browser": {
+			"require": {
+				"default": "./src/browser.js"
+			}
+		},
+		"./common": {
+			"require": {
+				"default": "./src/common.js"
+			}
+		},
+		"./cypress": {
+			"require": {
+				"default": "./src/cypress.js"
+			}
+		},
+		"./edge": {
+			"require": {
+				"default": "./src/edge.js"
+			}
+		},
+		"./jsx-a11y": {
+			"require": {
+				"default": "./src/jsx-a11y.js"
+			}
+		},
+		"./jsx": {
+			"require": {
+				"default": "./src/jsx.js"
+			}
+		},
+		"./mdx": {
+			"require": {
+				"default": "./src/mdx.js"
+			}
+		},
+		"./module": {
+			"require": {
+				"default": "./src/module.js"
+			}
+		},
+		"./next": {
+			"require": {
+				"default": "./src/next.js"
+			}
+		},
+		"./no-deprecated": {
+			"require": {
+				"default": "./src/no-deprecated.js"
+			}
+		},
+		"./node": {
+			"require": {
+				"default": "./src/node.js"
+			}
+		},
+		"./prettier": {
+			"require": {
+				"default": "./src/prettier.js"
+			}
+		},
+		"./react": {
+			"require": {
+				"default": "./src/react.js"
+			}
+		},
+		"./rxjs-angular": {
+			"require": {
+				"default": "./src/rxjs-angular.js"
+			}
+		},
+		"./rxjs": {
+			"require": {
+				"default": "./src/rxjs.js"
+			}
+		},
+		"./svelte-typescript": {
+			"require": {
+				"default": "./src/svelte-typescript.js"
+			}
+		},
+		"./svelte": {
+			"require": {
+				"default": "./src/svelte.js"
+			}
+		},
+		"./typescript": {
+			"require": {
+				"default": "./src/typescript.js"
+			}
+		},
+		"./vue-typescript": {
+			"require": {
+				"default": "./src/vue-typescript.js"
+			}
+		},
+		"./vue": {
+			"require": {
+				"default": "./src/vue.js"
+			}
+		}
+	},
 	"files": [
-		"*.js",
-		"src/*.js",
-		"flat/*.js"
+		"src/"
 	],
 	"keywords": [
 		"eslint",
@@ -44,13 +156,13 @@
 		"@rushstack/eslint-patch": "^1.10.1",
 		"@typescript-eslint/eslint-plugin": "^7.5.0",
 		"@typescript-eslint/parser": "^7.5.0",
-		"astro-eslint-parser": "^0.16.3",
+		"astro-eslint-parser": "^0.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-import-resolver-typescript": "^3.6.1",
 		"eslint-mdx": "^3.1.5",
-		"eslint-plugin-astro": "^0.33.1",
+		"eslint-plugin-astro": "^0.34.0",
 		"eslint-plugin-cypress": "^2.15.1",
-		"eslint-plugin-import": "npm:eslint-plugin-i@latest",
+		"eslint-plugin-import": "npm:eslint-plugin-import-x@latest",
 		"eslint-plugin-jsdoc": "^48.2.3",
 		"eslint-plugin-jsx-a11y": "^6.8.0",
 		"eslint-plugin-mdx": "^3.1.5",
@@ -71,15 +183,12 @@
 		"vue-eslint-parser": "^9.4.2"
 	},
 	"devDependencies": {
-		"eslint": "^8.57.0",
-		"husky": "^9.0.11",
-		"is-ci": "^3.0.1",
-		"pinst": "^3.0.0",
+		"eslint": "^9.0.0",
 		"prettier": "^3.2.5",
 		"typescript": "^5.4.4"
 	},
 	"engines": {
-		"node": ">=16.0.0"
+		"node": "^18.18.0 || ^20.9.0 || >=21.1.0"
 	},
 	"packageManager": "yarn@4.1.1"
 }

@@ -9,21 +9,12 @@ const rules = {
 	"unicorn/prefer-modern-dom-apis": 2,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		env: {
-			browser: true,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		languageOptions: {
+			globals: globals.browser,
 		},
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			languageOptions: {
-				globals: globals.browser,
-			},
-			rules,
-		},
-	],
-};
+];

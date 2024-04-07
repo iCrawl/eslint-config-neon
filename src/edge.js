@@ -10,15 +10,9 @@ const rules = {
 	"n/prefer-global/url-search-params": [2, "always"],
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
 		rules,
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			rules,
-		},
-	],
-};
+];

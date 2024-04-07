@@ -1,7 +1,3 @@
-const parser = (old = true) => (old ? "vue-eslint-parser" : require("vue-eslint-parser"));
-
-const plugins = (old = true) => (old ? ["vue"] : { vue: require("eslint-plugin-vue") });
-
 const rules = {
 	"vue/array-bracket-newline": [2, { multiline: true }],
 	"vue/array-bracket-spacing": [2, "never"],
@@ -304,30 +300,18 @@ const vueRules = {
 	indent: 0,
 };
 
-module.exports = {
-	/** @type {import('eslint').Linter.Config} */
-	default: {
-		parser: parser(),
-		plugins: plugins(),
+/** @type {import('eslint').Linter.FlatConfig[]} */
+module.exports = [
+	{
+		languageOptions: {
+			parser: require("vue-eslint-parser"),
+		},
+		plugins: {
+			vue: require("eslint-plugin-vue"),
+		},
 		rules,
-		overrides: [
-			{
-				files: ["**/*.vue"],
-				rules: vueRules,
-			},
-		],
 	},
-	/** @type {import('eslint').Linter.FlatConfig[]} */
-	flat: [
-		{
-			languageOptions: {
-				parser: parser(false),
-			},
-			plugins: plugins(false),
-			rules,
-		},
-		{
-			rules: vueRules,
-		},
-	],
-};
+	{
+		rules: vueRules,
+	},
+];
