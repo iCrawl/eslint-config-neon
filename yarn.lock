@@ -819,26 +819,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint-scope@npm:^3.7.7":
-  version: 3.7.7
-  resolution: "@types/eslint-scope@npm:3.7.7"
-  dependencies:
-    "@types/eslint": "npm:*"
-    "@types/estree": "npm:*"
-  checksum: 10c0/a0ecbdf2f03912679440550817ff77ef39a30fa8bfdacaf6372b88b1f931828aec392f52283240f0d648cf3055c5ddc564544a626bcf245f3d09fcb099ebe3cc
-  languageName: node
-  linkType: hard
-
-"@types/eslint@npm:*, @types/eslint@npm:^8.56.7":
-  version: 8.56.7
-  resolution: "@types/eslint@npm:8.56.7"
-  dependencies:
-    "@types/estree": "npm:*"
-    "@types/json-schema": "npm:*"
-  checksum: 10c0/159bb5ae2f78d905b9263240c75d07b60c26e1bcaecee8c775a7bb0cf7362f5dcdd286259ba6289ab62f989b87048090b2420619f7170a0abbd83cb68b5e0699
-  languageName: node
-  linkType: hard
-
 "@types/estree-jsx@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/estree-jsx@npm:1.0.0"
@@ -875,13 +855,6 @@ __metadata:
   version: 1.2.1
   resolution: "@types/is-empty@npm:1.2.1"
   checksum: 10c0/3bad9f550eb20817b7634cae1453f88cb3e50622b93b0e9a365239ee6b3135ee1b2390ba897eb7033fa257345d2044cd7d73c80198ec0e40d6fec7de5d165dd2
-  languageName: node
-  linkType: hard
-
-"@types/json-schema@npm:*":
-  version: 7.0.15
-  resolution: "@types/json-schema@npm:7.0.15"
-  checksum: 10c0/a996a745e6c5d60292f36731dd41341339d4eeed8180bb09226e5c8d23759067692b1d88e5d91d72ee83dfc00d3aca8e7bd43ea120516c17922cbcb7c3e252db
   languageName: node
   linkType: hard
 
@@ -2599,8 +2572,6 @@ __metadata:
     "@angular-eslint/template-parser": "npm:^17.3.0"
     "@next/eslint-plugin-next": "npm:^14.1.4"
     "@sapphire/node-utilities": "npm:^1.0.2"
-    "@types/eslint": "npm:^8.56.7"
-    "@types/eslint-scope": "npm:^3.7.7"
     "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
     "@typescript-eslint/parser": "npm:^7.5.0"
     astro-eslint-parser: "npm:^0.17.0"

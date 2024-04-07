@@ -303,8 +303,6 @@
 	},
 	"devDependencies": {
 		"@sapphire/node-utilities": "^1.0.2",
-		"@types/eslint": "^8.56.7",
-		"@types/eslint-scope": "^3.7.7",
 		"eslint": "^9.0.0",
 		"prettier": "^3.2.5",
 		"tsup": "^8.0.2",
