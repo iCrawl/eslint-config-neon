@@ -1,0 +1,25 @@
+name: Continuous Integration
+on:
+  pull_request: 
+  push:
+    branches:
+      - main
+jobs:
+  build-and-lint:
+    name: Build & Lint
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'icrawl'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: yarn --immutable
+
+      - name: Build & Lint
+        run: yarn lint
