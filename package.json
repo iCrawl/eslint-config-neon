@@ -14,7 +14,6 @@
 	"type": "commonjs",
 	"main": "./common.js",
 	"files": [
-		"*.js",
 		"src/*.js",
 		"flat/*.js"
 	],
@@ -77,6 +76,10 @@
 		"pinst": "^3.0.0",
 		"prettier": "^3.2.5",
 		"typescript": "^5.4.4"
+	},
+	"exports": {
+		"./*": "./src/*.js",
+		"./flat/*": "./flat/*.js"
 	},
 	"engines": {
 		"node": ">=16.0.0"
