@@ -1,5 +1,5 @@
-import type { TSESLint } from "@typescript-eslint/utils";
 import { fixupPluginRules } from "@eslint/compat";
+import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-react is not typed
 import eslintPluginReact from "eslint-plugin-react";
 
@@ -104,8 +104,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
-	"import/extensions": [".js", ".jsx"],
-	"import/resolver": {
+	"import-x/extensions": [".js", ".jsx"],
+	"import-x/resolver": {
 		node: {
 			extensions: [".js", ".jsx"],
 		},

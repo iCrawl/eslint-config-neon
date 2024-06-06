@@ -1,7 +1,7 @@
 import type { TSESLint } from "@typescript-eslint/utils";
 
 const rules: TSESLint.FlatConfig.Rules = {
-	"import/no-deprecated": 1,
+	"import-x/no-deprecated": 1,
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [

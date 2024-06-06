@@ -32,7 +32,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"@angular-eslint/use-injectable-provided-in": 2,
 	"@angular-eslint/use-lifecycle-interface": 2,
 	"@angular-eslint/use-pipe-transform-interface": 2,
-	"import/extensions": 0,
+	"import-x/extensions": 0,
 };
 
 const templateRules: TSESLint.FlatConfig.Rules = {

@@ -3,9 +3,9 @@ import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginImport from "eslint-plugin-import-x";
 import eslintPluginJsdoc from "eslint-plugin-jsdoc";
 // @ts-expect-error eslint-plugin-unicorn is not typed
-import eslintPluginUnicorn from "eslint-plugin-unicorn";
-// @ts-expect-error eslint-plugin-unicorn is not typed
 import eslintPluginPromise from "eslint-plugin-promise";
+// @ts-expect-error eslint-plugin-unicorn is not typed
+import eslintPluginUnicorn from "eslint-plugin-unicorn";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"accessor-pairs": 0,
@@ -489,10 +489,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"prefer-rest-params": 2,
 	"prefer-spread": 2,
 	"prefer-template": 0,
-	// "promise/param-names": 2,
-	// "promise/prefer-await-to-callbacks": 1,
-	// "promise/prefer-await-to-then": 2,
-	// "promise/valid-params": 2,
+	"promise/param-names": 2,
+	"promise/prefer-await-to-callbacks": 1,
+	"promise/prefer-await-to-then": 2,
+	"promise/valid-params": 2,
 	"quote-props": [
 		2,
 		"as-needed",
@@ -702,8 +702,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
-	"import/extensions": [".js"],
-	"import/resolver": {
+	"import-x/extensions": [".js"],
+	"import-x/resolver": {
 		node: {
 			extensions: [".js"],
 		},
@@ -727,7 +727,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			import: eslintPluginImport,
+			"import-x": eslintPluginImport,
 			jsdoc: eslintPluginJsdoc,
 			unicorn: fixupPluginRules(eslintPluginUnicorn),
 			promise: fixupPluginRules(eslintPluginPromise),

@@ -1,5 +1,5 @@
-import type { TSESLint } from "@typescript-eslint/utils";
 import { fixupPluginRules } from "@eslint/compat";
+import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-cypress is not typed
 import cypress from "eslint-plugin-cypress";
 
@@ -10,7 +10,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"cypress/no-force": 2,
 	"cypress/no-pause": 2,
 	"cypress/no-unnecessary-waiting": 2,
-	"import/unambiguous": 0,
+	"import-x/unambiguous": 0,
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [

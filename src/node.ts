@@ -38,7 +38,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			message: "Import clearImmediate from `node:timers` instead",
 		},
 	],
-	"import/no-unresolved": 0,
+	"import-x/no-unresolved": 0,
 	"n/callback-return": 2,
 	"n/exports-style": 0,
 	"n/file-extension-in-import": 0,

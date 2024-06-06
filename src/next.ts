@@ -23,7 +23,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"@next/next/no-title-in-document-head": 2,
 	"@next/next/no-typos": 2,
 	"@next/next/no-unwanted-polyfillio": 2,
-	"import/extensions": 0,
+	"import-x/extensions": 0,
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [
