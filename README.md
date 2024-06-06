@@ -46,7 +46,11 @@ This package includes the following configurations:
 
 ### Notes
 
+#### Flat Config only
+
 It is important to note that this package only exports [ESLint Flat Config][]! This means that you _have_ to use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs` to use this package. See the ESLint documentation on flat config for more information.
+
+#### Importing Configs
 
 Instead of importing from `eslint-config-neon`, you can also import each individual config from subpaths, e.g.
 
@@ -59,6 +63,12 @@ instead of
 ```ts
 import { common } from "eslint-config-neon";
 ```
+
+#### Merging Configs
+
+In the examples below you will often see `lodash.merge` being used. This is of vital importance as objects often have to be deeply merged when using ESLint Flat Config. If you don't merge the objects, you will overwrite the previous object with the new one, and your config will be invalid.
+
+This package ships ships a transient dependency to `lodash.merge` and `@types/lodash.merge` to make sure it is available in your project.
 
 ### Configuration
 
@@ -261,35 +271,36 @@ export default [
 <br>
 
 ```js
-import { common, browser, node, typescript, angular, rxjs, rxjsangular, prettier } from "eslint-config-neon";
+import { angular, browser, common, node, prettier, rxjs, rxjsangular, typescript } from "eslint-config-neon";
+import merge from "lodash/merge.js";
 
-export default [
-	{
-		ignore: ["**/dist/*"],
-	},
-	{
-		files: ["*.ts"],
-		...common,
-		...browser,
-		...node,
-		...typescript,
-		...angular,
-		...rxjs,
-		...rxjsangular,
-		...prettier,
-	},
-	{
-		files: ["*.html"],
-		...(await import("eslint-config-neon/angular")),
-	},
-	{
-		languageOptions: {
-			parserOptions: {
-				project: "./tsconfig.json",
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
+const config = [
+	...[...common, ...browser, ...node, ...typescript, ...angular, ...rxjs, ...rxjsangular, ...prettier].map((config) =>
+		merge(config, {
+			files: ["src/**/*.ts"],
+			languageOptions: {
+				parserOptions: {
+					project: "tsconfig.json",
+				},
 			},
-		},
-	},
+		}),
+	),
+	...angular.map((config) =>
+		merge(config, {
+			files: ["src/**/*.html"],
+			languageOptions: {
+				parserOptions: {
+					project: "tsconfig.json",
+				},
+			},
+		}),
+	),
 ];
+
+export default config;
 ```
 
 <br>

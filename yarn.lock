@@ -1060,6 +1060,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash.merge@npm:^4.6.9":
+  version: 4.6.9
+  resolution: "@types/lodash.merge@npm:4.6.9"
+  dependencies:
+    "@types/lodash": "npm:*"
+  checksum: 10c0/2e2ccacdceb2e23343a514e8c24540fc4e1f1ffd616b645eb72ec685da9389d99a2544f04d61921e46a6768f8cc0fe5f58d4f7edaba9bc50552f0ca7df905e83
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.17.4
+  resolution: "@types/lodash@npm:4.17.4"
+  checksum: 10c0/0124c64cb9fe7a0f78b6777955abd05ef0d97844d49118652eae45f8fa57bfb7f5a7a9bccc0b5a84c0a6dc09631042e4590cb665acb9d58dfd5e6543c75341ec
+  languageName: node
+  linkType: hard
+
 "@types/mdast@npm:^3.0.0":
   version: 3.0.11
   resolution: "@types/mdast@npm:3.0.11"
@@ -2838,6 +2854,7 @@ __metadata:
     "@eslint/compat": "npm:^1.0.3"
     "@next/eslint-plugin-next": "npm:^14.2.3"
     "@sapphire/node-utilities": "npm:^1.0.2"
+    "@types/lodash.merge": "npm:^4.6.9"
     "@typescript-eslint/eslint-plugin": "npm:^7.12.0"
     "@typescript-eslint/parser": "npm:^7.12.0"
     astro-eslint-parser: "npm:^1.0.2"
@@ -2865,6 +2882,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:^53.0.0"
     eslint-plugin-vue: "npm:^9.26.0"
     globals: "npm:^15.4.0"
+    lodash.merge: "npm:^4.6.2"
     prettier: "npm:^3.3.1"
     tsup: "npm:^8.1.0"
     tsx: "npm:^4.12.0"
