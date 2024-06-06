@@ -22,8 +22,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			parser: astroParser,
 		},
 		plugins: {
-			// @ts-expect-error eslint-plugin-astro needs to be updated to v9
-			// TODO [V9 UPDATE]
 			astro: astroPlugin,
 		},
 		rules: astroRules,

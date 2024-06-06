@@ -1,9 +1,10 @@
+import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-svelte3 is not typed
 import eslintPluginSvelte3 from "eslint-plugin-svelte3";
 
 const plugins: TSESLint.FlatConfig.Plugins = {
-	svelte3: eslintPluginSvelte3,
+	svelte3: fixupPluginRules(eslintPluginSvelte3),
 };
 
 const svelteRules: TSESLint.FlatConfig.Rules = {

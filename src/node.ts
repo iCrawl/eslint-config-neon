@@ -1,5 +1,4 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-// @ts-expect-error eslint-plugin-n is not typed
 import n from "eslint-plugin-n"; // eslint-disable-line id-length
 import globals from "globals";
 

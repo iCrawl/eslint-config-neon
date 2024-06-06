@@ -1,4 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
+import { fixupPluginRules } from "@eslint/compat";
 // @ts-expect-error eslint-plugin-react is not typed
 import eslintPluginReact from "eslint-plugin-react";
 
@@ -121,7 +122,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			react: eslintPluginReact,
+			react: fixupPluginRules(eslintPluginReact),
 		},
 		rules,
 		settings,

@@ -3,8 +3,6 @@ import mdxParser from "eslint-mdx";
 import mdxPlugin from "eslint-plugin-mdx";
 
 const plugins: TSESLint.FlatConfig.Plugins = {
-	// @ts-expect-error eslint-plugin-mdx needs to be updated to v9
-	// TODO [V9 UPDATE]
 	mdx: mdxPlugin,
 };
 

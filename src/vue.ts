@@ -1,3 +1,4 @@
+import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-vue is not typed
 import eslintPluginVue from "eslint-plugin-vue";
@@ -308,12 +309,10 @@ const vueRules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
-			// @ts-expect-error vue-eslint-parser needs to be updated to v9
-			// TODO [V9 UPDATE]
 			parser: vueEslintParser,
 		},
 		plugins: {
-			vue: eslintPluginVue,
+			vue: fixupPluginRules(eslintPluginVue),
 		},
 		rules,
 	},

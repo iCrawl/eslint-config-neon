@@ -1,4 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
+import { fixupPluginRules } from "@eslint/compat";
 // @ts-expect-error eslint-plugin-cypress is not typed
 import cypress from "eslint-plugin-cypress";
 
@@ -18,7 +19,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			globals: cypress.environments.globals.globals,
 		},
 		plugins: {
-			cypress,
+			cypress: fixupPluginRules(cypress),
 		},
 		rules,
 	},

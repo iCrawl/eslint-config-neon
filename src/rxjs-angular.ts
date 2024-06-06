@@ -1,3 +1,4 @@
+import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-rxjs-angular is not typed
 import eslintPluginRxjsAngular from "eslint-plugin-rxjs-angular";
@@ -11,7 +12,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			"rxjs-angular": eslintPluginRxjsAngular,
+			"rxjs-angular": fixupPluginRules(eslintPluginRxjsAngular),
 		},
 		rules,
 	},

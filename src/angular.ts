@@ -1,6 +1,4 @@
-// @ts-expect-error angular-eslint is not typed
 import angularEslintPlugin from "@angular-eslint/eslint-plugin";
-// @ts-expect-error angular-eslint is not typed
 import angularEslintTemplatePlugin from "@angular-eslint/eslint-plugin-template";
 import angularParser from "@angular-eslint/template-parser";
 import type { TSESLint } from "@typescript-eslint/utils";

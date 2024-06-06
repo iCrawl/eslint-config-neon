@@ -1,10 +1,11 @@
+import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
-import eslintPluginImport from "eslint-plugin-import";
+import eslintPluginImport from "eslint-plugin-import-x";
 import eslintPluginJsdoc from "eslint-plugin-jsdoc";
 // @ts-expect-error eslint-plugin-unicorn is not typed
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
-// TODO [V9 UPDATE]
-// import eslintPluginPromise from "eslint-plugin-promise";
+// @ts-expect-error eslint-plugin-unicorn is not typed
+import eslintPluginPromise from "eslint-plugin-promise";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"accessor-pairs": 0,
@@ -97,27 +98,27 @@ const rules: TSESLint.FlatConfig.Rules = {
 	],
 	"id-match": 0,
 	"implicit-arrow-linebreak": [2, "beside"],
-	"import/default": 0,
-	"import/dynamic-import-chunkname": 0,
-	"import/export": 0,
-	"import/exports-last": 0,
-	"import/extensions": 0,
-	"import/first": 2,
-	"import/group-exports": 0,
-	"import/max-dependencies": 0,
-	"import/named": 0,
-	"import/namespace": 0,
-	"import/newline-after-import": 2,
-	"import/no-absolute-path": 2,
-	"import/no-amd": 2,
-	"import/no-anonymous-default-export": 0,
-	"import/no-commonjs": 0,
-	"import/no-cycle": 0,
-	"import/no-default-export": 0,
-	"import/no-deprecated": 0,
-	"import/no-duplicates": 2,
-	"import/no-dynamic-require": 2,
-	"import/no-extraneous-dependencies": [
+	"import-x/default": 0,
+	"import-x/dynamic-import-chunkname": 0,
+	"import-x/export": 0,
+	"import-x/exports-last": 0,
+	"import-x/extensions": 0,
+	"import-x/first": 2,
+	"import-x/group-exports": 0,
+	"import-x/max-dependencies": 0,
+	"import-x/named": 0,
+	"import-x/namespace": 0,
+	"import-x/newline-after-import": 2,
+	"import-x/no-absolute-path": 2,
+	"import-x/no-amd": 2,
+	"import-x/no-anonymous-default-export": 0,
+	"import-x/no-commonjs": 0,
+	"import-x/no-cycle": 0,
+	"import-x/no-default-export": 0,
+	"import-x/no-deprecated": 0,
+	"import-x/no-duplicates": 2,
+	"import-x/no-dynamic-require": 2,
+	"import-x/no-extraneous-dependencies": [
 		2,
 		{
 			devDependencies: true,
@@ -125,25 +126,25 @@ const rules: TSESLint.FlatConfig.Rules = {
 			peerDependencies: true,
 		},
 	],
-	"import/no-import-module-exports": 0,
-	"import/no-internal-modules": 0,
-	"import/no-mutable-exports": 2,
-	"import/no-named-as-default": 0,
-	"import/no-named-as-default-member": 0,
-	"import/no-named-default": 0,
-	"import/no-named-export": 0,
-	"import/no-namespace": 0,
-	"import/no-nodejs-modules": 0,
-	"import/no-relative-packages": 0,
-	"import/no-relative-parent-imports": 0,
-	"import/no-restricted-paths": 0,
-	"import/no-self-import": 2,
-	"import/no-unassigned-import": 0,
-	"import/no-unresolved": 0,
-	"import/no-unused-modules": 0,
-	"import/no-useless-path-segments": 2,
-	"import/no-webpack-loader-syntax": 2,
-	"import/order": [
+	"import-x/no-import-module-exports": 0,
+	"import-x/no-internal-modules": 0,
+	"import-x/no-mutable-exports": 2,
+	"import-x/no-named-as-default": 0,
+	"import-x/no-named-as-default-member": 0,
+	"import-x/no-named-default": 0,
+	"import-x/no-named-export": 0,
+	"import-x/no-namespace": 0,
+	"import-x/no-nodejs-modules": 0,
+	"import-x/no-relative-packages": 0,
+	"import-x/no-relative-parent-imports": 0,
+	"import-x/no-restricted-paths": 0,
+	"import-x/no-self-import": 2,
+	"import-x/no-unassigned-import": 0,
+	"import-x/no-unresolved": 0,
+	"import-x/no-unused-modules": 0,
+	"import-x/no-useless-path-segments": 2,
+	"import-x/no-webpack-loader-syntax": 2,
+	"import-x/order": [
 		2,
 		{
 			alphabetize: {
@@ -154,8 +155,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 			"newlines-between": "never",
 		},
 	],
-	"import/prefer-default-export": 0,
-	"import/unambiguous": 0,
+	"import-x/prefer-default-export": 0,
+	"import-x/unambiguous": 0,
 	indent: [2, "tab"],
 	"init-declarations": 0,
 	"jsdoc/check-access": 2,
@@ -727,11 +728,9 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		},
 		plugins: {
 			import: eslintPluginImport,
-			// @ts-expect-error eslint-plugin-jsdoc needs to be updated to v9
 			jsdoc: eslintPluginJsdoc,
-			unicorn: eslintPluginUnicorn,
-			// TODO [V9 UPDATE]
-			// promise: eslintPluginPromise,
+			unicorn: fixupPluginRules(eslintPluginUnicorn),
+			promise: fixupPluginRules(eslintPluginPromise),
 		},
 		rules,
 		settings,

@@ -1,5 +1,6 @@
+import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
-// import eslintPluginSonarjs from "eslint-plugin-sonarjs";
+import eslintPluginSonarjs from "eslint-plugin-sonarjs";
 import eslintPluginTsdoc from "eslint-plugin-tsdoc";
 // @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
 import eslintPluginTypescriptSortKeys from "eslint-plugin-typescript-sort-keys";
@@ -428,12 +429,9 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
 	...tseslint.configs.recommended,
 	{
 		plugins: {
-			// TODO [V9 UPDATE]
-			// sonarjs: eslintPluginSonarjs,
-			// @ts-expect-error eslint-plugin-tsdoc needs to be updated to v9
-			// TODO [V9 UPDATE]
+			sonarjs: eslintPluginSonarjs,
 			tsdoc: eslintPluginTsdoc,
-			"typescript-sort-keys": eslintPluginTypescriptSortKeys,
+			"typescript-sort-keys": fixupPluginRules(eslintPluginTypescriptSortKeys),
 		},
 		rules,
 		settings,
