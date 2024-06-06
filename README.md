@@ -272,7 +272,7 @@ export default [
 
 ```js
 import { angular, browser, common, node, prettier, rxjs, rxjsangular, typescript } from "eslint-config-neon";
-import merge from "lodash/merge.js";
+import merge from 'lodash.merge';
 
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
