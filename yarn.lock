@@ -2620,6 +2620,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-plugin-file-path-extensions@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "esbuild-plugin-file-path-extensions@npm:2.1.1"
+  checksum: 10c0/9e04cc7b88401f0504b5e0194eea24129689b3cc7e7642c8529be396217abb655cc888cf86b9aea436f1e94336699282ab941683ca9ba2f5d3c97a1403b6f0cc
+  languageName: node
+  linkType: hard
+
 "esbuild@npm:^0.21.4":
   version: 0.21.4
   resolution: "esbuild@npm:0.21.4"
@@ -2834,6 +2841,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.12.0"
     "@typescript-eslint/parser": "npm:^7.12.0"
     astro-eslint-parser: "npm:^1.0.2"
+    esbuild-plugin-file-path-extensions: "npm:^2.1.1"
     eslint: "npm:^9.4.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-import-resolver-typescript: "npm:^3.6.1"

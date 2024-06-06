@@ -14,13 +14,13 @@ for await (const file of findFilesRecursivelyStringEndsWith(srcURL, ".ts")) {
 		continue;
 	}
 
-	filesToExport.push(`./${basename(file).replace(/\.ts$/, ".js")}`);
+	filesToExport.push(`./${basename(file).replace(/\.ts$/, "")}`);
 }
 
 const toExports = filesToExport
 	.toSorted((fileOne, fileTwo) => basename(fileOne).localeCompare(basename(fileTwo)))
 	.map((fileToExport) => {
-		const generatedName = basename(fileToExport).replace(/\.js$/, "").replaceAll("-", "");
+		const generatedName = basename(fileToExport).replaceAll("-", "");
 		return `export { default as ${exportAliases.get(generatedName) ?? generatedName} } from "${fileToExport}";`;
 	})
 	.join("\n");

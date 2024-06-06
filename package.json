@@ -305,6 +305,7 @@
 	},
 	"devDependencies": {
 		"@sapphire/node-utilities": "^1.0.2",
+		"esbuild-plugin-file-path-extensions": "^2.1.1",
 		"eslint": "^9.4.0",
 		"prettier": "^3.3.1",
 		"tsup": "^8.1.0",

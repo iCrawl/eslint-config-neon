@@ -4,7 +4,7 @@ import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error eslint-plugin-react-hooks is not typed
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
-import jsx from "./jsx.js";
+import jsx from "./jsx";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"react/boolean-prop-naming": 2,
