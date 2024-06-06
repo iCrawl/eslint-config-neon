@@ -36,11 +36,11 @@ const rules: TSESLint.FlatConfig.Rules = {
 };
 
 const templateRules: TSESLint.FlatConfig.Rules = {
-	"@angular-eslint/template/accessibility-alt-text": 2,
-	"@angular-eslint/template/accessibility-elements-content": 2,
-	"@angular-eslint/template/accessibility-label-has-associated-control": 1,
-	"@angular-eslint/template/accessibility-table-scope": 2,
-	"@angular-eslint/template/accessibility-valid-aria": 2,
+	"@angular-eslint/template/alt-text": 2,
+	"@angular-eslint/template/elements-content": 2,
+	"@angular-eslint/template/label-has-associated-control": 1,
+	"@angular-eslint/template/table-scope": 2,
+	"@angular-eslint/template/valid-aria": 2,
 	"@angular-eslint/template/banana-in-box": 2,
 	"@angular-eslint/template/button-has-type": 2,
 	"@angular-eslint/template/click-events-have-key-events": 2,
