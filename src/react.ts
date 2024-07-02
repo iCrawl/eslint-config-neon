@@ -4,9 +4,12 @@ import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error eslint-plugin-react-hooks is not typed
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
+// @ts-expect-error eslint-plugin-react-refresh is not typed
+import reactRefresh from "eslint-plugin-react-refresh";
 import jsx from "./jsx";
 
 const rules: TSESLint.FlatConfig.Rules = {
+	// React
 	"react/boolean-prop-naming": 2,
 	"react/button-has-type": 2,
 	"react/default-props-match-prop-types": 2,
@@ -20,6 +23,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"react/function-component-definition": 0,
 	"react/hook-use-state": 2,
 	"react/iframe-missing-sandbox": 2,
+	"react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
 	"react/no-access-state-in-setstate": 2,
 	"react/no-adjacent-inline-elements": 0,
 	"react/no-array-index-key": 0,
@@ -73,8 +77,12 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"react/style-prop-object": 2,
 	"react/void-dom-elements-no-children": 2,
 
+	// React Hooks
 	"react-hooks/exhaustive-deps": 2,
 	"react-hooks/rules-of-hooks": 2,
+
+	// React Refresh
+	"react-refresh/only-export-components": 1,
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -87,7 +95,8 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	...jsx,
 	{
 		plugins: {
-			react: fixupPluginRules(eslintPluginReact),
+			react: eslintPluginReact,
+			"react-refresh": reactRefresh,
 			"react-hooks": fixupPluginRules(eslintPluginReactHooks),
 		},
 		rules,

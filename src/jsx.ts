@@ -1,9 +1,11 @@
-import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-react is not typed
 import eslintPluginReact from "eslint-plugin-react";
+// @ts-expect-error eslint-plugin-react-refresh is not typed
+import eslintPluginReactRefresh from "eslint-plugin-react-refresh";
 
 const rules: TSESLint.FlatConfig.Rules = {
+	// React
 	"react/jsx-boolean-value": [2, "never"],
 	"react/jsx-child-element-spacing": 0,
 	"react/jsx-closing-bracket-location": [2, "line-aligned"],
@@ -101,7 +103,11 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"react/jsx-uses-react": 2,
 	"react/jsx-uses-vars": 2,
 	"react/jsx-wrap-multilines": 0,
+
+	// React Refresh
+	"react-refresh/only-export-components": 1,
 };
+
 
 const settings: TSESLint.FlatConfig.Settings = {
 	"import-x/extensions": [".js", ".jsx"],
@@ -122,7 +128,8 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			react: fixupPluginRules(eslintPluginReact),
+			"react-refresh": eslintPluginReactRefresh,
+			react: eslintPluginReact,
 		},
 		rules,
 		settings,
