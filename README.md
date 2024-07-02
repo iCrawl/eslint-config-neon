@@ -70,6 +70,32 @@ In the examples below you will often see `lodash.merge` being used. This is of v
 
 This package ships ships a transient dependency to `lodash.merge` and `@types/lodash.merge` to make sure it is available in your project.
 
+#### Reducing downloaded bundle size
+
+Because this eslint config has a lot of transient dependencies to offer different eslint configs the bundle size of this package will be quite large. To alleviate this somewhat you can configure your package manager to skip the dependencies that you do not need through the `resolutions` (yarn) or `overrides` (npm / pnpm) fields.
+
+Following is an example of excluding `eslint-plugin-vue`, which you can safely do if you're not using `eslint-config-neon/vue` nor `eslint-config-neon/vue-typescript`.
+
+**Yarn**
+
+```json
+{
+	"resolutions": {
+		"eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
+	}
+}
+```
+
+**Pnpm** and **npm**
+
+```json
+{
+	"overrides": {
+		"eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
+	}
+}
+```
+
 ### Configuration
 
 ```js
@@ -95,22 +121,26 @@ export default [
 <br>
 
 ```js
-import { common, node, typescript, prettier } from "eslint-config-neon";
+import { common, prettier, typescript } from "eslint-config-neon";
+import merge from "lodash.merge";
 
-export default [
-	{
-		ignore: ["**/dist/*"],
-	},
-	...common,
-	...typescript,
-	...node,
-	...prettier,
-	{
-		languageOptions: {
-			project: "./tsconfig.json",
-		},
-	},
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
+const config = [
+	...[...common, ...typescript, ...prettier].map((config) =>
+		merge(config, {
+			files: ["src/**/*.ts"],
+			languageOptions: {
+				parserOptions: {
+					project: "tsconfig.eslint.json",
+				},
+			},
+		}),
+	),
 ];
+
+export default config;
 ```
 
 <br>
@@ -157,39 +187,34 @@ export default [
 
 Next:
 
-```js
-import { common, browser, node, typescript, react, next, edge, prettier } from "eslint-config-neon";
+Note: For Vite this is the same setup, just exclude the next config.
 
-export default [
-	{
-		ignore: ["**/dist/*"],
-	},
-	...common,
-	...browser,
-	...node,
-	...typescript,
-	...react,
-	...next,
-	...edge,
-	...prettier,
-	{
-		settings: {
-			react: {
-				version: "detect",
+```js
+import { browser, common, edge, next, node, prettier, react, typescript } from "eslint-config-neon";
+import merge from "lodash.merge";
+
+/**
+ * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
+ */
+const config = [
+	...[...common, ...browser, ...node, ...typescript, ...react, ...next, ...edge, ...prettier].map((config) =>
+		merge(config, {
+			files: ["src/**/*.ts"],
+			settings: {
+				react: {
+					version: "detect",
+				},
 			},
-		},
-		languageOptions: {
-			project: "./tsconfig.json",
-			parserOptions: {
-				project: "./tsconfig.json",
+			languageOptions: {
+				parserOptions: {
+					project: "tsconfig.json",
+				},
 			},
-		},
-		rules: {
-			"react/react-in-jsx-scope": 0,
-			"react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
-		},
-	},
+		}),
+	),
 ];
+
+export default config;
 ```
 
 <br>
