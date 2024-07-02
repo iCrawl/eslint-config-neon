@@ -106,8 +106,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 
 	// React Refresh
 	"react-refresh/only-export-components": 1,
-};
 
+	// Unicorn
+	"unicorn/consistent-function-scoping": 0, // We disable this because in React it's a common thing to have functions in functions
+};
 
 const settings: TSESLint.FlatConfig.Settings = {
 	"import-x/extensions": [".js", ".jsx"],
