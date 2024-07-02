@@ -1,0 +1,50 @@
+{
+	"include": ["src"],
+	"compilerOptions": {
+		// Type Checking
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": false,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+
+		// Modules
+		"allowArbitraryExtensions": false,
+		"allowImportingTsExtensions": false,
+		"module": "ES2022",
+		"moduleResolution": "Bundler",
+		"resolveJsonModule": true,
+		"resolvePackageJsonExports": true,
+		"resolvePackageJsonImports": true,
+
+		// Emit
+		"declaration": true,
+		"declarationMap": true,
+		"importHelpers": false,
+		"newLine": "lf",
+		"noEmitHelpers": false,
+		"outDir": "dist",
+		"removeComments": false,
+		"sourceMap": true,
+
+		// Interop Constraints
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": false,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+
+		// Language and Environment
+		"experimentalDecorators": true,
+		"lib": ["ESNext", "esnext.disposable"],
+		"pretty": true,
+		"rootDir": "src",
+		"target": "ES2020",
+		"useDefineForClassFields": true
+	}
+}
