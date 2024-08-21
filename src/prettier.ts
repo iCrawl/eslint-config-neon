@@ -1,7 +1,10 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+// @ts-expect-error eslint-config-prettier is not typed
+import eslintConfigPrettier from "eslint-config-prettier";
 
 const rules: TSESLint.FlatConfig.Rules = {
+	...eslintConfigPrettier.rules,
+
 	"line-comment-position": 0,
 	"no-inline-comments": 0,
 };
@@ -10,7 +13,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		rules,
 	},
-	eslintPluginPrettierRecommended,
 ];
 
 export default config;

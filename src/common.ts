@@ -2,7 +2,7 @@ import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginImport from "eslint-plugin-import-x";
 import eslintPluginJsdoc from "eslint-plugin-jsdoc";
-// @ts-expect-error eslint-plugin-unicorn is not typed
+// @ts-expect-error eslint-plugin-promise is not typed
 import eslintPluginPromise from "eslint-plugin-promise";
 // @ts-expect-error eslint-plugin-unicorn is not typed
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
