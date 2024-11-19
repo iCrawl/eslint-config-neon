@@ -1,7 +1,6 @@
-import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-plugin-cypress is not typed
-import cypress from "eslint-plugin-cypress";
+import cypress from "eslint-plugin-cypress/flat";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"cypress/assertion-before-screenshot": 2,
@@ -16,10 +15,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
-			globals: cypress.environments.globals.globals,
+			globals: cypress.configs.globals.languageOptions.globals,
 		},
 		plugins: {
-			cypress: fixupPluginRules(cypress),
+			cypress,
 		},
 		rules,
 	},

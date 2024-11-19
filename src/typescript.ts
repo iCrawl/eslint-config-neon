@@ -1,4 +1,6 @@
 import { fixupPluginRules } from "@eslint/compat";
+import eslintPluginStylistic from "@stylistic/eslint-plugin";
+import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginSonarjs from "eslint-plugin-sonarjs";
 import eslintPluginTsdoc from "eslint-plugin-tsdoc";
@@ -25,7 +27,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	"@typescript-eslint/ban-tslint-comment": 2,
-	"@typescript-eslint/ban-types": 0,
 	"@typescript-eslint/class-literal-property-style": [2, "fields"],
 	"@typescript-eslint/consistent-indexed-object-style": 0,
 	"@typescript-eslint/consistent-type-assertions": [
@@ -51,27 +52,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"@typescript-eslint/explicit-function-return-type": 0,
 	"@typescript-eslint/explicit-member-accessibility": 2,
 	"@typescript-eslint/explicit-module-boundary-types": 0,
-	"@typescript-eslint/member-delimiter-style": [
-		2,
-		{
-			multiline: {
-				delimiter: "semi",
-				requireLast: true,
-			},
-			overrides: {
-				interface: {
-					multiline: {
-						delimiter: "semi",
-						requireLast: true,
-					},
-				},
-			},
-			singleline: {
-				delimiter: "semi",
-				requireLast: true,
-			},
-		},
-	],
 	"@typescript-eslint/member-ordering": 0,
 	"@typescript-eslint/method-signature-style": [2, "method"],
 	"@typescript-eslint/naming-convention": 0,
@@ -216,7 +196,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 			types: "never",
 		},
 	],
-	"@typescript-eslint/type-annotation-spacing": 2,
 	"@typescript-eslint/typedef": 0,
 	"@typescript-eslint/unbound-method": [
 		2,
@@ -226,15 +205,92 @@ const rules: TSESLint.FlatConfig.Rules = {
 	],
 	"@typescript-eslint/unified-signatures": 2,
 
-	// Eslint compatability
-	"@typescript-eslint/brace-style": [
+	// Eslint compatibility
+	"@typescript-eslint/default-param-last": 2,
+	"@typescript-eslint/dot-notation": 2,
+	"@typescript-eslint/init-declarations": 0,
+	"@typescript-eslint/no-array-constructor": 2,
+	"@typescript-eslint/no-dupe-class-members": 2,
+	"@typescript-eslint/no-implied-eval": 2,
+	"@typescript-eslint/no-invalid-this": 0,
+	"@typescript-eslint/no-loop-func": 2,
+	"@typescript-eslint/no-magic-numbers": 0,
+	"@typescript-eslint/no-redeclare": [
 		2,
-		"1tbs",
 		{
-			allowSingleLine: false,
+			builtinGlobals: true,
 		},
 	],
-	"@typescript-eslint/comma-dangle": [
+	"@typescript-eslint/no-restricted-imports": 0,
+	"@typescript-eslint/no-shadow": 0,
+	"@typescript-eslint/only-throw-error": 2,
+	"@typescript-eslint/no-unused-expressions": 2,
+	"@typescript-eslint/no-unused-vars": 0,
+	"@typescript-eslint/no-use-before-define": [
+		2,
+		{
+			classes: true,
+			functions: false,
+			variables: true,
+		},
+	],
+	"@typescript-eslint/no-useless-constructor": 2,
+	"@typescript-eslint/require-await": 0,
+
+	// Disable eslint rules implemented in @typescript-eslint
+	"default-param-last": 0,
+	"dot-notation": 0,
+	"init-declarations": 0,
+	"no-array-constructor": 0,
+	"no-dupe-class-members": 0,
+	"no-empty-function": 0,
+	"no-implied-eval": 0,
+	"no-invalid-this": 0,
+	"no-loop-func": 0,
+	"no-magic-numbers": 0,
+	"no-redeclare": 0,
+	"no-restricted-imports": 0,
+	"no-return-await": 0,
+	"no-shadow": 0,
+	"no-throw-literal": 0,
+	"no-unused-expressions": 0,
+	"no-unused-vars": 0,
+	"no-use-before-define": 0,
+	"no-useless-constructor": 0,
+
+	"require-await": 0,
+
+	// Disable Stylistic JS rules implemented in Stylistic TS
+	"@stylistic/ts/type-annotation-spacing": 2,
+	"@stylistic/ts/keyword-spacing": [
+		2,
+		{
+			after: true,
+			before: true,
+		},
+	],
+	"@stylistic/ts/no-extra-parens": 2,
+	"@stylistic/ts/no-extra-semi": 2,
+	"@stylistic/js/brace-style": 0,
+	"@stylistic/js/comma-dangle": 0,
+	"@stylistic/js/comma-spacing": 0,
+	"@stylistic/js/func-call-spacing": 0,
+	"@stylistic/js/indent": 0,
+	"@stylistic/js/keyword-spacing": 0,
+	"@stylistic/js/lines-between-class-members": 0,
+	"@stylistic/js/no-extra-parens": 0,
+	"@stylistic/js/no-extra-semi": 0,
+	"@stylistic/js/object-curly-spacing": 0,
+	"@stylistic/js/padding-line-between-statements": 0,
+	"@stylistic/js/quotes": 0,
+	"@stylistic/js/semi": 0,
+	"@stylistic/js/space-before-blocks": 0,
+	"@stylistic/js/space-before-function-paren": 0,
+	"@stylistic/js/space-infix-ops": 0,
+
+	// Stylistic
+	"@stylistic/ts/brace-style": [2, "1tbs", { allowSingleLine: false }],
+	"@stylistic/ts/comma-dangle": [
 		2,
 		{
 			arrays: "always-multiline",
@@ -247,116 +303,28 @@ const rules: TSESLint.FlatConfig.Rules = {
 			tuples: "never",
 		},
 	],
-	"@typescript-eslint/comma-spacing": [
+	"@stylistic/ts/comma-spacing": [2, { after: true, before: false }],
+	"@stylistic/ts/func-call-spacing": [2, "never"],
+	"@stylistic/ts/indent": [2, "tab"],
+	"@stylistic/ts/lines-between-class-members": [2, "always"],
+	"@stylistic/ts/member-delimiter-style": [
 		2,
 		{
-			after: true,
-			before: false,
+			multiline: { delimiter: "semi", requireLast: true },
+			overrides: { interface: { multiline: { delimiter: "semi", requireLast: true } } },
+			singleline: { delimiter: "semi", requireLast: true },
 		},
 	],
-	"@typescript-eslint/default-param-last": 2,
-	"@typescript-eslint/dot-notation": 2,
-	"@typescript-eslint/func-call-spacing": [2, "never"],
-	"@typescript-eslint/indent": [2, "tab"],
-	"@typescript-eslint/init-declarations": 0,
-	"@typescript-eslint/keyword-spacing": [
+	"@stylistic/ts/object-curly-spacing": [2, "always"],
+	"@stylistic/ts/padding-line-between-statements": [
 		2,
-		{
-			after: true,
-			before: true,
-		},
+		{ blankLine: "always", next: "*", prev: "multiline-block-like" },
 	],
-	"@typescript-eslint/lines-between-class-members": [2, "always"],
-	"@typescript-eslint/no-array-constructor": 2,
-	"@typescript-eslint/no-dupe-class-members": 2,
-	"@typescript-eslint/no-extra-parens": 2,
-	"@typescript-eslint/no-extra-semi": 2,
-	"@typescript-eslint/no-implied-eval": 2,
-	"@typescript-eslint/no-invalid-this": 0,
-	"@typescript-eslint/no-loop-func": 2,
-	"@typescript-eslint/no-loss-of-precision": 2,
-	"@typescript-eslint/no-magic-numbers": 0,
-	"@typescript-eslint/no-redeclare": [
-		2,
-		{
-			builtinGlobals: true,
-		},
-	],
-	"@typescript-eslint/no-restricted-imports": 0,
-	"@typescript-eslint/no-shadow": 0,
-	"@typescript-eslint/no-throw-literal": 2,
-	"@typescript-eslint/no-unused-expressions": 2,
-	"@typescript-eslint/no-unused-vars": 0,
-	"@typescript-eslint/no-use-before-define": [
-		2,
-		{
-			classes: true,
-			functions: false,
-			variables: true,
-		},
-	],
-	"@typescript-eslint/no-useless-constructor": 2,
-	"@typescript-eslint/object-curly-spacing": [2, "always"],
-	"@typescript-eslint/padding-line-between-statements": [
-		2,
-		{
-			blankLine: "always",
-			next: "*",
-			prev: "multiline-block-like",
-		},
-	],
-	"@typescript-eslint/quotes": [2, "double"],
-	"@typescript-eslint/require-await": 0,
-	"@typescript-eslint/semi": [2, "always"],
-	"@typescript-eslint/space-before-blocks": [2, "always"],
-	"@typescript-eslint/space-before-function-paren": [
-		2,
-		{
-			anonymous: "always",
-			named: "never",
-			asyncArrow: "always",
-		},
-	],
-	"@typescript-eslint/space-infix-ops": [2, { int32Hint: true }],
-
-	// Disable eslint rules implemented in @typescript-eslint
-	"brace-style": 0,
-	"comma-dangle": 0,
-	"comma-spacing": 0,
-	"default-param-last": 0,
-	"dot-notation": 0,
-	"func-call-spacing": 0,
-	indent: 0,
-	"init-declarations": 0,
-	"keyword-spacing": 0,
-	"lines-between-class-members": 0,
-	"no-array-constructor": 0,
-	"no-dupe-class-members": 0,
-	"no-empty-function": 0,
-	"no-extra-parens": 0,
-	"no-extra-semi": 0,
-	"no-implied-eval": 0,
-	"no-invalid-this": 0,
-	"no-loop-func": 0,
-	"no-loss-of-precision": 0,
-	"no-magic-numbers": 0,
-	"no-redeclare": 0,
-	"no-restricted-imports": 0,
-	"no-return-await": 0,
-	"no-shadow": 0,
-	"no-throw-literal": 0,
-	"no-unused-expressions": 0,
-	"no-unused-vars": 0,
-	"no-use-before-define": 0,
-	"no-useless-constructor": 0,
-	"object-curly-spacing": 0,
-	"padding-line-between-statements": 0,
-	quotes: 0,
-	"require-await": 0,
-	semi: 0,
-	"space-before-blocks": 0,
-	"space-before-function-paren": 0,
-	"space-infix-ops": 0,
+	"@stylistic/ts/quotes": [2, "double"],
+	"@stylistic/ts/semi": [2, "always"],
+	"@stylistic/ts/space-before-blocks": [2, "always"],
+	"@stylistic/ts/space-before-function-paren": [2, { anonymous: "always", named: "never", asyncArrow: "always" }],
+	"@stylistic/ts/space-infix-ops": [2, { int32Hint: true }],
 
 	// Additional rules
 	"consistent-return": 0,
@@ -429,6 +397,8 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.conf
 		sonarjs: eslintPluginSonarjs,
 		tsdoc: eslintPluginTsdoc,
 		"typescript-sort-keys": fixupPluginRules(eslintPluginTypescriptSortKeys),
+		"@stylistic/ts": eslintPluginStylisticTs,
+		"@stylistic/js": eslintPluginStylistic,
 	},
 	rules,
 	settings,
