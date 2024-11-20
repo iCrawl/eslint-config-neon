@@ -1,4 +1,5 @@
 import eslintPluginStylistic from "@stylistic/eslint-plugin";
+import eslintPluginStylisticJsx from "@stylistic/eslint-plugin-jsx";
 import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginImport from "eslint-plugin-import-x";
@@ -756,6 +757,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			unicorn: eslintPluginUnicorn,
 			promise: eslintPluginPromise,
 			"@stylistic/js": eslintPluginStylistic,
+			"@stylistic/jsx": eslintPluginStylisticJsx,
 			"@stylistic/ts": eslintPluginStylisticTs,
 		},
 		rules,
