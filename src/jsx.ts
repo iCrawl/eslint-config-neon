@@ -1,4 +1,3 @@
-import eslintPluginStylisticJsx from "@stylistic/eslint-plugin-jsx";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error eslint-plugin-react-refresh is not typed
@@ -135,7 +134,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			"react-refresh": eslintPluginReactRefresh,
 			// @ts-expect-error eslint-plugin-react is poorly typed
 			react: eslintPluginReact,
-			"@stylistic/jsx": eslintPluginStylisticJsx,
 		},
 		rules,
 		settings,

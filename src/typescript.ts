@@ -1,6 +1,4 @@
 import { fixupPluginRules } from "@eslint/compat";
-import eslintPluginStylistic from "@stylistic/eslint-plugin";
-import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginSonarjs from "eslint-plugin-sonarjs";
 import eslintPluginTsdoc from "eslint-plugin-tsdoc";
@@ -397,8 +395,6 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.conf
 		sonarjs: eslintPluginSonarjs,
 		tsdoc: eslintPluginTsdoc,
 		"typescript-sort-keys": fixupPluginRules(eslintPluginTypescriptSortKeys),
-		"@stylistic/ts": eslintPluginStylisticTs,
-		"@stylistic/js": eslintPluginStylistic,
 	},
 	rules,
 	settings,

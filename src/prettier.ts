@@ -1,5 +1,3 @@
-import eslintPluginStylistic from "@stylistic/eslint-plugin";
-import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
 import type { TSESLint } from "@typescript-eslint/utils";
 // @ts-expect-error eslint-config-prettier is not typed
 import eslintConfigPrettier from "eslint-config-prettier";
@@ -204,10 +202,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		rules,
-		plugins: {
-			"@stylistic/ts": eslintPluginStylisticTs,
-			"@stylistic/js": eslintPluginStylistic,
-		},
 	},
 ];
 
