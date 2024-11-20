@@ -1,5 +1,5 @@
+import eslintPluginStylisticJsx from "@stylistic/eslint-plugin-jsx";
 import type { TSESLint } from "@typescript-eslint/utils";
-// @ts-expect-error eslint-plugin-react is not typed
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error eslint-plugin-react-refresh is not typed
 import eslintPluginReactRefresh from "eslint-plugin-react-refresh";
@@ -7,27 +7,7 @@ import eslintPluginReactRefresh from "eslint-plugin-react-refresh";
 const rules: TSESLint.FlatConfig.Rules = {
 	// React
 	"react/jsx-boolean-value": [2, "never"],
-	"react/jsx-child-element-spacing": 0,
-	"react/jsx-closing-bracket-location": [2, "line-aligned"],
-	"react/jsx-closing-tag-location": 2,
-	"react/jsx-curly-brace-presence": [
-		2,
-		{
-			children: "never",
-			props: "never",
-		},
-	],
-	"react/jsx-curly-newline": 2,
-	"react/jsx-curly-spacing": [
-		2,
-		"never",
-		{
-			allowMultiline: true,
-		},
-	],
-	"react/jsx-equals-spacing": [2, "never"],
 	"react/jsx-filename-extension": 0,
-	"react/jsx-first-prop-new-line": [2, "multiline-multiprop"],
 	"react/jsx-fragments": [2, "syntax"],
 	"react/jsx-handler-names": [
 		2,
@@ -38,7 +18,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 			eventHandlerPropPrefix: "on",
 		},
 	],
-	"react/jsx-indent": [2, "tab"],
 	"react/jsx-indent-props": [2, "tab"],
 	"react/jsx-key": [
 		2,
@@ -48,19 +27,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	"react/jsx-max-depth": 0,
-	"react/jsx-max-props-per-line": [
-		2,
-		{
-			maximum: 3,
-			when: "multiline",
-		},
-	],
-	"react/jsx-newline": [
-		2,
-		{
-			prevent: true,
-		},
-	],
 	"react/jsx-no-bind": [
 		2,
 		{
@@ -82,17 +48,60 @@ const rules: TSESLint.FlatConfig.Rules = {
 			allowExpressions: true,
 		},
 	],
-	"react/jsx-one-expression-per-line": 0,
-	"react/jsx-pascal-case": [
+	"react/jsx-props-no-spreading": 0,
+	"react/jsx-uses-react": 2,
+	"react/jsx-uses-vars": 2,
+
+	// React Refresh
+	"react-refresh/only-export-components": 1,
+
+	// Unicorn
+	"unicorn/consistent-function-scoping": 0, // We disable this because in React it's a common thing to have functions in functions
+
+	// Stylistic
+	"@stylistic/jsx/jsx-child-element-spacing": 0,
+	"@stylistic/jsx/jsx-closing-bracket-location": [2, "line-aligned"],
+	"@stylistic/jsx/jsx-closing-tag-location": 2,
+	"@stylistic/jsx/jsx-curly-brace-presence": [
+		2,
+		{
+			children: "never",
+			props: "never",
+		},
+	],
+	"@stylistic/jsx/jsx-curly-newline": 2,
+	"@stylistic/jsx/jsx-curly-spacing": [
+		2,
+		"never",
+		{
+			allowMultiline: true,
+		},
+	],
+	"@stylistic/jsx/jsx-equals-spacing": [2, "never"],
+	"@stylistic/jsx/jsx-first-prop-new-line": [2, "multiline-multiprop"],
+	"@stylistic/jsx/jsx-max-props-per-line": [
+		2,
+		{
+			maximum: 3,
+			when: "multiline",
+		},
+	],
+	"@stylistic/jsx/jsx-newline": [
+		2,
+		{
+			prevent: true,
+		},
+	],
+	"@stylistic/jsx/jsx-one-expression-per-line": 0,
+	"@stylistic/jsx/jsx-pascal-case": [
 		2,
 		{
 			ignore: ["h{}", "h2", "h3", "h4", "h5", "h6", "p", "a", "ul", "ol", "li", "img", "div", "span", "dl", "dt", "dd"],
 		},
 	],
-	"react/jsx-props-no-multi-spaces": 2,
-	"react/jsx-props-no-spreading": 0,
-	"react/jsx-sort-props": 2,
-	"react/jsx-tag-spacing": [
+	"@stylistic/jsx/jsx-props-no-multi-spaces": 2,
+	"@stylistic/jsx/jsx-sort-props": 2,
+	"@stylistic/jsx/jsx-tag-spacing": [
 		2,
 		{
 			afterOpening: "never",
@@ -100,15 +109,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 			closingSlash: "never",
 		},
 	],
-	"react/jsx-uses-react": 2,
-	"react/jsx-uses-vars": 2,
-	"react/jsx-wrap-multilines": 0,
-
-	// React Refresh
-	"react-refresh/only-export-components": 1,
-
-	// Unicorn
-	"unicorn/consistent-function-scoping": 0, // We disable this because in React it's a common thing to have functions in functions
+	"@stylistic/jsx/jsx-wrap-multilines": 0,
+	"@stylistic/jsx/jsx-indent": [2, "tab"],
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -131,7 +133,9 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		},
 		plugins: {
 			"react-refresh": eslintPluginReactRefresh,
+			// @ts-expect-error eslint-plugin-react is poorly typed
 			react: eslintPluginReact,
+			"@stylistic/jsx": eslintPluginStylisticJsx,
 		},
 		rules,
 		settings,

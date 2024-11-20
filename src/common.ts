@@ -1,59 +1,21 @@
-import { fixupPluginRules } from "@eslint/compat";
+import eslintPluginStylistic from "@stylistic/eslint-plugin";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginImport from "eslint-plugin-import-x";
 import eslintPluginJsdoc from "eslint-plugin-jsdoc";
 // @ts-expect-error eslint-plugin-promise is not typed
 import eslintPluginPromise from "eslint-plugin-promise";
-// @ts-expect-error eslint-plugin-unicorn is not typed
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
+import globals from "globals";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"accessor-pairs": 0,
-	"array-bracket-newline": [2, { multiline: true }],
-	"array-bracket-spacing": [2, "never"],
 	"array-callback-return": 2,
-	"array-element-newline": [2, { multiline: true }],
 	"arrow-body-style": [2, "as-needed"],
-	"arrow-parens": [2, "always"],
-	"arrow-spacing": [
-		2,
-		{
-			after: true,
-			before: true,
-		},
-	],
 	"block-scoped-var": 2,
-	"block-spacing": [2, "always"],
-	"brace-style": [
-		2,
-		"1tbs",
-		{
-			allowSingleLine: false,
-		},
-	],
 	camelcase: 0,
 	"capitalized-comments": 0,
 	"class-methods-use-this": 0,
-	"comma-dangle": [
-		2,
-		{
-			arrays: "always-multiline",
-			exports: "always-multiline",
-			functions: "always-multiline",
-			imports: "always-multiline",
-			objects: "always-multiline",
-		},
-	],
-	"comma-spacing": [
-		2,
-		{
-			after: true,
-			before: false,
-		},
-	],
-	"comma-style": [2, "last"],
 	complexity: 0,
-	"computed-property-spacing": [2, "never"],
 	"consistent-return": 2,
 	"consistent-this": [2, "self"],
 	"constructor-super": 2,
@@ -61,12 +23,9 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"default-case": 2,
 	"default-case-last": 2,
 	"default-param-last": 2,
-	"dot-location": [2, "property"],
 	"dot-notation": 2,
-	"eol-last": 2,
 	eqeqeq: 2,
 	"for-direction": 2,
-	"func-call-spacing": [2, "never"],
 	"func-name-matching": 2,
 	"func-names": [2, "as-needed"],
 	"func-style": [
@@ -74,15 +33,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 		"declaration",
 		{
 			allowArrowFunctions: true,
-		},
-	],
-	"function-call-argument-newline": [2, "consistent"],
-	"function-paren-newline": [2, "consistent"],
-	"generator-star-spacing": [
-		2,
-		{
-			after: false,
-			before: true,
 		},
 	],
 	"getter-return": 2,
@@ -97,7 +47,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	"id-match": 0,
-	"implicit-arrow-linebreak": [2, "beside"],
 	"import-x/default": 0,
 	"import-x/dynamic-import-chunkname": 0,
 	"import-x/export": 0,
@@ -157,7 +106,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	],
 	"import-x/prefer-default-export": 0,
 	"import-x/unambiguous": 0,
-	indent: [2, "tab"],
 	"init-declarations": 0,
 	"jsdoc/check-access": 2,
 	"jsdoc/check-alignment": 2,
@@ -220,49 +168,14 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	"jsdoc/valid-types": 2,
-	"jsx-quotes": [2, "prefer-single"],
-	"key-spacing": [
-		2,
-		{
-			afterColon: true,
-			beforeColon: false,
-		},
-	],
-	"keyword-spacing": [
-		2,
-		{
-			after: true,
-			before: true,
-		},
-	],
-	"line-comment-position": [
-		2,
-		{
-			position: "above",
-		},
-	],
-	"linebreak-style": [2, "unix"],
-	"lines-around-comment": 0,
-	"lines-between-class-members": [2, "always"],
 	"max-classes-per-file": 0,
 	"max-depth": 0,
-	"max-len": 0,
 	"max-lines": 0,
 	"max-lines-per-function": 0,
 	"max-nested-callbacks": 0,
 	"max-params": 0,
 	"max-statements": 0,
-	"max-statements-per-line": [
-		2,
-		{
-			max: 1,
-		},
-	],
-	"multiline-comment-style": 0,
-	"multiline-ternary": 0,
 	"new-cap": 0,
-	"new-parens": 2,
-	"newline-per-chained-call": 0,
 	"no-alert": 2,
 	"no-array-constructor": 2,
 	"no-async-promise-executor": 2,
@@ -273,7 +186,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"no-class-assign": 2,
 	"no-compare-neg-zero": 2,
 	"no-cond-assign": 2,
-	"no-confusing-arrow": 0,
 	"no-console": 0,
 	"no-const-assign": 2,
 	"no-constant-condition": 0,
@@ -300,10 +212,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"no-extra-bind": 2,
 	"no-extra-boolean-cast": 2,
 	"no-extra-label": 2,
-	"no-extra-parens": 2,
-	"no-extra-semi": 2,
 	"no-fallthrough": 2,
-	"no-floating-decimal": 2,
 	"no-func-assign": 2,
 	"no-global-assign": 2,
 	"no-implicit-coercion": 2,
@@ -324,19 +233,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"no-loss-of-precision": 2,
 	"no-magic-numbers": 0,
 	"no-misleading-character-class": 2,
-	"no-mixed-operators": 0,
-	"no-mixed-spaces-and-tabs": 2,
 	"no-multi-assign": 2,
-	"no-multi-spaces": 2,
 	"no-multi-str": 2,
-	"no-multiple-empty-lines": [
-		2,
-		{
-			max: 1,
-			maxBOF: 0,
-			maxEOF: 1,
-		},
-	],
 	"no-negated-condition": 2,
 	"no-nested-ternary": 0,
 	"no-new": 0,
@@ -386,17 +284,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 	],
 	"no-shadow-restricted-names": 2,
 	"no-sparse-arrays": 0,
-	"no-tabs": [
-		2,
-		{
-			allowIndentationTabs: true,
-		},
-	],
 	"no-template-curly-in-string": 2,
 	"no-ternary": 0,
 	"no-this-before-super": 2,
 	"no-throw-literal": 2,
-	"no-trailing-spaces": 2,
 	"no-undef": 2,
 	"no-undef-init": 2,
 	"no-undefined": 0,
@@ -446,31 +337,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 			terms: ["todo", "@todo"],
 		},
 	],
-	"no-whitespace-before-property": 2,
 	"no-with": 2,
-	"nonblock-statement-body-position": [2, "below"],
-	"object-curly-newline": [2, { multiline: true }],
-	"object-curly-spacing": [2, "always"],
-	"object-property-newline": [
-		2,
-		{
-			allowAllPropertiesOnSameLine: false,
-		},
-	],
 	"object-shorthand": [2, "always"],
 	"one-var": [2, "never"],
-	"one-var-declaration-per-line": 2,
 	"operator-assignment": [2, "always"],
-	"operator-linebreak": [2, "after"],
-	"padded-blocks": [2, "never"],
-	"padding-line-between-statements": [
-		2,
-		{
-			blankLine: "always",
-			next: "*",
-			prev: "multiline-block-like",
-		},
-	],
 	"prefer-arrow-callback": 2,
 	"prefer-const": 2,
 	"prefer-destructuring": 0,
@@ -493,68 +363,16 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"promise/prefer-await-to-callbacks": 1,
 	"promise/prefer-await-to-then": 2,
 	"promise/valid-params": 2,
-	"quote-props": [
-		2,
-		"as-needed",
-		{
-			numbers: true,
-		},
-	],
-	quotes: [2, "double"],
 	radix: 2,
 	"require-atomic-updates": 2,
 	"require-await": 0,
 	"require-unicode-regexp": 0,
 	"require-yield": 2,
-	"rest-spread-spacing": [2, "never"],
-	semi: [2, "always"],
-	"semi-spacing": [
-		2,
-		{
-			after: true,
-			before: false,
-		},
-	],
-	"semi-style": [2, "last"],
 	"sort-imports": 0,
 	"sort-keys": 0,
 	"sort-vars": 2,
-	"space-before-blocks": [2, "always"],
-	"space-before-function-paren": [
-		2,
-		{
-			anonymous: "always",
-			named: "never",
-			asyncArrow: "always",
-		},
-	],
-	"space-in-parens": [2, "never"],
-	"space-infix-ops": [2, { int32Hint: true }],
-	"space-unary-ops": [
-		2,
-		{
-			nonwords: false,
-			words: true,
-		},
-	],
-	"spaced-comment": [
-		2,
-		"always",
-		{
-			markers: ["/"],
-		},
-	],
 	strict: [2, "never"],
-	"switch-colon-spacing": [
-		2,
-		{
-			after: true,
-			before: false,
-		},
-	],
 	"symbol-description": 2,
-	"template-curly-spacing": [2, "never"],
-	"template-tag-spacing": [2, "never"],
 	"unicode-bom": [2, "never"],
 	"unicorn/better-regex": 2,
 	"unicorn/catch-error-name": [
@@ -689,16 +507,220 @@ const rules: TSESLint.FlatConfig.Rules = {
 		},
 	],
 	"vars-on-top": 2,
-	"wrap-iife": [2, "inside"],
-	"wrap-regex": 0,
-	"yield-star-spacing": [
+	yoda: [2, "never"],
+
+	// Stylistic
+	"@stylistic/js/array-bracket-newline": [
+		2,
+		{
+			multiline: true,
+		},
+	],
+	"@stylistic/js/array-bracket-spacing": [2, "never"],
+	"@stylistic/js/array-element-newline": [
+		2,
+		{
+			multiline: true,
+		},
+	],
+	"@stylistic/js/arrow-parens": [2, "always"],
+	"@stylistic/js/arrow-spacing": [
+		2,
+		{
+			after: true,
+			before: true,
+		},
+	],
+	"@stylistic/js/block-spacing": [2, "always"],
+	"@stylistic/js/brace-style": [
+		2,
+		"1tbs",
+		{
+			allowSingleLine: false,
+		},
+	],
+	"@stylistic/js/comma-dangle": [
+		2,
+		{
+			arrays: "always-multiline",
+			exports: "always-multiline",
+			functions: "always-multiline",
+			imports: "always-multiline",
+			objects: "always-multiline",
+		},
+	],
+	"@stylistic/js/comma-spacing": [
 		2,
 		{
 			after: true,
 			before: false,
 		},
 	],
-	yoda: [2, "never"],
+	"@stylistic/js/comma-style": [2, "last"],
+	"@stylistic/js/computed-property-spacing": [2, "never"],
+	"@stylistic/js/dot-location": [2, "property"],
+	"@stylistic/js/eol-last": 2,
+	"@stylistic/js/func-call-spacing": [2, "never"],
+	"@stylistic/js/function-call-argument-newline": [2, "consistent"],
+	"@stylistic/js/function-paren-newline": [2, "consistent"],
+	"@stylistic/js/generator-star-spacing": [
+		2,
+		{
+			after: false,
+			before: true,
+		},
+	],
+	"@stylistic/js/implicit-arrow-linebreak": [2, "beside"],
+	"@stylistic/js/indent": [2, "tab"],
+	"@stylistic/js/jsx-quotes": [2, "prefer-single"],
+	"@stylistic/js/key-spacing": [
+		2,
+		{
+			afterColon: true,
+			beforeColon: false,
+		},
+	],
+	"@stylistic/js/keyword-spacing": [
+		2,
+		{
+			after: true,
+			before: true,
+		},
+	],
+	"@stylistic/js/line-comment-position": [
+		2,
+		{
+			position: "above",
+		},
+	],
+	"@stylistic/js/linebreak-style": [2, "unix"],
+	"@stylistic/js/lines-around-comment": 0,
+	"@stylistic/js/lines-between-class-members": [2, "always"],
+	"@stylistic/js/max-len": 0,
+	"@stylistic/js/max-statements-per-line": [
+		2,
+		{
+			max: 1,
+		},
+	],
+	"@stylistic/js/multiline-comment-style": 0,
+	"@stylistic/js/multiline-ternary": 0,
+	"@stylistic/js/new-parens": 2,
+	"@stylistic/js/newline-per-chained-call": 0,
+	"@stylistic/js/no-confusing-arrow": 0,
+	"@stylistic/js/no-extra-parens": 2,
+	"@stylistic/js/no-extra-semi": 2,
+	"@stylistic/js/no-floating-decimal": 2,
+	"@stylistic/js/no-mixed-operators": 0,
+	"@stylistic/js/no-mixed-spaces-and-tabs": 2,
+	"@stylistic/js/no-multi-spaces": 2,
+	"@stylistic/js/no-multiple-empty-lines": [
+		2,
+		{
+			max: 1,
+			maxBOF: 0,
+			maxEOF: 1,
+		},
+	],
+	"@stylistic/js/no-tabs": [
+		2,
+		{
+			allowIndentationTabs: true,
+		},
+	],
+	"@stylistic/js/no-trailing-spaces": 2,
+	"@stylistic/js/no-whitespace-before-property": 2,
+	"@stylistic/js/nonblock-statement-body-position": [2, "below"],
+	"@stylistic/js/object-curly-newline": [
+		2,
+		{
+			multiline: true,
+		},
+	],
+	"@stylistic/js/object-curly-spacing": [2, "always"],
+	"@stylistic/js/object-property-newline": [
+		2,
+		{
+			allowAllPropertiesOnSameLine: false,
+		},
+	],
+	"@stylistic/js/one-var-declaration-per-line": 2,
+	"@stylistic/js/operator-linebreak": [2, "after"],
+	"@stylistic/js/padded-blocks": [2, "never"],
+	"@stylistic/js/padding-line-between-statements": [
+		2,
+		{
+			blankLine: "always",
+			next: "*",
+			prev: "multiline-block-like",
+		},
+	],
+	"@stylistic/js/quote-props": [
+		2,
+		"as-needed",
+		{
+			numbers: true,
+		},
+	],
+	"@stylistic/js/quotes": [2, "double"],
+	"@stylistic/js/rest-spread-spacing": [2, "never"],
+	"@stylistic/js/semi": [2, "always"],
+	"@stylistic/js/semi-spacing": [
+		2,
+		{
+			after: true,
+			before: false,
+		},
+	],
+	"@stylistic/js/semi-style": [2, "last"],
+	"@stylistic/js/space-before-blocks": [2, "always"],
+	"@stylistic/js/space-before-function-paren": [
+		2,
+		{
+			anonymous: "always",
+			asyncArrow: "always",
+			named: "never",
+		},
+	],
+	"@stylistic/js/space-in-parens": [2, "never"],
+	"@stylistic/js/space-infix-ops": [
+		2,
+		{
+			int32Hint: true,
+		},
+	],
+	"@stylistic/js/space-unary-ops": [
+		2,
+		{
+			nonwords: false,
+			words: true,
+		},
+	],
+	"@stylistic/js/spaced-comment": [
+		2,
+		"always",
+		{
+			markers: ["/"],
+		},
+	],
+	"@stylistic/js/switch-colon-spacing": [
+		2,
+		{
+			after: true,
+			before: false,
+		},
+	],
+	"@stylistic/js/template-curly-spacing": [2, "never"],
+	"@stylistic/js/template-tag-spacing": [2, "never"],
+	"@stylistic/js/wrap-iife": [2, "inside"],
+	"@stylistic/js/wrap-regex": 0,
+	"@stylistic/js/yield-star-spacing": [
+		2,
+		{
+			after: true,
+			before: false,
+		},
+	],
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -718,6 +740,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		languageOptions: {
 			ecmaVersion: "latest",
 			sourceType: "module",
+			globals: globals.builtin,
 			parserOptions: {
 				requireConfigFile: false,
 				ecmaFeatures: {
@@ -729,8 +752,9 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		plugins: {
 			"import-x": eslintPluginImport,
 			jsdoc: eslintPluginJsdoc,
-			unicorn: fixupPluginRules(eslintPluginUnicorn),
-			promise: fixupPluginRules(eslintPluginPromise),
+			unicorn: eslintPluginUnicorn,
+			promise: eslintPluginPromise,
+			"@stylistic/js": eslintPluginStylistic,
 		},
 		rules,
 		settings,
