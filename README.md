@@ -38,6 +38,7 @@ This package includes the following configurations:
 - [`eslint-config-neon/react`](./src/react.ts) – for usage with [React](https://reactjs.org/).
 - [`eslint-config-neon/rxjs`](./src/rxjs.ts) – for usage with [RxJS](https://rxjs.dev/).
 - [`eslint-config-neon/rxjs-angular`](./src/rxjs-angular.ts) – for usage [RxJS](https://rxjs.dev/) and [Angular](https://angular.io/).
+- [`eslint-config-neon/sonar`](./src/sonar.ts) – ESLint rules that match [The Sonar Way](https://rules.sonarsource.com/javascript).
 - [`eslint-config-neon/svelte`](./src/svelte.ts) – for usage with [Svelte](https://svelte.dev/).
 - [`eslint-config-neon/svelte-typescript`](./src/svelte-typescript.ts) – for usage with [Svelte](https://svelte.dev/) and [TypeScript](http://typescriptlang.org/).
 - [`eslint-config-neon/typescript`](./src/typescript.ts) – for usage with [TypeScript](http://typescriptlang.org/).

@@ -15,6 +15,7 @@ export { default as prettier } from "./prettier";
 export { default as react } from "./react";
 export { default as rxjs } from "./rxjs";
 export { default as rxjsangular } from "./rxjs-angular";
+export { default as sonar } from "./sonar";
 export { default as svelte } from "./svelte";
 export { default as sveltetypescript } from "./svelte-typescript";
 export { default as typescript } from "./typescript";

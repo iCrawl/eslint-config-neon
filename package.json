@@ -197,6 +197,16 @@
 				"default": "./dist/cjs/rxjs.cjs"
 			}
 		},
+		"./sonar": {
+			"import": {
+				"types": "./dist/esm/sonar.d.mts",
+				"default": "./dist/esm/sonar.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/sonar.d.cts",
+				"default": "./dist/cjs/sonar.cjs"
+			}
+		},
 		"./svelte-typescript": {
 			"import": {
 				"types": "./dist/esm/svelte-typescript.d.mts",
