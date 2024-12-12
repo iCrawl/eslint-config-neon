@@ -5,6 +5,7 @@ import eslintPluginTsdoc from "eslint-plugin-tsdoc";
 // @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
 import eslintPluginTypescriptSortKeys from "eslint-plugin-typescript-sort-keys";
 import tseslint from "typescript-eslint";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"@typescript-eslint/adjacent-overload-signatures": 2,
@@ -380,14 +381,15 @@ const settings: TSESLint.FlatConfig.Settings = {
 	"import-x/external-module-folders": ["node_modules", "node_modules/@types"],
 	"import-x/extensions": [".ts", ".tsx", ".cts", ".mts", ".js", ".jsx"],
 	"import-x/resolver": {
-		typescript: {
+		typescript: true,
+		node: true
+	},
+	"import-x/resolver-next": [
+		createTypeScriptImportResolver({
 			alwaysTryTypes: true,
 			project: ["./tsconfig.json", "./tsconfig.eslint.json"],
-		},
-		node: {
-			extensions: [".ts", ".tsx", ".cts", ".mts", ".js", ".jsx"],
-		},
-	},
+		})
+	],
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommended, {
