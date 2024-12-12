@@ -392,6 +392,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 	],
 };
 
+// @ts-expect-error typescript-eslint is poorly typed
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommended, {
 	plugins: {
 		sonarjs: eslintPluginSonarjs,

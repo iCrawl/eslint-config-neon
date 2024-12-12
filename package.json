@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "The ultimate ESLint shareable config",
 	"scripts": {
 		"gen-index": "tsx scripts/gen-index.ts",
