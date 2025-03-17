@@ -4,7 +4,6 @@ import eslintConfigPrettier from "eslint-config-prettier";
 const rules: TSESLint.FlatConfig.Rules = {
 	...eslintConfigPrettier.rules,
 
-	"line-comment-position": 0,
 	"no-inline-comments": 0,
 
 	// Stylistic rules enabled by /jsx or /react that should be disabled when using Prettier
@@ -13,6 +12,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"@stylistic/jsx/jsx-props-no-multi-spaces": 0,
 	"@stylistic/jsx/jsx-tag-spacing": 0,
 	"@stylistic/jsx/jsx-wrap-multilines": 0,
+	
+	"@stylistic/js/line-comment-position": 0,
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [
