@@ -1,5 +1,4 @@
 {
-	"include": ["src"],
 	"compilerOptions": {
 		// Type Checking
 		"allowUnreachableCode": false,
@@ -46,5 +45,6 @@
 		"rootDir": "src",
 		"target": "ES2020",
 		"useDefineForClassFields": true
-	}
+	},
+	"include": ["src"]
 }

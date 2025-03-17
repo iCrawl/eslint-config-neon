@@ -1,6 +1,6 @@
 import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
-import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { createTypeScriptImportResolver, defaultExtensions } from "eslint-import-resolver-typescript";
 import eslintPluginSonarjs from "eslint-plugin-sonarjs";
 import eslintPluginTsdoc from "eslint-plugin-tsdoc";
 // @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
@@ -379,17 +379,17 @@ const settings: TSESLint.FlatConfig.Settings = {
 		"@typescript-eslint/parser": [".ts", ".tsx", ".cts", ".mts"],
 	},
 	"import-x/external-module-folders": ["node_modules", "node_modules/@types"],
-	"import-x/extensions": [".ts", ".tsx", ".cts", ".mts", ".js", ".jsx"],
 	"import-x/resolver": {
 		typescript: true,
 		node: true,
 	},
 	"import-x/resolver-next": [
 		createTypeScriptImportResolver({
-			alwaysTryTypes: true,
+			noWarnOnMultipleProjects: true,
 			project: ["./tsconfig.json", "./tsconfig.eslint.json"],
 		}),
 	],
+	"import-x/extensions": [...defaultExtensions, ".cts", ".mts", ".cjs", ".mjs"],
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommended, {
