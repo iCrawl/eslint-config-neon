@@ -1,11 +1,11 @@
 import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import eslintPluginSonarjs from "eslint-plugin-sonarjs";
 import eslintPluginTsdoc from "eslint-plugin-tsdoc";
 // @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
 import eslintPluginTypescriptSortKeys from "eslint-plugin-typescript-sort-keys";
 import tseslint from "typescript-eslint";
-import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"@typescript-eslint/adjacent-overload-signatures": 2,
@@ -382,17 +382,16 @@ const settings: TSESLint.FlatConfig.Settings = {
 	"import-x/extensions": [".ts", ".tsx", ".cts", ".mts", ".js", ".jsx"],
 	"import-x/resolver": {
 		typescript: true,
-		node: true
+		node: true,
 	},
 	"import-x/resolver-next": [
 		createTypeScriptImportResolver({
 			alwaysTryTypes: true,
 			project: ["./tsconfig.json", "./tsconfig.eslint.json"],
-		})
+		}),
 	],
 };
 
-// @ts-expect-error typescript-eslint is poorly typed
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(...tseslint.configs.recommended, {
 	plugins: {
 		sonarjs: eslintPluginSonarjs,

@@ -54,7 +54,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"react-refresh/only-export-components": 1,
 
 	// Unicorn
-	"unicorn/consistent-function-scoping": 0, // We disable this because in React it's a common thing to have functions in functions
+	// We disable this because in React it's a common thing to have functions in functions
+	"unicorn/consistent-function-scoping": 0,
 
 	// Stylistic
 	"@stylistic/jsx/jsx-child-element-spacing": 0,
@@ -131,7 +132,6 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		},
 		plugins: {
 			"react-refresh": eslintPluginReactRefresh,
-			// @ts-expect-error eslint-plugin-react is poorly typed
 			react: eslintPluginReact,
 		},
 		rules,

@@ -132,6 +132,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"vue/no-constant-condition": 0,
 	"vue/no-custom-modifiers-on-v-model": 2,
 	"vue/no-deprecated-data-object-declaration": 2,
+	"vue/no-deprecated-delete-set": 2,
 	"vue/no-deprecated-destroyed-lifecycle": 2,
 	"vue/no-deprecated-dollar-listeners-api": 2,
 	"vue/no-deprecated-dollar-scopedslots-api": 2,
@@ -140,6 +141,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"vue/no-deprecated-functional-template": 2,
 	"vue/no-deprecated-html-element-is": 2,
 	"vue/no-deprecated-inline-template": 2,
+	"vue/no-deprecated-model-definition": 2,
 	"vue/no-deprecated-props-default-this": 2,
 	"vue/no-deprecated-router-link-tag-prop": 2,
 	"vue/no-deprecated-scope-attribute": 2,
@@ -171,6 +173,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"vue/no-parsing-error": 2,
 	"vue/no-potential-component-option-typo": 2,
 	"vue/no-ref-as-operand": 2,
+	"vue/no-required-prop-with-default": 2,
 	"vue/no-reserved-component-names": [
 		2,
 		{

@@ -1,7 +1,5 @@
-import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
 import eslintPluginReact from "eslint-plugin-react";
-// @ts-expect-error eslint-plugin-react-hooks is not typed
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import jsx from "./jsx";
@@ -83,7 +81,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"react-refresh/only-export-components": 1,
 
 	// Unicorn
-	"unicorn/consistent-function-scoping": 0, // We disable this because in React it's a common thing to have functions in functions
+	// We disable this because in React it's a common thing to have functions in functions
+	"unicorn/consistent-function-scoping": 0,
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -93,14 +92,12 @@ const settings: TSESLint.FlatConfig.Settings = {
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [
-	// @ts-expect-error eslint-plugin-react is poorly typed
 	...jsx,
 	{
-		// @ts-expect-error eslint-plugin-react is poorly typed
 		plugins: {
 			react: eslintPluginReact,
 			"react-refresh": reactRefresh,
-			"react-hooks": fixupPluginRules(eslintPluginReactHooks),
+			"react-hooks": eslintPluginReactHooks,
 		},
 		rules,
 		settings,
