@@ -159,6 +159,12 @@ const rules: TSESLint.FlatConfig.Rules = {
 		{
 			ignoreConditionalTests: true,
 			ignoreMixedLogicalExpressions: true,
+			ignorePrimitives: {
+				bigint: false,
+				boolean: true,
+				number: false,
+				string: false,
+			},
 		},
 	],
 	"@typescript-eslint/prefer-optional-chain": 2,
