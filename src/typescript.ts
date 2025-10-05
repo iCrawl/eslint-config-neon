@@ -348,7 +348,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"sonarjs/no-identical-conditions": 2,
 	"sonarjs/no-identical-expressions": 2,
 	"sonarjs/no-ignored-return": 2,
-	"sonarjs/no-one-iteration-loop": 2,
 	"sonarjs/no-use-of-empty-return-value": 2,
 	"sonarjs/non-existent-operator": 2,
 	"sonarjs/elseif-without-else": 0,
