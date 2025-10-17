@@ -1,5 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-import n from "eslint-plugin-n"; // eslint-disable-line id-length
+import n from "eslint-plugin-n";
 import globals from "globals";
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -106,7 +106,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			n, // eslint-disable-line id-length
+			n,
 		},
 		rules,
 	},

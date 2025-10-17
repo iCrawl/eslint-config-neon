@@ -1,0 +1,64 @@
+{
+	"plugins": ["react", "unicorn"],
+	"rules": {
+		"react/button-has-type": 2,
+		"react/forbid-elements": 0,
+		"react/iframe-missing-sandbox": 2,
+		"react/jsx-fragments": [2, "syntax"],
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".jsx", ".tsx"]
+			}
+		],
+		"react/jsx-boolean-value": [2, "never"],
+		"react/jsx-handler-names": [
+			2,
+			{
+				"checkInlineFunction": false,
+				"checkLocalVariables": false,
+				"eventHandlerPrefix": "handle",
+				"eventHandlerPropPrefix": "on"
+			}
+		],
+		"react/jsx-key": [
+			2,
+			{
+				"checkFragmentShorthand": true,
+				"checkKeyMustBeforeSpread": true
+			}
+		],
+		"react/jsx-no-comment-textnodes": 2,
+		"react/jsx-no-duplicate-props": 2,
+		"react/jsx-no-script-url": 2,
+		"react/jsx-no-target-blank": 2,
+		"react/jsx-no-undef": 2,
+		"react/jsx-no-useless-fragment": [
+			2,
+			{
+				"allowExpressions": true
+			}
+		],
+		"react/no-namespace": 2,
+		"react/no-array-index-key": 0,
+		"react/no-children-prop": 2,
+		"react/no-danger-with-children": 2,
+		"react/no-danger": 2,
+		"react/no-direct-mutation-state": 2,
+		"react/no-find-dom-node": 2,
+		"react/no-is-mounted": 2,
+		"react/no-render-return-value": 2,
+		"react/no-set-state": 2,
+		"react/no-string-refs": 2,
+		"react/no-unescaped-entities": 0,
+		"react/no-unknown-property": 2,
+		"react/prefer-es6-class": 2,
+		"react/react-in-jsx-scope": 0,
+		"react/self-closing-comp": 2,
+		"react/style-prop-object": 2,
+		"react/void-dom-elements-no-children": 2,
+		"react-hooks/exhaustive-deps": 2,
+		"react-hooks/rules-of-hooks": 2,
+		"unicorn/consistent-function-scoping": 0
+	}
+}
