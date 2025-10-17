@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": [
+		"oxlint-configs/common.oxlintrc.json",
+		"oxlint-configs/node.oxlintrc.json",
+		"oxlint-configs/typescript.oxlintrc.json",
+		"oxlint-configs/prettier.oxlintrc.json"
+	],
+	"rules": {
+		"id-length": [
+			2,
+			{
+				"exceptions": ["_", "$", "a", "b", "n", "x", "y"],
+				"min": 2
+			}
+		]
+	}
+}

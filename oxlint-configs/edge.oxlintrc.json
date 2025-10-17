@@ -1,0 +1,6 @@
+{
+	"plugins": [],
+	"rules": {
+		"no-restricted-globals": 0
+	}
+}

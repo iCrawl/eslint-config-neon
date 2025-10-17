@@ -1,0 +1,137 @@
+{
+	"plugins": ["import", "jsdoc", "typescript"],
+	"rules": {
+		"default-case": 0,
+		"default-case-last": 0,
+		"default-param-last": 0,
+		"init-declarations": 0,
+		"no-array-constructor": 0,
+		"no-class-assign": "off",
+		"no-restricted-imports": 0,
+		"no-const-assign": "off",
+		"no-dupe-class-members": 0,
+		"no-dupe-keys": "off",
+		"no-empty-function": 0,
+		"no-func-assign": "off",
+		"no-import-assign": "off",
+		"no-magic-numbers": 0,
+		"no-new-native-nonconstructor": "off",
+		"no-obj-calls": "off",
+		"no-redeclare": 0,
+		"no-setter-return": "off",
+		"no-this-before-super": "off",
+		"no-throw-literal": 0,
+		"no-unsafe-negation": "off",
+		"no-unused-expressions": 0,
+		"no-unused-vars": 0,
+		"no-useless-constructor": 0,
+		"no-var": "error",
+		"no-with": "off",
+		"prefer-rest-params": "error",
+		"prefer-spread": "error",
+		"require-await": 0,
+		"jsdoc/check-tag-names": 0,
+		"jsdoc/require-property-type": 0,
+		"@typescript-eslint/adjacent-overload-signatures": 2,
+		"@typescript-eslint/array-type": [
+			2,
+			{
+				"default": "array"
+			}
+		],
+		"@typescript-eslint/ban-ts-comment": [
+			2,
+			{
+				"ts-check": true,
+				"ts-expect-error": "allow-with-description",
+				"ts-ignore": false,
+				"ts-nocheck": false
+			}
+		],
+		"@typescript-eslint/ban-tslint-comment": 2,
+		"@typescript-eslint/consistent-indexed-object-style": 0,
+		"@typescript-eslint/consistent-type-definitions": [2, "type"],
+		"@typescript-eslint/consistent-type-imports": [
+			2,
+			{
+				"prefer": "type-imports"
+			}
+		],
+		"@typescript-eslint/explicit-module-boundary-types": 0,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/no-inferrable-types": [
+			2,
+			{
+				"ignoreParameters": true,
+				"ignoreProperties": true
+			}
+		],
+		"@typescript-eslint/no-confusing-non-null-assertion": 2,
+		"@typescript-eslint/no-duplicate-enum-values": 2,
+		"@typescript-eslint/no-dynamic-delete": 2,
+		"@typescript-eslint/no-empty-interface": [
+			"error",
+			{
+				"allowSingleExtends": true
+			}
+		],
+		"@typescript-eslint/no-empty-object-type": "error",
+		"@typescript-eslint/no-explicit-any": 0,
+		"@typescript-eslint/no-extra-non-null-assertion": 2,
+		"@typescript-eslint/no-extraneous-class": 0,
+		"@typescript-eslint/no-misused-new": 2,
+		"@typescript-eslint/no-namespace": [
+			2,
+			{
+				"allowDeclarations": true
+			}
+		],
+		"@typescript-eslint/no-non-null-asserted-nullish-coalescing": 2,
+		"@typescript-eslint/no-non-null-asserted-optional-chain": 2,
+		"@typescript-eslint/no-non-null-assertion": 0,
+		"@typescript-eslint/no-require-imports": 2,
+		"@typescript-eslint/no-this-alias": [
+			2,
+			{
+				"allowDestructuring": true,
+				"allowedNames": ["self"]
+			}
+		],
+		"@typescript-eslint/no-unnecessary-type-constraint": 2,
+		"@typescript-eslint/no-unsafe-declaration-merging": "error",
+		"@typescript-eslint/no-unsafe-function-type": "error",
+		"@typescript-eslint/no-var-requires": 2,
+		"@typescript-eslint/no-wrapper-object-types": "error",
+		"@typescript-eslint/prefer-as-const": 2,
+		"@typescript-eslint/prefer-enum-initializers": 0,
+		"@typescript-eslint/prefer-for-of": 2,
+		"@typescript-eslint/prefer-function-type": 2,
+		"@typescript-eslint/prefer-literal-enum-member": 2,
+		"@typescript-eslint/prefer-namespace-keyword": 2,
+		"@typescript-eslint/prefer-ts-expect-error": 2,
+		"@typescript-eslint/triple-slash-reference": [
+			2,
+			{
+				"lib": "never",
+				"path": "never",
+				"types": "never"
+			}
+		],
+		"@typescript-eslint/default-param-last": 2,
+		"@typescript-eslint/init-declarations": 0,
+		"@typescript-eslint/no-array-constructor": 2,
+		"@typescript-eslint/no-restricted-imports": 0,
+		"@typescript-eslint/no-dupe-class-members": 2,
+		"@typescript-eslint/no-empty-function": 0,
+		"@typescript-eslint/no-magic-numbers": 0,
+		"@typescript-eslint/no-redeclare": [
+			2,
+			{
+				"builtinGlobals": true
+			}
+		],
+		"@typescript-eslint/no-unused-expressions": 2,
+		"@typescript-eslint/no-unused-vars": 0,
+		"@typescript-eslint/no-useless-constructor": 2
+	}
+}

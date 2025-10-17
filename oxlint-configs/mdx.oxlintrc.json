@@ -1,0 +1,9 @@
+{
+	"plugins": [],
+	"rules": {
+		"no-unused-expressions": "off",
+		"no-unused-vars": "off",
+		"unicode-bom": "off",
+		"@typescript-eslint/no-unused-vars": "off"
+	}
+}

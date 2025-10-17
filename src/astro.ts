@@ -1,5 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-import astroParser from "astro-eslint-parser";
+import * as astroParser from "astro-eslint-parser";
 import astroPlugin from "eslint-plugin-astro";
 
 const astroRules: TSESLint.FlatConfig.Rules = {
