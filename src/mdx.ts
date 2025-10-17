@@ -1,6 +1,6 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-import mdxParser from "eslint-mdx";
-import mdxPlugin from "eslint-plugin-mdx";
+import * as mdxParser from "eslint-mdx";
+import * as mdxPlugin from "eslint-plugin-mdx";
 
 const plugins: TSESLint.FlatConfig.Plugins = {
 	mdx: mdxPlugin,
