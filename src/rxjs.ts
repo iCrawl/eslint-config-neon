@@ -1,7 +1,5 @@
-import { fixupPluginRules } from "@eslint/compat";
 import type { TSESLint } from "@typescript-eslint/utils";
-// @ts-expect-error eslint-plugin-rxjs is not typed
-import eslintPluginRxjs from "eslint-plugin-rxjs";
+import eslintPluginRxjs from "eslint-plugin-rxjs-x";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"rxjs/ban-observables": 0,
@@ -16,9 +14,9 @@ const rules: TSESLint.FlatConfig.Rules = {
 	"rxjs/no-explicit-generics": 0,
 	"rxjs/no-exposed-subjects": 0,
 	"rxjs/no-finnish": 0,
+	"rxjs/no-floating-observables": 2,
 	"rxjs/no-ignored-error": 0,
 	"rxjs/no-ignored-notifier": 2,
-	"rxjs/no-ignored-observable": 2,
 	"rxjs/no-ignored-replay-buffer": 2,
 	"rxjs/no-ignored-subscribe": 0,
 	"rxjs/no-ignored-subscription": 0,
@@ -48,7 +46,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			rxjs: fixupPluginRules(eslintPluginRxjs),
+			rxjs: eslintPluginRxjs,
 		},
 		rules,
 	},
