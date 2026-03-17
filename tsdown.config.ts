@@ -6,7 +6,9 @@ const baseOptions: UserConfig = {
 	dts: true,
 	unbundle: true,
 	minify: false,
-	skipNodeModulesBundle: true,
+	deps: {
+		skipNodeModulesBundle: true,
+	},
 	sourcemap: true,
 	target: "es2022",
 	tsconfig: "./tsconfig.json",
