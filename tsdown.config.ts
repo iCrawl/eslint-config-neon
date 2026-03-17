@@ -1,19 +1,16 @@
-import { esbuildPluginFilePathExtensions } from "esbuild-plugin-file-path-extensions";
-import { defineConfig, type Options } from "tsup";
+import { defineConfig, type UserConfig } from "tsdown";
 
-const baseOptions: Options = {
+const baseOptions: UserConfig = {
 	clean: true,
-	dts: true,
 	entry: ["src/*.ts"],
+	dts: true,
+	unbundle: true,
 	minify: false,
 	skipNodeModulesBundle: true,
 	sourcemap: true,
-	bundle: true,
 	target: "es2022",
 	tsconfig: "./tsconfig.json",
-	keepNames: true,
 	treeshake: true,
-	esbuildPlugins: [esbuildPluginFilePathExtensions()],
 };
 
 export default [
@@ -21,11 +18,13 @@ export default [
 		...baseOptions,
 		outDir: "dist/cjs",
 		format: "cjs",
+		banner: {
+			js: '"use strict";',
+		},
 	}),
 	defineConfig({
 		...baseOptions,
 		outDir: "dist/esm",
 		format: "esm",
-		outExtension: () => ({ js: ".mjs" }),
 	}),
 ];
