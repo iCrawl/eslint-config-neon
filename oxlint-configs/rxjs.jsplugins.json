@@ -2,7 +2,7 @@
   "jsPlugins": [
     {
       "name": "@neon/eslint-rxjs",
-      "specifier": "eslint-plugin-rxjs"
+      "specifier": "eslint-plugin-rxjs-x"
     }
   ],
   "overrides": [
@@ -23,9 +23,9 @@
         "@neon/eslint-rxjs/no-explicit-generics": 0,
         "@neon/eslint-rxjs/no-exposed-subjects": 0,
         "@neon/eslint-rxjs/no-finnish": 0,
+        "@neon/eslint-rxjs/no-floating-observables": 2,
         "@neon/eslint-rxjs/no-ignored-error": 0,
         "@neon/eslint-rxjs/no-ignored-notifier": 2,
-        "@neon/eslint-rxjs/no-ignored-observable": 2,
         "@neon/eslint-rxjs/no-ignored-replay-buffer": 2,
         "@neon/eslint-rxjs/no-ignored-subscribe": 0,
         "@neon/eslint-rxjs/no-ignored-subscription": 0,

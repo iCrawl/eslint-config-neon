@@ -2,7 +2,7 @@
   "jsPlugins": [
     {
       "name": "@neon/eslint-rxjs-angular",
-      "specifier": "eslint-plugin-rxjs-angular"
+      "specifier": "eslint-plugin-rxjs-angular-x"
     }
   ],
   "overrides": [
