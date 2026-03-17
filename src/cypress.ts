@@ -1,5 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
-import cypress from "eslint-plugin-cypress/flat";
+import cypress from "eslint-plugin-cypress";
 
 const rules: TSESLint.FlatConfig.Rules = {
 	"cypress/assertion-before-screenshot": 2,
