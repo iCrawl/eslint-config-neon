@@ -16,7 +16,6 @@
         "@neon/eslint-rxjs/finnish": 2,
         "@neon/eslint-rxjs/just": 0,
         "@neon/eslint-rxjs/no-async-subscribe": 0,
-        "@neon/eslint-rxjs/no-compat": 2,
         "@neon/eslint-rxjs/no-connectable": 2,
         "@neon/eslint-rxjs/no-create": 2,
         "@neon/eslint-rxjs/no-cyclic-action": 2,

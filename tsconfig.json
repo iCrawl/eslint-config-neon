@@ -43,7 +43,8 @@
 		"pretty": true,
 		"rootDir": "src",
 		"target": "ES2020",
-		"useDefineForClassFields": true
+		"useDefineForClassFields": true,
+		"types": ["node"]
 	},
 	"include": ["src"]
 }
