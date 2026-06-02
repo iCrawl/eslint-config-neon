@@ -17,7 +17,7 @@ const config = [
 	{
 		languageOptions: {
 			parserOptions: {
-				project: ["./tsconfig.eslint.json"]
+				project: ["./tsconfig.eslint.json"],
 			},
 		},
 	},
