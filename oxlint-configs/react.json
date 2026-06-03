@@ -1,7 +1,6 @@
 {
   "plugins": [
     "react",
-    "react-hooks",
     "unicorn"
   ],
   "rules": {

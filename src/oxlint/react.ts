@@ -1,7 +1,7 @@
 import type { OxlintConfig } from 'oxlint';
 
 const config = {
-	plugins: ['react', 'react-hooks', 'unicorn'],
+	plugins: ['react', 'unicorn'],
 	rules: {
 		'react/button-has-type': 2,
 		'react/display-name': 0,

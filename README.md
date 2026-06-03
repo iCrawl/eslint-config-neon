@@ -33,33 +33,33 @@ Install both runners if your project uses both ESLint and Oxlint.
 Neon's ESLint configs are [ESLint Flat Config][] arrays. Use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs`; legacy `.eslintrc` config is not supported.
 
 ```js
-import common from "eslint-config-neon/common";
-import node from "eslint-config-neon/node";
-import prettier from "eslint-config-neon/prettier";
-import typescript from "eslint-config-neon/typescript";
+import common from 'eslint-config-neon/common';
+import node from 'eslint-config-neon/node';
+import prettier from 'eslint-config-neon/prettier';
+import typescript from 'eslint-config-neon/typescript';
 
 export default [
-  {
-    ignores: ["dist/**", "coverage/**"],
-  },
-  ...common,
-  ...node,
-  ...typescript,
-  ...prettier,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
+	{
+		ignores: ['dist/**', 'coverage/**'],
+	},
+	...common,
+	...node,
+	...typescript,
+	...prettier,
+	{
+		languageOptions: {
+			parserOptions: {
+				project: './tsconfig.json',
+			},
+		},
+	},
 ];
 ```
 
 You can also import named exports from the package root:
 
 ```js
-import { common, node, prettier, typescript } from "eslint-config-neon";
+import { common, node, prettier, typescript } from 'eslint-config-neon';
 ```
 
 Prefer subpath imports when the config name contains a hyphen, because the root export uses JavaScript identifier aliases such as `jsxa11y`, `rxjsangular`, `sveltetypescript`, and `vuetypescript`.
@@ -69,27 +69,27 @@ Prefer subpath imports when the config name contains a hyphen, because the root 
 Neon's Oxlint configs are importable modules for `oxlint.config.ts`.
 
 ```ts
-import { defineConfig } from "oxlint";
+import { defineConfig } from 'oxlint';
 
-import common from "eslint-config-neon/oxlint/common";
-import node from "eslint-config-neon/oxlint/node";
-import prettier from "eslint-config-neon/oxlint/prettier";
-import typescript from "eslint-config-neon/oxlint/typescript";
+import common from 'eslint-config-neon/oxlint/common';
+import node from 'eslint-config-neon/oxlint/node';
+import prettier from 'eslint-config-neon/oxlint/prettier';
+import typescript from 'eslint-config-neon/oxlint/typescript';
 
 export default defineConfig({
-  extends: [common, node, typescript, prettier],
-  ignorePatterns: ["dist/**", "coverage/**"],
-  options: {
-    typeAware: true,
-    typeCheck: true,
-  },
+	extends: [common, node, typescript, prettier],
+	ignorePatterns: ['dist/**', 'coverage/**'],
+	options: {
+		typeAware: true,
+		typeCheck: true,
+	},
 });
 ```
 
 You can also import named Oxlint Config Modules from `eslint-config-neon/oxlint`:
 
 ```ts
-import { common, node, prettier, typescript } from "eslint-config-neon/oxlint";
+import { common, node, prettier, typescript } from 'eslint-config-neon/oxlint';
 ```
 
 ### JS Plugin Configs
@@ -97,15 +97,15 @@ import { common, node, prettier, typescript } from "eslint-config-neon/oxlint";
 Some ESLint plugin rules do not have native Oxlint support. For those rules, Neon publishes optional JS Plugin Configs with a `.jsplugins` suffix.
 
 ```ts
-import { defineConfig } from "oxlint";
+import { defineConfig } from 'oxlint';
 
-import common from "eslint-config-neon/oxlint/common";
-import commonJsPlugins from "eslint-config-neon/oxlint/common.jsplugins";
-import typescript from "eslint-config-neon/oxlint/typescript";
-import typescriptJsPlugins from "eslint-config-neon/oxlint/typescript.jsplugins";
+import common from 'eslint-config-neon/oxlint/common';
+import commonJsPlugins from 'eslint-config-neon/oxlint/common.jsplugins';
+import typescript from 'eslint-config-neon/oxlint/typescript';
+import typescriptJsPlugins from 'eslint-config-neon/oxlint/typescript.jsplugins';
 
 export default defineConfig({
-  extends: [common, commonJsPlugins, typescript, typescriptJsPlugins],
+	extends: [common, commonJsPlugins, typescript, typescriptJsPlugins],
 });
 ```
 
@@ -163,23 +163,23 @@ For ESLint, each config is an array and should be spread into your exported Flat
 When you need to apply the same nested option to every ESLint config object, deep merge the objects instead of replacing them. This is most common when scoping a composed config to specific files or adding `languageOptions.parserOptions.project`.
 
 ```js
-import merge from "lodash.merge";
+import merge from 'lodash.merge';
 
-import common from "eslint-config-neon/common";
-import prettier from "eslint-config-neon/prettier";
-import typescript from "eslint-config-neon/typescript";
+import common from 'eslint-config-neon/common';
+import prettier from 'eslint-config-neon/prettier';
+import typescript from 'eslint-config-neon/typescript';
 
 export default [
-  ...[...common, ...typescript, ...prettier].map((config) =>
-    merge(config, {
-      files: ["src/**/*.ts"],
-      languageOptions: {
-        parserOptions: {
-          project: "./tsconfig.eslint.json",
-        },
-      },
-    }),
-  ),
+	...[...common, ...typescript, ...prettier].map((config) =>
+		merge(config, {
+			files: ['src/**/*.ts'],
+			languageOptions: {
+				parserOptions: {
+					project: './tsconfig.eslint.json',
+				},
+			},
+		}),
+	),
 ];
 ```
 
@@ -193,9 +193,9 @@ For example, projects that do not use `eslint-config-neon/vue` or `eslint-config
 
 ```json
 {
-  "overrides": {
-    "eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
-  }
+	"overrides": {
+		"eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
+	}
 }
 ```
 

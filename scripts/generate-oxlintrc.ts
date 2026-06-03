@@ -58,7 +58,6 @@ const OXLINT_PLUGIN_ORDER = [
 	'node',
 	'promise',
 	'react',
-	'react-hooks',
 	'react-perf',
 	'typescript',
 	'unicorn',
@@ -408,7 +407,9 @@ function inferPluginsFromRules(rules: RuleRecord): string[] {
 		const slashIndex = ruleName.indexOf('/');
 		if (slashIndex === -1) continue; // core rules
 
-		present.add(ruleName.slice(0, slashIndex));
+		const pluginName = ruleName.slice(0, slashIndex);
+		// Oxlint enables the native react-hooks rules through the react plugin.
+		present.add(pluginName === 'react-hooks' ? 'react' : pluginName);
 	}
 
 	return OXLINT_PLUGIN_ORDER.filter((plugin) => present.has(plugin));

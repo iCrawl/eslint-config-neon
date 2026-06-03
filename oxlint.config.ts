@@ -1,9 +1,9 @@
 import { defineConfig } from 'oxlint';
 
-import common from './src/oxlint/common';
-import node from './src/oxlint/node';
-import prettier from './src/oxlint/prettier';
-import typescript from './src/oxlint/typescript';
+import common from './src/oxlint/common.ts';
+import node from './src/oxlint/node.ts';
+import prettier from './src/oxlint/prettier.ts';
+import typescript from './src/oxlint/typescript.ts';
 
 export default defineConfig({
 	extends: [common, node, typescript, prettier],
