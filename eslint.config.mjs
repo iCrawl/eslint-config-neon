@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-check
 
 import common from "./dist/esm/common.mjs";
@@ -16,7 +17,7 @@ const config = [
 	{
 		languageOptions: {
 			parserOptions: {
-				project: ["./tsconfig.json", "./scripts/tsconfig.json"],
+				project: ["./tsconfig.eslint.json"],
 			},
 		},
 	},

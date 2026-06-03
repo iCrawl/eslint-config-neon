@@ -1,4 +1,5 @@
 import type { TSESLint } from "@typescript-eslint/utils";
+// eslint-disable-next-line id-length
 import n from "eslint-plugin-n";
 import globals from "globals";
 
@@ -106,6 +107,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
+			// eslint-disable-next-line id-length
 			n,
 		},
 		rules,

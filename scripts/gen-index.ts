@@ -1,6 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import { EOL } from "node:os";
 import { basename } from "node:path";
+import { URL } from "node:url";
 import { findFilesRecursivelyStringEndsWith } from "@sapphire/node-utilities";
 
 const srcURL = new URL("../src/", import.meta.url);
