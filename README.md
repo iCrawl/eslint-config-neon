@@ -8,339 +8,197 @@
  </p>
 </div>
 
+Shared lint configuration for ESLint and Oxlint. Neon publishes composable ESLint Flat Config arrays, importable Oxlint Config Modules, and optional Oxlint JS Plugin Configs for rules that Oxlint cannot run natively yet.
+
 ## Installation
 
-neon comes as a complete package, none of the configs require any additional dependecies.
+Install `eslint-config-neon` with the lint runner you use. Framework and ESLint plugin packages used by the configs are bundled as dependencies of this package.
 
 ```sh-session
-npm install eslint eslint-config-neon
-yarn add eslint eslint-config-neon
-pnpm add eslint eslint-config-neon
+npm install --save-dev eslint eslint-config-neon
+yarn add --dev eslint eslint-config-neon
+pnpm add --save-dev eslint eslint-config-neon
 ```
 
-## Usage
+```sh-session
+npm install --save-dev oxlint eslint-config-neon
+yarn add --dev oxlint eslint-config-neon
+pnpm add --save-dev oxlint eslint-config-neon
+```
 
-This package includes the following configurations:
+Install both runners if your project uses both ESLint and Oxlint.
 
-- [`eslint-config-neon/common`](./src/common.ts) – The neon code style guide.
-- [`eslint-config-neon/angular`](./src/angular.ts) – for usage with [Angular](https://angular.io/).
-- [`eslint-config-neon/astro`](./src/astro.ts) – for usage with [Astro](https://astro.build/).
-- [`eslint-config-neon/browser`](./src/browser.ts) – for usage with DOM and other browser APIs.
-- [`eslint-config-neon/cypress`](./src/cypress.ts) – for usage with [Cypress](https://cypress.io/).
-- [`eslint-config-neon/edge`](./src/edge.ts) – for usage with an edge runtime [Vercel](https://vercel.com/blog/introducing-the-edge-runtime), [Cloudflare Workers](https://workers.cloudflare.com/), or others.
-- [`eslint-config-neon/jsx`](./src/jsx.ts) – for usage with [JSX](https://reactjs.org/docs/introducing-jsx.html) (with or without [React](https://reactjs.org/)).
-- [`eslint-config-neon/jsx-a11y`](./src/jsx-a11y.ts) – for usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)) and want to include [accessibility checks](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y).
-- [`eslint-config-neon/module`](./src/module.ts) – for usage with ESM modules.
-- [`eslint-config-neon/next`](./src/next.ts) – for usage with [Next.js](https://nextjs.org/).
-- [`eslint-config-neon/no-deprecated`](./src/no-deprecated.ts) - for reporting deprecated APIs (very slow on big repos, especially monorepos).
-- [`eslint-config-neon/node`](./src/node.ts) – for usage with Node.js.
-- [`eslint-config-neon/prettier`](./src/prettier.ts) – for usage with [Prettier](https://prettier.io/).
-- [`eslint-config-neon/react`](./src/react.ts) – for usage with [React](https://reactjs.org/).
-- [`eslint-config-neon/rxjs`](./src/rxjs.ts) – for usage with [RxJS](https://rxjs.dev/).
-- [`eslint-config-neon/rxjs-angular`](./src/rxjs-angular.ts) – for usage [RxJS](https://rxjs.dev/) and [Angular](https://angular.io/).
-- [`eslint-config-neon/svelte`](./src/svelte.ts) – for usage with [Svelte](https://svelte.dev/).
-- [`eslint-config-neon/svelte-typescript`](./src/svelte-typescript.ts) – for usage with [Svelte](https://svelte.dev/) and [TypeScript](http://typescriptlang.org/).
-- [`eslint-config-neon/typescript`](./src/typescript.ts) – for usage with [TypeScript](http://typescriptlang.org/).
-- [`eslint-config-neon/vue`](./src/vue.ts) – for usage with [Vue](https://vuejs.org/).
-- [`eslint-config-neon/vue-typescript`](./src/vue-typescript.ts) – for usage with [Vue](https://vuejs.org/) and [TypeScript](http://typescriptlang.org/).
+## ESLint Usage
 
-### Notes
+Neon's ESLint configs are [ESLint Flat Config][] arrays. Use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs`; legacy `.eslintrc` config is not supported.
 
-#### Flat Config only
+```js
+import common from "eslint-config-neon/common";
+import node from "eslint-config-neon/node";
+import prettier from "eslint-config-neon/prettier";
+import typescript from "eslint-config-neon/typescript";
 
-It is important to note that this package only exports [ESLint Flat Config][]! This means that you _have_ to use `eslint.config.js`, `eslint.config.mjs`, or `eslint.config.cjs` to use this package. See the ESLint documentation on flat config for more information.
+export default [
+  {
+    ignores: ["dist/**", "coverage/**"],
+  },
+  ...common,
+  ...node,
+  ...typescript,
+  ...prettier,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+  },
+];
+```
 
-#### Importing Configs
+You can also import named exports from the package root:
 
-Instead of importing from `eslint-config-neon`, you can also import each individual config from subpaths, e.g.
+```js
+import { common, node, prettier, typescript } from "eslint-config-neon";
+```
+
+Prefer subpath imports when the config name contains a hyphen, because the root export uses JavaScript identifier aliases such as `jsxa11y`, `rxjsangular`, `sveltetypescript`, and `vuetypescript`.
+
+## Oxlint Usage
+
+Neon's Oxlint configs are importable modules for `oxlint.config.ts`.
 
 ```ts
-import common from 'eslint-config-neon/common';
+import { defineConfig } from "oxlint";
+
+import common from "eslint-config-neon/oxlint/common";
+import node from "eslint-config-neon/oxlint/node";
+import prettier from "eslint-config-neon/oxlint/prettier";
+import typescript from "eslint-config-neon/oxlint/typescript";
+
+export default defineConfig({
+  extends: [common, node, typescript, prettier],
+  ignorePatterns: ["dist/**", "coverage/**"],
+  options: {
+    typeAware: true,
+    typeCheck: true,
+  },
+});
 ```
 
-instead of
+You can also import named Oxlint Config Modules from `eslint-config-neon/oxlint`:
 
 ```ts
-import { common } from 'eslint-config-neon';
+import { common, node, prettier, typescript } from "eslint-config-neon/oxlint";
 ```
 
-#### Merging Configs
+### JS Plugin Configs
 
-In the examples below you will often see `lodash.merge` being used. This is of vital importance as objects often have to be deeply merged when using ESLint Flat Config. If you don't merge the objects, you will overwrite the previous object with the new one, and your config will be invalid.
+Some ESLint plugin rules do not have native Oxlint support. For those rules, Neon publishes optional JS Plugin Configs with a `.jsplugins` suffix.
 
-This package ships ships a transient dependency to `lodash.merge` and `@types/lodash.merge` to make sure it is available in your project.
+```ts
+import { defineConfig } from "oxlint";
 
-#### Reducing downloaded bundle size
+import common from "eslint-config-neon/oxlint/common";
+import commonJsPlugins from "eslint-config-neon/oxlint/common.jsplugins";
+import typescript from "eslint-config-neon/oxlint/typescript";
+import typescriptJsPlugins from "eslint-config-neon/oxlint/typescript.jsplugins";
 
-Because this eslint config has a lot of transient dependencies to offer different eslint configs the bundle size of this package will be quite large. To alleviate this somewhat you can configure your package manager to skip the dependencies that you do not need through the `resolutions` (yarn) or `overrides` (npm / pnpm) fields.
+export default defineConfig({
+  extends: [common, commonJsPlugins, typescript, typescriptJsPlugins],
+});
+```
 
-Following is an example of excluding `eslint-plugin-vue`, which you can safely do if you're not using `eslint-config-neon/vue` nor `eslint-config-neon/vue-typescript`.
+Use these only when you want the extra ESLint-plugin-backed rules and accept Oxlint's JavaScript plugin bridge limitations. Native Oxlint Config Modules are the default path.
 
-**Yarn**
+Raw generated JSON artifacts are still published behind the `.json` suffix, for example `eslint-config-neon/oxlint/common.json` and `eslint-config-neon/oxlint/common.jsplugins.json`.
+
+## Available Configs
+
+| Config                   | ESLint import                          | Oxlint import                                 | Oxlint JS Plugin Config                             |
+| ------------------------ | -------------------------------------- | --------------------------------------------- | --------------------------------------------------- |
+| Common style guide       | `eslint-config-neon/common`            | `eslint-config-neon/oxlint/common`            | `eslint-config-neon/oxlint/common.jsplugins`        |
+| Angular                  | `eslint-config-neon/angular`           | `eslint-config-neon/oxlint/angular`           | `eslint-config-neon/oxlint/angular.jsplugins`       |
+| Astro                    | `eslint-config-neon/astro`             | `eslint-config-neon/oxlint/astro`             | -                                                   |
+| Browser APIs             | `eslint-config-neon/browser`           | `eslint-config-neon/oxlint/browser`           | -                                                   |
+| Cypress                  | `eslint-config-neon/cypress`           | `eslint-config-neon/oxlint/cypress`           | -                                                   |
+| Edge runtime             | `eslint-config-neon/edge`              | `eslint-config-neon/oxlint/edge`              | -                                                   |
+| JSX                      | `eslint-config-neon/jsx`               | `eslint-config-neon/oxlint/jsx`               | `eslint-config-neon/oxlint/jsx.jsplugins`           |
+| JSX accessibility        | `eslint-config-neon/jsx-a11y`          | `eslint-config-neon/oxlint/jsx-a11y`          | -                                                   |
+| MDX                      | `eslint-config-neon/mdx`               | `eslint-config-neon/oxlint/mdx`               | -                                                   |
+| ESM modules              | `eslint-config-neon/module`            | `eslint-config-neon/oxlint/module`            | -                                                   |
+| Next.js                  | `eslint-config-neon/next`              | `eslint-config-neon/oxlint/next`              | -                                                   |
+| Deprecated API reporting | `eslint-config-neon/no-deprecated`     | `eslint-config-neon/oxlint/no-deprecated`     | `eslint-config-neon/oxlint/no-deprecated.jsplugins` |
+| Node.js                  | `eslint-config-neon/node`              | `eslint-config-neon/oxlint/node`              | `eslint-config-neon/oxlint/node.jsplugins`          |
+| Prettier compatibility   | `eslint-config-neon/prettier`          | `eslint-config-neon/oxlint/prettier`          | `eslint-config-neon/oxlint/prettier.jsplugins`      |
+| React                    | `eslint-config-neon/react`             | `eslint-config-neon/oxlint/react`             | `eslint-config-neon/oxlint/react.jsplugins`         |
+| RxJS                     | `eslint-config-neon/rxjs`              | `eslint-config-neon/oxlint/rxjs`              | `eslint-config-neon/oxlint/rxjs.jsplugins`          |
+| RxJS Angular             | `eslint-config-neon/rxjs-angular`      | `eslint-config-neon/oxlint/rxjs-angular`      | `eslint-config-neon/oxlint/rxjs-angular.jsplugins`  |
+| Svelte                   | `eslint-config-neon/svelte`            | `eslint-config-neon/oxlint/svelte`            | `eslint-config-neon/oxlint/svelte.jsplugins`        |
+| Svelte TypeScript        | `eslint-config-neon/svelte-typescript` | `eslint-config-neon/oxlint/svelte-typescript` | -                                                   |
+| TypeScript               | `eslint-config-neon/typescript`        | `eslint-config-neon/oxlint/typescript`        | `eslint-config-neon/oxlint/typescript.jsplugins`    |
+| Vue                      | `eslint-config-neon/vue`               | `eslint-config-neon/oxlint/vue`               | `eslint-config-neon/oxlint/vue.jsplugins`           |
+| Vue TypeScript           | `eslint-config-neon/vue-typescript`    | `eslint-config-neon/oxlint/vue-typescript`    | -                                                   |
+
+## Composition Recipes
+
+Compose the configs that match your runtime, language, framework, and formatter. Put `prettier` last when you use Prettier.
+
+| Project type       | Suggested configs                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| Node TypeScript    | `common`, `node`, `typescript`, `prettier`                                               |
+| Browser TypeScript | `common`, `browser`, `typescript`, `prettier`                                            |
+| React              | `common`, `browser`, `typescript`, `react`, `prettier`                                   |
+| Next.js            | `common`, `browser`, `node`, `typescript`, `react`, `next`, `prettier`                   |
+| Astro              | `common`, `browser`, `node`, `typescript`, `react`, `astro`, `prettier`                  |
+| Vue TypeScript     | `common`, `browser`, `node`, `typescript`, `vue`, `vue-typescript`, `prettier`           |
+| Angular            | `common`, `browser`, `node`, `typescript`, `angular`, `rxjs`, `rxjs-angular`, `prettier` |
+
+For ESLint, each config is an array and should be spread into your exported Flat Config. For Oxlint, each config is an object and should be added to `extends`.
+
+## Notes
+
+### Merging ESLint Config Objects
+
+When you need to apply the same nested option to every ESLint config object, deep merge the objects instead of replacing them. This is most common when scoping a composed config to specific files or adding `languageOptions.parserOptions.project`.
+
+```js
+import merge from "lodash.merge";
+
+import common from "eslint-config-neon/common";
+import prettier from "eslint-config-neon/prettier";
+import typescript from "eslint-config-neon/typescript";
+
+export default [
+  ...[...common, ...typescript, ...prettier].map((config) =>
+    merge(config, {
+      files: ["src/**/*.ts"],
+      languageOptions: {
+        parserOptions: {
+          project: "./tsconfig.eslint.json",
+        },
+      },
+    }),
+  ),
+];
+```
+
+`lodash.merge` is included as a dependency of this package.
+
+### Reducing Downloaded Dependencies
+
+This package depends on the plugins needed by all supported configs. If you never use a particular config, you can ask your package manager to skip that dependency.
+
+For example, projects that do not use `eslint-config-neon/vue` or `eslint-config-neon/vue-typescript` can skip `eslint-plugin-vue`:
 
 ```json
 {
-	"resolutions": {
-		"eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
-	}
+  "overrides": {
+    "eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
+  }
 }
 ```
 
-**Pnpm** and **npm**
+Use `resolutions` instead of `overrides` when using Yarn.
 
-```json
-{
-	"overrides": {
-		"eslint-plugin-vue": "npm:@favware/skip-dependency@latest"
-	}
-}
-```
-
-### Configuration
-
-```js
-import { common, typescript, prettier } from 'eslint-config-neon';
-
-export default [
-	{
-		ignore: ['**/dist/*'],
-	},
-	...common,
-	...typescript,
-	...prettier,
-	{
-		languageOptions: {
-			project: './tsconfig.json',
-		},
-	},
-];
-```
-
-<details>
-<summary>Node.js</summary>
-<br>
-
-```js
-import { common, prettier, typescript } from 'eslint-config-neon';
-import merge from 'lodash.merge';
-
-/**
- * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
- */
-const config = [
-	...[...common, ...typescript, ...prettier].map((config) =>
-		merge(config, {
-			files: ['src/**/*.ts'],
-			languageOptions: {
-				parserOptions: {
-					project: 'tsconfig.eslint.json',
-				},
-			},
-		}),
-	),
-];
-
-export default config;
-```
-
-<br>
-</details>
-
-<details>
-<summary>React / Next</summary>
-<br>
-
-React:
-
-```js
-import { common, browser, node, typescript, react, edge, prettier } from 'eslint-config-neon';
-
-export default [
-	{
-		ignore: ['**/dist/*'],
-	},
-	...common,
-	...browser,
-	...node,
-	...typescript,
-	...react,
-	...edge,
-	...prettier,
-	{
-		settings: {
-			react: {
-				version: 'detect',
-			},
-		},
-		languageOptions: {
-			parserOptions: {
-				project: './tsconfig.json',
-			},
-		},
-		rules: {
-			'react/react-in-jsx-scope': 0,
-			'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-		},
-	},
-];
-```
-
-Next:
-
-Note: For Vite this is the same setup, just exclude the next config.
-
-```js
-import { browser, common, edge, next, node, prettier, react, typescript } from 'eslint-config-neon';
-import merge from 'lodash.merge';
-
-/**
- * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
- */
-const config = [
-	...[...common, ...browser, ...node, ...typescript, ...react, ...next, ...edge, ...prettier].map((config) =>
-		merge(config, {
-			files: ['src/**/*.ts'],
-			settings: {
-				react: {
-					version: 'detect',
-				},
-			},
-			languageOptions: {
-				parserOptions: {
-					project: 'tsconfig.json',
-				},
-			},
-		}),
-	),
-];
-
-export default config;
-```
-
-<br>
-</details>
-
-<details>
-<summary>Astro</summary>
-<br>
-
-```js
-import { common, browser, node, typescript, react, astro, prettier } from 'eslint-config-neon';
-
-export default [
-	{
-		ignore: ['**/dist/*'],
-	},
-	...common,
-	...browser,
-	...node,
-	...typescript,
-	...react,
-	...astro,
-	...prettier,
-	{
-		settings: {
-			react: {
-				version: 'detect',
-			},
-		},
-		languageOptions: {
-			project: './tsconfig.json',
-			parserOptions: {
-				project: './tsconfig.json',
-			},
-		},
-		rules: {
-			'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-		},
-	},
-];
-```
-
-<br>
-</details>
-
-<details>
-<summary>Vue 2/3 / Nuxt</summary>
-<br>
-
-```js
-import { common, browser, node, typescript, vue, vuetypescript, prettier } from 'eslint-config-neon';
-
-export default [
-	{
-		ignore: ['**/dist/*'],
-	},
-	...common,
-	...browser,
-	...node,
-	...typescript,
-	...vue,
-	...vuetypescript,
-	...prettier,
-	{
-		languageOptions: {
-			parserOptions: {
-				project: './tsconfig.json',
-			},
-		},
-	},
-];
-```
-
-<br>
-</details>
-
-<details>
-<summary>Angular / NX</summary>
-<br>
-
-```js
-import { angular, browser, common, node, prettier, rxjs, rxjsangular, typescript } from 'eslint-config-neon';
-import merge from 'lodash.merge';
-
-/**
- * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
- */
-const config = [
-	...[...common, ...browser, ...node, ...typescript, ...angular, ...rxjs, ...rxjsangular, ...prettier].map((config) =>
-		merge(config, {
-			files: ['src/**/*.ts'],
-			languageOptions: {
-				parserOptions: {
-					project: 'tsconfig.json',
-				},
-			},
-		}),
-	),
-	...angular.map((config) =>
-		merge(config, {
-			files: ['src/**/*.html'],
-			languageOptions: {
-				parserOptions: {
-					project: 'tsconfig.json',
-				},
-			},
-		}),
-	),
-];
-
-export default config;
-```
-
-<br>
-</details>
-
-### Usage with Prettier
-
-Prettier and neon are already compatible. Just add it as the last config in your `extends` configuration, e.g.
-
-```js
-import { prettier } from 'eslint-config-neon';
-
-export default [...prettier];
-```
-
-This configuration disables all neon rules that conflict with Prettier.
-
-[ESLint Flat Config]: https://eslint.org/blog/2022/08/new-config-system-part-2/
+[ESLint Flat Config]: https://eslint.org/docs/latest/use/configure/configuration-files
