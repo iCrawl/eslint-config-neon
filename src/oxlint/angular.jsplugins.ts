@@ -1,0 +1,77 @@
+import type { OxlintConfig } from 'oxlint';
+
+const config = {
+	jsPlugins: [
+		{
+			name: '@neon/eslint-angular-eslint',
+			specifier: '@angular-eslint/eslint-plugin',
+		},
+		{
+			name: '@neon/eslint-angular-eslint-template',
+			specifier: '@angular-eslint/eslint-plugin-template',
+		},
+	],
+	overrides: [
+		{
+			files: ['**/*.html'],
+			rules: {
+				'@neon/eslint-angular-eslint-template/alt-text': 2,
+				'@neon/eslint-angular-eslint-template/banana-in-box': 2,
+				'@neon/eslint-angular-eslint-template/button-has-type': 2,
+				'@neon/eslint-angular-eslint-template/click-events-have-key-events': 2,
+				'@neon/eslint-angular-eslint-template/conditional-complexity': 0,
+				'@neon/eslint-angular-eslint-template/cyclomatic-complexity': 0,
+				'@neon/eslint-angular-eslint-template/elements-content': 2,
+				'@neon/eslint-angular-eslint-template/eqeqeq': 2,
+				'@neon/eslint-angular-eslint-template/i18n': 0,
+				'@neon/eslint-angular-eslint-template/label-has-associated-control': 1,
+				'@neon/eslint-angular-eslint-template/mouse-events-have-key-events': 2,
+				'@neon/eslint-angular-eslint-template/no-any': 0,
+				'@neon/eslint-angular-eslint-template/no-autofocus': 2,
+				'@neon/eslint-angular-eslint-template/no-call-expression': 2,
+				'@neon/eslint-angular-eslint-template/no-distracting-elements': 2,
+				'@neon/eslint-angular-eslint-template/no-duplicate-attributes': 2,
+				'@neon/eslint-angular-eslint-template/no-negated-async': 2,
+				'@neon/eslint-angular-eslint-template/no-positive-tabindex': 2,
+				'@neon/eslint-angular-eslint-template/table-scope': 2,
+				'@neon/eslint-angular-eslint-template/use-track-by-function': 2,
+				'@neon/eslint-angular-eslint-template/valid-aria': 2,
+			},
+		},
+		{
+			files: ['**/*.ts'],
+			rules: {
+				'@neon/eslint-angular-eslint/component-class-suffix': 2,
+				'@neon/eslint-angular-eslint/contextual-decorator': 2,
+				'@neon/eslint-angular-eslint/contextual-lifecycle': 2,
+				'@neon/eslint-angular-eslint/directive-class-suffix': 2,
+				'@neon/eslint-angular-eslint/no-attribute-decorator': 2,
+				'@neon/eslint-angular-eslint/no-conflicting-lifecycle': 2,
+				'@neon/eslint-angular-eslint/no-empty-lifecycle-method': 2,
+				'@neon/eslint-angular-eslint/no-forward-ref': 0,
+				'@neon/eslint-angular-eslint/no-input-prefix': 0,
+				'@neon/eslint-angular-eslint/no-input-rename': 0,
+				'@neon/eslint-angular-eslint/no-inputs-metadata-property': 2,
+				'@neon/eslint-angular-eslint/no-lifecycle-call': 2,
+				'@neon/eslint-angular-eslint/no-output-native': 2,
+				'@neon/eslint-angular-eslint/no-output-on-prefix': 2,
+				'@neon/eslint-angular-eslint/no-output-rename': 0,
+				'@neon/eslint-angular-eslint/no-outputs-metadata-property': 2,
+				'@neon/eslint-angular-eslint/no-pipe-impure': 0,
+				'@neon/eslint-angular-eslint/no-queries-metadata-property': 2,
+				'@neon/eslint-angular-eslint/prefer-on-push-component-change-detection': 2,
+				'@neon/eslint-angular-eslint/prefer-output-readonly': 2,
+				'@neon/eslint-angular-eslint/relative-url-prefix': 2,
+				'@neon/eslint-angular-eslint/use-component-selector': 0,
+				'@neon/eslint-angular-eslint/use-component-view-encapsulation': 2,
+				'@neon/eslint-angular-eslint/use-injectable-provided-in': 2,
+				'@neon/eslint-angular-eslint/use-lifecycle-interface': 2,
+				'@neon/eslint-angular-eslint/use-pipe-transform-interface': 2,
+			},
+		},
+	],
+	rules: {},
+	plugins: [],
+} satisfies OxlintConfig;
+
+export default config;

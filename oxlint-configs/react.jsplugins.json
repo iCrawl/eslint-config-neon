@@ -5,10 +5,6 @@
       "specifier": "eslint-plugin-react"
     },
     {
-      "name": "@neon/eslint-react-refresh",
-      "specifier": "eslint-plugin-react-refresh"
-    },
-    {
       "name": "@neon/eslint-stylistic",
       "specifier": "@stylistic/eslint-plugin"
     }
@@ -22,12 +18,9 @@
         "@neon/eslint-react/boolean-prop-naming": 2,
         "@neon/eslint-react/default-props-match-prop-types": 2,
         "@neon/eslint-react/destructuring-assignment": 0,
-        "@neon/eslint-react/display-name": 0,
-        "@neon/eslint-react/forbid-component-props": 0,
         "@neon/eslint-react/forbid-foreign-prop-types": 0,
         "@neon/eslint-react/forbid-prop-types": 0,
         "@neon/eslint-react/function-component-definition": 0,
-        "@neon/eslint-react/hook-use-state": 2,
         "@neon/eslint-react/jsx-indent-props": [
           2,
           "tab"
@@ -40,7 +33,6 @@
             "ignoreRefs": true
           }
         ],
-        "@neon/eslint-react/jsx-no-constructed-context-values": 2,
         "@neon/eslint-react/jsx-no-literals": 0,
         "@neon/eslint-react/jsx-uses-react": 2,
         "@neon/eslint-react/jsx-uses-vars": 2,
@@ -48,11 +40,8 @@
         "@neon/eslint-react/no-adjacent-inline-elements": 0,
         "@neon/eslint-react/no-arrow-function-lifecycle": 2,
         "@neon/eslint-react/no-deprecated": 2,
-        "@neon/eslint-react/no-did-update-set-state": 2,
         "@neon/eslint-react/no-invalid-html-attribute": 2,
-        "@neon/eslint-react/no-multi-comp": 0,
         "@neon/eslint-react/no-typos": 2,
-        "@neon/eslint-react/no-unstable-nested-components": 2,
         "@neon/eslint-react/no-unused-class-component-methods": 2,
         "@neon/eslint-react/no-unused-prop-types": 2,
         "@neon/eslint-react/no-unused-state": 2,
@@ -72,7 +61,6 @@
         "@neon/eslint-react/sort-default-props": 2,
         "@neon/eslint-react/sort-prop-types": 2,
         "@neon/eslint-react/static-property-placement": 2,
-        "@neon/eslint-react-refresh/only-export-components": 1,
         "@neon/eslint-stylistic/jsx-child-element-spacing": 0,
         "@neon/eslint-stylistic/jsx-closing-bracket-location": [
           2,

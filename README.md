@@ -55,13 +55,13 @@ It is important to note that this package only exports [ESLint Flat Config][]! T
 Instead of importing from `eslint-config-neon`, you can also import each individual config from subpaths, e.g.
 
 ```ts
-import common from "eslint-config-neon/common";
+import common from 'eslint-config-neon/common';
 ```
 
 instead of
 
 ```ts
-import { common } from "eslint-config-neon";
+import { common } from 'eslint-config-neon';
 ```
 
 #### Merging Configs
@@ -99,18 +99,18 @@ Following is an example of excluding `eslint-plugin-vue`, which you can safely d
 ### Configuration
 
 ```js
-import { common, typescript, prettier } from "eslint-config-neon";
+import { common, typescript, prettier } from 'eslint-config-neon';
 
 export default [
 	{
-		ignore: ["**/dist/*"],
+		ignore: ['**/dist/*'],
 	},
 	...common,
 	...typescript,
 	...prettier,
 	{
 		languageOptions: {
-			project: "./tsconfig.json",
+			project: './tsconfig.json',
 		},
 	},
 ];
@@ -121,8 +121,8 @@ export default [
 <br>
 
 ```js
-import { common, prettier, typescript } from "eslint-config-neon";
-import merge from "lodash.merge";
+import { common, prettier, typescript } from 'eslint-config-neon';
+import merge from 'lodash.merge';
 
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
@@ -130,10 +130,10 @@ import merge from "lodash.merge";
 const config = [
 	...[...common, ...typescript, ...prettier].map((config) =>
 		merge(config, {
-			files: ["src/**/*.ts"],
+			files: ['src/**/*.ts'],
 			languageOptions: {
 				parserOptions: {
-					project: "tsconfig.eslint.json",
+					project: 'tsconfig.eslint.json',
 				},
 			},
 		}),
@@ -153,11 +153,11 @@ export default config;
 React:
 
 ```js
-import { common, browser, node, typescript, react, edge, prettier } from "eslint-config-neon";
+import { common, browser, node, typescript, react, edge, prettier } from 'eslint-config-neon';
 
 export default [
 	{
-		ignore: ["**/dist/*"],
+		ignore: ['**/dist/*'],
 	},
 	...common,
 	...browser,
@@ -169,17 +169,17 @@ export default [
 	{
 		settings: {
 			react: {
-				version: "detect",
+				version: 'detect',
 			},
 		},
 		languageOptions: {
 			parserOptions: {
-				project: "./tsconfig.json",
+				project: './tsconfig.json',
 			},
 		},
 		rules: {
-			"react/react-in-jsx-scope": 0,
-			"react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
+			'react/react-in-jsx-scope': 0,
+			'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
 		},
 	},
 ];
@@ -190,8 +190,8 @@ Next:
 Note: For Vite this is the same setup, just exclude the next config.
 
 ```js
-import { browser, common, edge, next, node, prettier, react, typescript } from "eslint-config-neon";
-import merge from "lodash.merge";
+import { browser, common, edge, next, node, prettier, react, typescript } from 'eslint-config-neon';
+import merge from 'lodash.merge';
 
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
@@ -199,15 +199,15 @@ import merge from "lodash.merge";
 const config = [
 	...[...common, ...browser, ...node, ...typescript, ...react, ...next, ...edge, ...prettier].map((config) =>
 		merge(config, {
-			files: ["src/**/*.ts"],
+			files: ['src/**/*.ts'],
 			settings: {
 				react: {
-					version: "detect",
+					version: 'detect',
 				},
 			},
 			languageOptions: {
 				parserOptions: {
-					project: "tsconfig.json",
+					project: 'tsconfig.json',
 				},
 			},
 		}),
@@ -225,11 +225,11 @@ export default config;
 <br>
 
 ```js
-import { common, browser, node, typescript, react, astro, prettier } from "eslint-config-neon";
+import { common, browser, node, typescript, react, astro, prettier } from 'eslint-config-neon';
 
 export default [
 	{
-		ignore: ["**/dist/*"],
+		ignore: ['**/dist/*'],
 	},
 	...common,
 	...browser,
@@ -241,17 +241,17 @@ export default [
 	{
 		settings: {
 			react: {
-				version: "detect",
+				version: 'detect',
 			},
 		},
 		languageOptions: {
-			project: "./tsconfig.json",
+			project: './tsconfig.json',
 			parserOptions: {
-				project: "./tsconfig.json",
+				project: './tsconfig.json',
 			},
 		},
 		rules: {
-			"react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
+			'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
 		},
 	},
 ];
@@ -265,11 +265,11 @@ export default [
 <br>
 
 ```js
-import { common, browser, node, typescript, vue, vuetypescript, prettier } from "eslint-config-neon";
+import { common, browser, node, typescript, vue, vuetypescript, prettier } from 'eslint-config-neon';
 
 export default [
 	{
-		ignore: ["**/dist/*"],
+		ignore: ['**/dist/*'],
 	},
 	...common,
 	...browser,
@@ -281,7 +281,7 @@ export default [
 	{
 		languageOptions: {
 			parserOptions: {
-				project: "./tsconfig.json",
+				project: './tsconfig.json',
 			},
 		},
 	},
@@ -296,8 +296,8 @@ export default [
 <br>
 
 ```js
-import { angular, browser, common, node, prettier, rxjs, rxjsangular, typescript } from "eslint-config-neon";
-import merge from "lodash.merge";
+import { angular, browser, common, node, prettier, rxjs, rxjsangular, typescript } from 'eslint-config-neon';
+import merge from 'lodash.merge';
 
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
@@ -305,20 +305,20 @@ import merge from "lodash.merge";
 const config = [
 	...[...common, ...browser, ...node, ...typescript, ...angular, ...rxjs, ...rxjsangular, ...prettier].map((config) =>
 		merge(config, {
-			files: ["src/**/*.ts"],
+			files: ['src/**/*.ts'],
 			languageOptions: {
 				parserOptions: {
-					project: "tsconfig.json",
+					project: 'tsconfig.json',
 				},
 			},
 		}),
 	),
 	...angular.map((config) =>
 		merge(config, {
-			files: ["src/**/*.html"],
+			files: ['src/**/*.html'],
 			languageOptions: {
 				parserOptions: {
-					project: "tsconfig.json",
+					project: 'tsconfig.json',
 				},
 			},
 		}),
@@ -336,7 +336,7 @@ export default config;
 Prettier and neon are already compatible. Just add it as the last config in your `extends` configuration, e.g.
 
 ```js
-import { prettier } from "eslint-config-neon";
+import { prettier } from 'eslint-config-neon';
 
 export default [...prettier];
 ```

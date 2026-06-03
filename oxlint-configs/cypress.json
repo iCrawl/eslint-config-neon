@@ -3,6 +3,7 @@
     "import"
   ],
   "rules": {
-    "import/unambiguous": 0
+    "import/unambiguous": 0,
+    "import-x/unambiguous": 0
   }
 }

@@ -4,14 +4,14 @@
     "unicorn"
   ],
   "rules": {
-    "react/jsx-fragments": [
-      2,
-      "syntax"
-    ],
-    "react/jsx-filename-extension": 0,
     "react/jsx-boolean-value": [
       2,
       "never"
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-fragments": [
+      2,
+      "syntax"
     ],
     "react/jsx-handler-names": [
       2,
@@ -31,6 +31,7 @@
     ],
     "react/jsx-max-depth": 0,
     "react/jsx-no-comment-textnodes": 2,
+    "react/jsx-no-constructed-context-values": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/jsx-no-script-url": 2,
     "react/jsx-no-target-blank": 2,
@@ -42,6 +43,7 @@
       }
     ],
     "react/jsx-props-no-spreading": 0,
+    "react-refresh/only-export-components": 1,
     "unicorn/consistent-function-scoping": 0
   }
 }

@@ -4,6 +4,7 @@
   ],
   "rules": {
     "no-restricted-globals": 0,
-    "import/extensions": 0
+    "import/extensions": 0,
+    "import-x/extensions": 0
   }
 }

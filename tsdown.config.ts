@@ -1,8 +1,8 @@
-import { defineConfig, type UserConfig } from "tsdown";
+import { defineConfig, type UserConfig } from 'tsdown';
 
 const baseOptions: UserConfig = {
 	clean: true,
-	entry: ["src/*.ts"],
+	entry: ['src/*.ts', 'src/oxlint/*.ts'],
 	dts: true,
 	unbundle: true,
 	minify: false,
@@ -10,23 +10,23 @@ const baseOptions: UserConfig = {
 		skipNodeModulesBundle: true,
 	},
 	sourcemap: true,
-	target: "es2022",
-	tsconfig: "./tsconfig.json",
+	target: 'es2022',
+	tsconfig: './tsconfig.json',
 	treeshake: true,
 };
 
 export default [
 	defineConfig({
 		...baseOptions,
-		outDir: "dist/cjs",
-		format: "cjs",
+		outDir: 'dist/cjs',
+		format: 'cjs',
 		banner: {
 			js: '"use strict";',
 		},
 	}),
 	defineConfig({
 		...baseOptions,
-		outDir: "dist/esm",
-		format: "esm",
+		outDir: 'dist/esm',
+		format: 'esm',
 	}),
 ];

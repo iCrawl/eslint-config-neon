@@ -315,7 +315,6 @@
         ],
         "@neon/eslint-unicorn/better-regex": 2,
         "@neon/eslint-unicorn/consistent-destructuring": 0,
-        "@neon/eslint-unicorn/custom-error-definition": 0,
         "@neon/eslint-unicorn/expiring-todo-comments": [
           2,
           {
@@ -327,7 +326,6 @@
             ]
           }
         ],
-        "@neon/eslint-unicorn/import-style": 0,
         "@neon/eslint-unicorn/no-array-push-push": 0,
         "@neon/eslint-unicorn/no-for-loop": 2,
         "@neon/eslint-unicorn/no-keyword-prefix": 0,
@@ -336,12 +334,7 @@
         "@neon/eslint-unicorn/prefer-export-from": 2,
         "@neon/eslint-unicorn/prefer-json-parse-buffer": 0,
         "@neon/eslint-unicorn/prefer-switch": 0,
-        "@neon/eslint-unicorn/prefer-ternary": 0,
         "@neon/eslint-unicorn/prevent-abbreviations": 0,
-        "@neon/eslint-unicorn/relative-url-style": [
-          2,
-          "never"
-        ],
         "@neon/eslint-unicorn/string-content": 0,
         "@neon/eslint-unicorn/template-indent": 2
       }
@@ -354,7 +347,6 @@
         "@neon/eslint-import-x/dynamic-import-chunkname": 0,
         "@neon/eslint-import-x/export": 0,
         "@neon/eslint-import-x/named": 0,
-        "@neon/eslint-import-x/newline-after-import": 2,
         "@neon/eslint-import-x/no-deprecated": 0,
         "@neon/eslint-import-x/no-extraneous-dependencies": [
           2,
@@ -366,9 +358,7 @@
         ],
         "@neon/eslint-import-x/no-import-module-exports": 0,
         "@neon/eslint-import-x/no-internal-modules": 0,
-        "@neon/eslint-import-x/no-nodejs-modules": 0,
         "@neon/eslint-import-x/no-relative-packages": 0,
-        "@neon/eslint-import-x/no-relative-parent-imports": 0,
         "@neon/eslint-import-x/no-restricted-paths": 0,
         "@neon/eslint-import-x/no-unresolved": 0,
         "@neon/eslint-import-x/no-unused-modules": 0,

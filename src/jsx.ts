@@ -1,31 +1,31 @@
-import type { TSESLint } from "@typescript-eslint/utils";
-import eslintPluginReact from "eslint-plugin-react";
-import eslintPluginReactRefresh from "eslint-plugin-react-refresh";
+import type { TSESLint } from '@typescript-eslint/utils';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactRefresh from 'eslint-plugin-react-refresh';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	// React
-	"react/jsx-boolean-value": [2, "never"],
-	"react/jsx-filename-extension": 0,
-	"react/jsx-fragments": [2, "syntax"],
-	"react/jsx-handler-names": [
+	'react/jsx-boolean-value': [2, 'never'],
+	'react/jsx-filename-extension': 0,
+	'react/jsx-fragments': [2, 'syntax'],
+	'react/jsx-handler-names': [
 		2,
 		{
 			checkInlineFunction: false,
 			checkLocalVariables: false,
-			eventHandlerPrefix: "handle",
-			eventHandlerPropPrefix: "on",
+			eventHandlerPrefix: 'handle',
+			eventHandlerPropPrefix: 'on',
 		},
 	],
-	"react/jsx-indent-props": [2, "tab"],
-	"react/jsx-key": [
+	'react/jsx-indent-props': [2, 'tab'],
+	'react/jsx-key': [
 		2,
 		{
 			checkFragmentShorthand: true,
 			checkKeyMustBeforeSpread: true,
 		},
 	],
-	"react/jsx-max-depth": 0,
-	"react/jsx-no-bind": [
+	'react/jsx-max-depth': 0,
+	'react/jsx-no-bind': [
 		2,
 		{
 			allowArrowFunctions: true,
@@ -33,90 +33,90 @@ const rules: TSESLint.FlatConfig.Rules = {
 			ignoreRefs: true,
 		},
 	],
-	"react/jsx-no-comment-textnodes": 2,
-	"react/jsx-no-constructed-context-values": 2,
-	"react/jsx-no-duplicate-props": 2,
-	"react/jsx-no-literals": 0,
-	"react/jsx-no-script-url": 2,
-	"react/jsx-no-target-blank": 2,
-	"react/jsx-no-undef": 2,
-	"react/jsx-no-useless-fragment": [
+	'react/jsx-no-comment-textnodes': 2,
+	'react/jsx-no-constructed-context-values': 2,
+	'react/jsx-no-duplicate-props': 2,
+	'react/jsx-no-literals': 0,
+	'react/jsx-no-script-url': 2,
+	'react/jsx-no-target-blank': 2,
+	'react/jsx-no-undef': 2,
+	'react/jsx-no-useless-fragment': [
 		2,
 		{
 			allowExpressions: true,
 		},
 	],
-	"react/jsx-props-no-spreading": 0,
-	"react/jsx-uses-react": 2,
-	"react/jsx-uses-vars": 2,
+	'react/jsx-props-no-spreading': 0,
+	'react/jsx-uses-react': 2,
+	'react/jsx-uses-vars': 2,
 
 	// React Refresh
-	"react-refresh/only-export-components": 1,
+	'react-refresh/only-export-components': 1,
 
 	// Unicorn
 	// We disable this because in React it's a common thing to have functions in functions
-	"unicorn/consistent-function-scoping": 0,
+	'unicorn/consistent-function-scoping': 0,
 
 	// Stylistic
-	"@stylistic/jsx-child-element-spacing": 0,
-	"@stylistic/jsx-closing-bracket-location": [2, "line-aligned"],
-	"@stylistic/jsx-closing-tag-location": 2,
-	"@stylistic/jsx-curly-brace-presence": [
+	'@stylistic/jsx-child-element-spacing': 0,
+	'@stylistic/jsx-closing-bracket-location': [2, 'line-aligned'],
+	'@stylistic/jsx-closing-tag-location': 2,
+	'@stylistic/jsx-curly-brace-presence': [
 		2,
 		{
-			children: "never",
-			props: "never",
+			children: 'never',
+			props: 'never',
 		},
 	],
-	"@stylistic/jsx-curly-newline": 2,
-	"@stylistic/jsx-curly-spacing": [
+	'@stylistic/jsx-curly-newline': 2,
+	'@stylistic/jsx-curly-spacing': [
 		2,
-		"never",
+		'never',
 		{
 			allowMultiline: true,
 		},
 	],
-	"@stylistic/jsx-equals-spacing": [2, "never"],
-	"@stylistic/jsx-first-prop-new-line": [2, "multiline-multiprop"],
-	"@stylistic/jsx-max-props-per-line": [
+	'@stylistic/jsx-equals-spacing': [2, 'never'],
+	'@stylistic/jsx-first-prop-new-line': [2, 'multiline-multiprop'],
+	'@stylistic/jsx-max-props-per-line': [
 		2,
 		{
 			maximum: 3,
-			when: "multiline",
+			when: 'multiline',
 		},
 	],
-	"@stylistic/jsx-newline": [
+	'@stylistic/jsx-newline': [
 		2,
 		{
 			prevent: true,
 		},
 	],
-	"@stylistic/jsx-one-expression-per-line": 0,
-	"@stylistic/jsx-pascal-case": [
+	'@stylistic/jsx-one-expression-per-line': 0,
+	'@stylistic/jsx-pascal-case': [
 		2,
 		{
-			ignore: ["h{}", "h2", "h3", "h4", "h5", "h6", "p", "a", "ul", "ol", "li", "img", "div", "span", "dl", "dt", "dd"],
+			ignore: ['h{}', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'img', 'div', 'span', 'dl', 'dt', 'dd'],
 		},
 	],
-	"@stylistic/jsx-props-no-multi-spaces": 2,
-	"@stylistic/jsx-sort-props": 2,
-	"@stylistic/jsx-tag-spacing": [
+	'@stylistic/jsx-props-no-multi-spaces': 2,
+	'@stylistic/jsx-sort-props': 2,
+	'@stylistic/jsx-tag-spacing': [
 		2,
 		{
-			afterOpening: "never",
-			beforeSelfClosing: "always",
-			closingSlash: "never",
+			afterOpening: 'never',
+			beforeSelfClosing: 'always',
+			closingSlash: 'never',
 		},
 	],
-	"@stylistic/jsx-wrap-multilines": 0,
-	"@stylistic/jsx-indent": [2, "tab"],
+	'@stylistic/jsx-wrap-multilines': 0,
+	'@stylistic/jsx-indent': [2, 'tab'],
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
-	"import-x/extensions": [".js", ".jsx"],
-	"import-x/resolver": {
+	'import-x/extensions': ['.js', '.jsx'],
+	'import-x/resolver': {
 		node: {
-			extensions: [".js", ".jsx"],
+			extensions: ['.js', '.jsx'],
 		},
 	},
 };
@@ -131,7 +131,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			},
 		},
 		plugins: {
-			"react-refresh": eslintPluginReactRefresh,
+			'react-refresh': eslintPluginReactRefresh,
 			react: eslintPluginReact,
 		},
 		rules,

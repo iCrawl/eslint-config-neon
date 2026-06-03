@@ -10,34 +10,41 @@
     "default-case": 0,
     "default-case-last": 0,
     "default-param-last": 0,
+    "getter-return": "off",
     "init-declarations": 0,
-    "no-loop-func": 0,
     "no-array-constructor": 0,
     "no-class-assign": "off",
-    "no-restricted-imports": 0,
     "no-const-assign": "off",
     "no-dupe-class-members": 0,
     "no-dupe-keys": "off",
     "no-empty-function": 0,
     "no-func-assign": "off",
+    "no-implied-eval": 0,
     "no-import-assign": "off",
+    "no-loop-func": 0,
     "no-magic-numbers": 0,
     "no-new-native-nonconstructor": "off",
     "no-obj-calls": "off",
     "no-redeclare": 0,
+    "no-restricted-imports": 0,
     "no-setter-return": "off",
+    "no-shadow": 0,
     "no-this-before-super": "off",
     "no-throw-literal": 0,
+    "no-unreachable": "off",
     "no-unsafe-negation": "off",
     "no-unused-expressions": 0,
     "no-unused-vars": 0,
+    "no-use-before-define": 0,
     "no-useless-constructor": 0,
     "no-var": "error",
     "no-with": "off",
+    "prefer-const": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "require-await": 0,
     "import/no-dynamic-require": 0,
+    "import-x/no-dynamic-require": 0,
     "jsdoc/check-tag-names": 0,
     "jsdoc/require-property-type": 0,
     "node/global-require": 0,
@@ -58,7 +65,18 @@
       }
     ],
     "typescript/ban-tslint-comment": 2,
+    "typescript/class-literal-property-style": [
+      2,
+      "fields"
+    ],
     "typescript/consistent-indexed-object-style": 0,
+    "typescript/consistent-type-assertions": [
+      2,
+      {
+        "assertionStyle": "as",
+        "objectLiteralTypeAssertions": "allow"
+      }
+    ],
     "typescript/consistent-type-definitions": 0,
     "typescript/consistent-type-imports": [
       2,
@@ -66,14 +84,12 @@
         "prefer": "type-imports"
       }
     ],
-    "typescript/explicit-module-boundary-types": 0,
     "typescript/explicit-function-return-type": 0,
-    "typescript/no-inferrable-types": [
+    "typescript/explicit-member-accessibility": 2,
+    "typescript/explicit-module-boundary-types": 0,
+    "typescript/method-signature-style": [
       2,
-      {
-        "ignoreParameters": true,
-        "ignoreProperties": true
-      }
+      "method"
     ],
     "typescript/no-confusing-non-null-assertion": 2,
     "typescript/no-duplicate-enum-values": 2,
@@ -88,6 +104,20 @@
     "typescript/no-explicit-any": 0,
     "typescript/no-extra-non-null-assertion": 2,
     "typescript/no-extraneous-class": 0,
+    "typescript/no-inferrable-types": [
+      2,
+      {
+        "ignoreParameters": true,
+        "ignoreProperties": true
+      }
+    ],
+    "typescript/no-invalid-void-type": [
+      2,
+      {
+        "allowAsThisParameter": true,
+        "allowInGenericTypeArguments": true
+      }
+    ],
     "typescript/no-misused-new": 2,
     "typescript/no-namespace": [
       2,
@@ -128,13 +158,13 @@
         "types": "never"
       }
     ],
+    "typescript/unified-signatures": 2,
     "typescript/default-param-last": 2,
     "typescript/init-declarations": 0,
-    "typescript/no-loop-func": 2,
     "typescript/no-array-constructor": 2,
-    "typescript/no-restricted-imports": 0,
     "typescript/no-dupe-class-members": 2,
     "typescript/no-empty-function": 0,
+    "typescript/no-loop-func": 2,
     "typescript/no-magic-numbers": 0,
     "typescript/no-redeclare": [
       2,
@@ -142,24 +172,27 @@
         "builtinGlobals": true
       }
     ],
+    "typescript/no-restricted-imports": 0,
+    "typescript/no-shadow": 0,
     "typescript/no-unused-expressions": 2,
     "typescript/no-unused-vars": 0,
+    "typescript/no-use-before-define": [
+      2,
+      {
+        "classes": true,
+        "functions": false,
+        "variables": true
+      }
+    ],
     "typescript/no-useless-constructor": 2,
     "typescript/await-thenable": 2,
-    "typescript/no-misused-promises": [
+    "typescript/consistent-type-exports": [
       2,
       {
-        "checksConditionals": true,
-        "checksVoidReturn": false
+        "fixMixedExportsWithInlineTypeSpecifier": true
       }
     ],
-    "typescript/no-floating-promises": [
-      2,
-      {
-        "ignoreVoid": true,
-        "ignoreIIFE": true
-      }
-    ],
+    "typescript/dot-notation": 2,
     "typescript/no-base-to-string": [
       2,
       {
@@ -182,6 +215,13 @@
         "ignoreUnions": false
       }
     ],
+    "typescript/no-floating-promises": [
+      2,
+      {
+        "ignoreVoid": true,
+        "ignoreIIFE": true
+      }
+    ],
     "typescript/no-for-in-array": 2,
     "typescript/no-implied-eval": 2,
     "typescript/no-meaningless-void-operator": [
@@ -190,7 +230,15 @@
         "checkNever": true
       }
     ],
+    "typescript/no-misused-promises": [
+      2,
+      {
+        "checksConditionals": true,
+        "checksVoidReturn": false
+      }
+    ],
     "typescript/no-unnecessary-boolean-literal-compare": 0,
+    "typescript/no-unnecessary-qualifier": 2,
     "typescript/no-unnecessary-type-arguments": 0,
     "typescript/no-unnecessary-type-assertion": 0,
     "typescript/no-unsafe-argument": 0,
@@ -214,8 +262,17 @@
         }
       }
     ],
+    "typescript/prefer-readonly": [
+      2,
+      {
+        "onlyInlineLambdas": true
+      }
+    ],
+    "typescript/prefer-readonly-parameter-types": 0,
     "typescript/prefer-reduce-type-parameter": 2,
+    "typescript/prefer-regexp-exec": 2,
     "typescript/prefer-return-this-type": 2,
+    "typescript/prefer-string-starts-ends-with": 2,
     "typescript/promise-function-async": 2,
     "typescript/require-array-sort-compare": [
       2,

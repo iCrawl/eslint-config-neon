@@ -259,16 +259,36 @@
 				"default": "./dist/cjs/vue.cjs"
 			}
 		},
-		"./oxlint/*": {
+		"./oxlint": {
+			"import": {
+				"types": "./dist/esm/oxlint/index.d.mts",
+				"default": "./dist/esm/oxlint/index.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/oxlint/index.d.cts",
+				"default": "./dist/cjs/oxlint/index.cjs"
+			}
+		},
+		"./oxlint/*.json": {
 			"default": "./oxlint-configs/*.json"
+		},
+		"./oxlint/*": {
+			"import": {
+				"types": "./dist/esm/oxlint/*.d.mts",
+				"default": "./dist/esm/oxlint/*.mjs"
+			},
+			"require": {
+				"types": "./dist/cjs/oxlint/*.d.cts",
+				"default": "./dist/cjs/oxlint/*.cjs"
+			}
 		}
 	},
 	"scripts": {
 		"gen-index": "tsx scripts/gen-index.ts",
 		"gen-oxlintrc": "tsx scripts/generate-oxlintrc.ts",
 		"build": "yarn gen-index && yarn gen-oxlintrc && tsdown",
-		"lint": "yarn build && oxfmt --check && oxlint --type-aware src",
-		"format": "yarn build && oxfmt && oxlint --type-aware src --fix --fix-suggestions",
+		"lint": "yarn build && oxfmt --check && oxlint --type-aware src scripts",
+		"format": "yarn build && oxfmt && oxlint --type-aware src scripts --fix --fix-suggestions",
 		"fmt": "yarn format",
 		"prepack": "yarn build",
 		"update": "yarn upgrade-interactive"
@@ -328,5 +348,5 @@
 	"engines": {
 		"node": "^20.19.0 || ^22.13.0 || >=24"
 	},
-	"packageManager": "yarn@4.13.0"
+	"packageManager": "yarn@4.16.0"
 }

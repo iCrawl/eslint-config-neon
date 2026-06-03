@@ -1,0 +1,59 @@
+import type { OxlintConfig } from 'oxlint';
+
+const config = {
+	jsPlugins: [
+		{
+			name: '@neon/eslint-rxjs',
+			specifier: 'eslint-plugin-rxjs-x',
+		},
+	],
+	overrides: [
+		{
+			files: ['**/*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}'],
+			rules: {
+				'@neon/eslint-rxjs/ban-observables': 0,
+				'@neon/eslint-rxjs/ban-operators': 0,
+				'@neon/eslint-rxjs/finnish': 2,
+				'@neon/eslint-rxjs/just': 0,
+				'@neon/eslint-rxjs/no-async-subscribe': 0,
+				'@neon/eslint-rxjs/no-connectable': 2,
+				'@neon/eslint-rxjs/no-create': 2,
+				'@neon/eslint-rxjs/no-cyclic-action': 2,
+				'@neon/eslint-rxjs/no-explicit-generics': 0,
+				'@neon/eslint-rxjs/no-exposed-subjects': 0,
+				'@neon/eslint-rxjs/no-finnish': 0,
+				'@neon/eslint-rxjs/no-floating-observables': 2,
+				'@neon/eslint-rxjs/no-ignored-error': 0,
+				'@neon/eslint-rxjs/no-ignored-notifier': 2,
+				'@neon/eslint-rxjs/no-ignored-replay-buffer': 2,
+				'@neon/eslint-rxjs/no-ignored-subscribe': 0,
+				'@neon/eslint-rxjs/no-ignored-subscription': 0,
+				'@neon/eslint-rxjs/no-ignored-takewhile-value': 2,
+				'@neon/eslint-rxjs/no-implicit-any-catch': 2,
+				'@neon/eslint-rxjs/no-index': 2,
+				'@neon/eslint-rxjs/no-internal': 2,
+				'@neon/eslint-rxjs/no-nested-subscribe': 2,
+				'@neon/eslint-rxjs/no-redundant-notify': 2,
+				'@neon/eslint-rxjs/no-sharereplay': 2,
+				'@neon/eslint-rxjs/no-subclass': 2,
+				'@neon/eslint-rxjs/no-subject-unsubscribe': 2,
+				'@neon/eslint-rxjs/no-subject-value': 0,
+				'@neon/eslint-rxjs/no-subscribe-handlers': 0,
+				'@neon/eslint-rxjs/no-topromise': 2,
+				'@neon/eslint-rxjs/no-unbound-methods': 2,
+				'@neon/eslint-rxjs/no-unsafe-catch': 2,
+				'@neon/eslint-rxjs/no-unsafe-first': 2,
+				'@neon/eslint-rxjs/no-unsafe-subject-next': 2,
+				'@neon/eslint-rxjs/no-unsafe-switchmap': 2,
+				'@neon/eslint-rxjs/no-unsafe-takeuntil': 2,
+				'@neon/eslint-rxjs/prefer-observer': 0,
+				'@neon/eslint-rxjs/suffix-subjects': 0,
+				'@neon/eslint-rxjs/throw-error': 2,
+			},
+		},
+	],
+	rules: {},
+	plugins: [],
+} satisfies OxlintConfig;
+
+export default config;

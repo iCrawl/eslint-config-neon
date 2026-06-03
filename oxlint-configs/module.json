@@ -1,4 +1,8 @@
 {
-  "plugins": [],
-  "rules": {}
+  "plugins": [
+    "unicorn"
+  ],
+  "rules": {
+    "unicorn/prefer-module": 2
+  }
 }

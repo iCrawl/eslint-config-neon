@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"rootDir": "."
 	},
-	"include": ["src", "scripts", "eslint.config.mjs", "tsdown.config.ts"]
+	"include": ["src", "scripts", "eslint.config.mjs", "oxfmt.config.ts", "tsdown.config.ts"]
 }

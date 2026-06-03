@@ -1,0 +1,44 @@
+import type { OxlintConfig } from 'oxlint';
+
+const config = {
+	plugins: ['react', 'unicorn'],
+	rules: {
+		'react/jsx-boolean-value': [2, 'never'],
+		'react/jsx-filename-extension': 0,
+		'react/jsx-fragments': [2, 'syntax'],
+		'react/jsx-handler-names': [
+			2,
+			{
+				checkInlineFunction: false,
+				checkLocalVariables: false,
+				eventHandlerPrefix: 'handle',
+				eventHandlerPropPrefix: 'on',
+			},
+		],
+		'react/jsx-key': [
+			2,
+			{
+				checkFragmentShorthand: true,
+				checkKeyMustBeforeSpread: true,
+			},
+		],
+		'react/jsx-max-depth': 0,
+		'react/jsx-no-comment-textnodes': 2,
+		'react/jsx-no-constructed-context-values': 2,
+		'react/jsx-no-duplicate-props': 2,
+		'react/jsx-no-script-url': 2,
+		'react/jsx-no-target-blank': 2,
+		'react/jsx-no-undef': 2,
+		'react/jsx-no-useless-fragment': [
+			2,
+			{
+				allowExpressions: true,
+			},
+		],
+		'react/jsx-props-no-spreading': 0,
+		'react-refresh/only-export-components': 1,
+		'unicorn/consistent-function-scoping': 0,
+	},
+} satisfies OxlintConfig;
+
+export default config;

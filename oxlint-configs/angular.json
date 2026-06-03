@@ -3,6 +3,7 @@
     "import"
   ],
   "rules": {
-    "import/extensions": 0
+    "import/extensions": 0,
+    "import-x/extensions": 0
   }
 }

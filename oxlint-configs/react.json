@@ -6,12 +6,15 @@
   ],
   "rules": {
     "react/button-has-type": 2,
+    "react/display-name": 0,
+    "react/forbid-component-props": 0,
     "react/forbid-dom-props": 0,
     "react/forbid-elements": 0,
+    "react/hook-use-state": 2,
     "react/iframe-missing-sandbox": 2,
-    "react/jsx-fragments": [
+    "react/jsx-boolean-value": [
       2,
-      "syntax"
+      "never"
     ],
     "react/jsx-filename-extension": [
       1,
@@ -22,9 +25,9 @@
         ]
       }
     ],
-    "react/jsx-boolean-value": [
+    "react/jsx-fragments": [
       2,
-      "never"
+      "syntax"
     ],
     "react/jsx-handler-names": [
       2,
@@ -44,6 +47,7 @@
     ],
     "react/jsx-max-depth": 0,
     "react/jsx-no-comment-textnodes": 2,
+    "react/jsx-no-constructed-context-values": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/jsx-no-script-url": 2,
     "react/jsx-no-target-blank": 2,
@@ -55,15 +59,17 @@
       }
     ],
     "react/jsx-props-no-spreading": 0,
-    "react/no-did-mount-set-state": 2,
-    "react/no-namespace": 2,
     "react/no-array-index-key": 0,
     "react/no-children-prop": 2,
-    "react/no-danger-with-children": 2,
     "react/no-danger": 2,
+    "react/no-danger-with-children": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
     "react/no-direct-mutation-state": 2,
     "react/no-find-dom-node": 2,
     "react/no-is-mounted": 2,
+    "react/no-multi-comp": 0,
+    "react/no-namespace": 2,
     "react/no-redundant-should-component-update": 2,
     "react/no-render-return-value": 2,
     "react/no-set-state": 2,
@@ -72,6 +78,7 @@
     "react/no-unescaped-entities": 0,
     "react/no-unknown-property": 2,
     "react/no-unsafe": 2,
+    "react/no-unstable-nested-components": 2,
     "react/no-will-update-set-state": 2,
     "react/prefer-es6-class": 2,
     "react/react-in-jsx-scope": 0,
@@ -82,6 +89,7 @@
     ],
     "react/style-prop-object": 2,
     "react/void-dom-elements-no-children": 2,
+    "react-refresh/only-export-components": 1,
     "react-hooks/exhaustive-deps": 2,
     "react-hooks/rules-of-hooks": 2,
     "unicorn/consistent-function-scoping": 0

@@ -5,10 +5,6 @@
       "specifier": "eslint-plugin-react"
     },
     {
-      "name": "@neon/eslint-react-refresh",
-      "specifier": "eslint-plugin-react-refresh"
-    },
-    {
       "name": "@neon/eslint-stylistic",
       "specifier": "@stylistic/eslint-plugin"
     }
@@ -31,11 +27,9 @@
             "ignoreRefs": true
           }
         ],
-        "@neon/eslint-react/jsx-no-constructed-context-values": 2,
         "@neon/eslint-react/jsx-no-literals": 0,
         "@neon/eslint-react/jsx-uses-react": 2,
         "@neon/eslint-react/jsx-uses-vars": 2,
-        "@neon/eslint-react-refresh/only-export-components": 1,
         "@neon/eslint-stylistic/jsx-child-element-spacing": 0,
         "@neon/eslint-stylistic/jsx-closing-bracket-location": [
           2,

@@ -1,29 +1,35 @@
-import { writeFile } from "node:fs/promises";
-import { EOL } from "node:os";
-import { basename } from "node:path";
-import { URL } from "node:url";
-import { findFilesRecursivelyStringEndsWith } from "@sapphire/node-utilities";
+import { writeFile } from 'node:fs/promises';
+import { EOL } from 'node:os';
+import { basename, dirname, resolve } from 'node:path';
+import { fileURLToPath, URL } from 'node:url';
 
-const srcURL = new URL("../src/", import.meta.url);
+import { findFilesRecursivelyStringEndsWith } from '@sapphire/node-utilities';
+
+const srcURL = new URL('../src/', import.meta.url);
+const srcPath = resolve(fileURLToPath(srcURL));
 
 const filesToExport: string[] = [];
 
-const exportAliases = new Map([["nodeprecated", "no"]]);
+const exportAliases = new Map([['nodeprecated', 'no']]);
 
-for await (const file of findFilesRecursivelyStringEndsWith(srcURL, ".ts")) {
-	if (file.endsWith("index.ts")) {
+for await (const file of findFilesRecursivelyStringEndsWith(srcURL, '.ts')) {
+	if (dirname(file) !== srcPath) {
 		continue;
 	}
 
-	filesToExport.push(`./${basename(file).replace(/\.ts$/, "")}`);
+	if (file.endsWith('index.ts')) {
+		continue;
+	}
+
+	filesToExport.push(`./${basename(file).replace(/\.ts$/, '')}`);
 }
 
 const toExports = filesToExport
 	.toSorted((fileOne, fileTwo) => basename(fileOne).localeCompare(basename(fileTwo)))
 	.map((fileToExport) => {
-		const generatedName = basename(fileToExport).replaceAll("-", "");
-		return `export { default as ${exportAliases.get(generatedName) ?? generatedName} } from "${fileToExport}";`;
+		const generatedName = basename(fileToExport).replaceAll('-', '');
+		return `export { default as ${exportAliases.get(generatedName) ?? generatedName} } from '${fileToExport}';`;
 	})
-	.join("\n");
+	.join('\n');
 
-await writeFile(new URL("../src/index.ts", import.meta.url), toExports + EOL);
+await writeFile(new URL('../src/index.ts', import.meta.url), toExports + EOL);

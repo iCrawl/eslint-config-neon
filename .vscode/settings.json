@@ -1,0 +1,74 @@
+{
+	"bun.test.enable": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.oxc": "explicit",
+		"source.fixAll.prettier": "explicit",
+		"source.organizeImports": "never"
+	},
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"editor.formatOnSave": true,
+	"editor.trimAutoWhitespace": false,
+	"editor.unicodeHighlight.invisibleCharacters": true,
+	"eslint.enable": false,
+	"eslint.ignoreUntitled": true,
+	"eslint.useESLintClass": true,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+	"files.associations": {
+		"tsconfig.eslint.json": "jsonc",
+		"tsconfig.json": "jsonc"
+	},
+	"files.eol": "\n",
+	"files.exclude": {
+		"**/.next": true,
+		"**/coverage": true,
+		"**/dist": true,
+		"**/node_modules": true,
+		"**/test-results": true
+	},
+	"files.insertFinalNewline": true,
+	"files.watcherExclude": {
+		"**/.next/*/**": true,
+		"**/.yarn/*/**": true,
+		"**/coverage/*/**": true,
+		"**/dist/*/**": true,
+		"**/test-results/*/**": true
+	},
+	"npm.packageManager": "pnpm",
+	"oxc.requireConfig": true,
+	"oxc.typeAware": true,
+	"prettier.enable": false,
+	"prettier.requireConfig": true,
+	"search.exclude": {
+		"**/.next": true,
+		"**/.yarn": true,
+		"**/coverage": true,
+		"**/dist": true,
+		"**/node_modules": true,
+		"**/test-results": true
+	},
+	"search.followSymlinks": true,
+	"search.useParentIgnoreFiles": true,
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]?([^\"'`]+)[\"'`]?"],
+		["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+		["class:\\s*?[\"'`]([^\"'`]*).*?,"],
+		["className:\\s*?[\"'`]([^\"'`]*).*?,"]
+	],
+	"js/ts.experimental.useTsgo": true,
+	"js/ts.preferences.importModuleSpecifier": "project-relative",
+	"js/ts.preferences.importModuleSpecifierEnding": "index",
+	"js/ts.preferences.includePackageJsonAutoImports": "on",
+	"js/ts.preferences.preferTypeOnlyAutoImports": true,
+	"js/ts.tsdk.path": "./node_modules/typescript/lib",
+	"typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview",
+	"workbench.editor.customLabels.patterns": {
+		"**/app/**/error.tsx": "${dirname} (${filename}.${extname}) - Error",
+		"**/app/**/layout.tsx": "${dirname} (${filename}.${extname}) - Layout",
+		"**/app/**/not-found.tsx": "${dirname} (${filename}.${extname}) - Not Found",
+		"**/app/**/page.tsx": "${dirname} (${filename}.${extname}) - Page",
+		"**/app/**/template.tsx": "${dirname} (${filename}.${extname}) - Template",
+		"**/components/**/page.tsx": "${dirname} (${filename}.${extname}) - Component"
+	}
+}
