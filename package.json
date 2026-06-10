@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-neon",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"description": "The ultimate ESLint shareable config",
 	"keywords": [
 		"config",
