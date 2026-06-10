@@ -175,6 +175,16 @@ function toSourceRuleName(oxlintRuleName: string): string {
 		return oxlintRuleName.replace('node/', 'n/');
 	}
 
+	// Oxlint scopes the native React Hooks rules under "react/*".
+	if (oxlintRuleName === 'react/exhaustive-deps' || oxlintRuleName === 'react/rules-of-hooks') {
+		return oxlintRuleName.replace('react/', 'react-hooks/');
+	}
+
+	// Oxlint implements eslint-plugin-react-refresh's rule under the React plugin.
+	if (oxlintRuleName === 'react/only-export-components') {
+		return 'react-refresh/only-export-components';
+	}
+
 	// ESLint's Next.js plugin uses "@next/next/*", but oxlint uses "nextjs/*".
 	if (oxlintRuleName.startsWith('nextjs/')) {
 		return oxlintRuleName.replace('nextjs/', '@next/next/');
@@ -195,6 +205,16 @@ function toSourceRuleName(oxlintRuleName: string): string {
 function toOxlintRuleName(generatedRuleName: string): string {
 	if (generatedRuleName.startsWith('n/')) {
 		return generatedRuleName.replace('n/', 'node/');
+	}
+
+	// Oxlint scopes eslint-plugin-react-hooks rules under the React plugin.
+	if (generatedRuleName.startsWith('react-hooks/')) {
+		return generatedRuleName.replace('react-hooks/', 'react/');
+	}
+
+	// Oxlint implements eslint-plugin-react-refresh's rule under the React plugin.
+	if (generatedRuleName === 'react-refresh/only-export-components') {
+		return 'react/only-export-components';
 	}
 
 	// ESLint's Next.js plugin uses "@next/next/*", but oxlint uses "nextjs/*".

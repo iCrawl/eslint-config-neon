@@ -36,7 +36,7 @@ const config = {
 			},
 		],
 		'react/jsx-props-no-spreading': 0,
-		'react-refresh/only-export-components': 1,
+		'react/only-export-components': 1,
 		'unicorn/consistent-function-scoping': 0,
 	},
 } satisfies OxlintConfig;

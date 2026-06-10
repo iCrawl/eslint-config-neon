@@ -79,6 +79,7 @@
     "react/no-unsafe": 2,
     "react/no-unstable-nested-components": 2,
     "react/no-will-update-set-state": 2,
+    "react/only-export-components": 1,
     "react/prefer-es6-class": 2,
     "react/react-in-jsx-scope": 0,
     "react/self-closing-comp": 2,
@@ -88,9 +89,8 @@
     ],
     "react/style-prop-object": 2,
     "react/void-dom-elements-no-children": 2,
-    "react-refresh/only-export-components": 1,
-    "react-hooks/exhaustive-deps": 2,
-    "react-hooks/rules-of-hooks": 2,
+    "react/exhaustive-deps": 2,
+    "react/rules-of-hooks": 2,
     "unicorn/consistent-function-scoping": 0
   }
 }
