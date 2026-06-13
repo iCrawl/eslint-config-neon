@@ -1,352 +1,353 @@
 {
-	"name": "eslint-config-neon",
-	"version": "0.5.2",
-	"description": "The ultimate ESLint shareable config",
-	"keywords": [
-		"config",
-		"eslint",
-		"eslintconfig",
-		"lint",
-		"linter",
-		"typescript",
-		"validate"
-	],
-	"bugs": {
-		"url": "https://github.com/iCrawl/eslint-config-neon/issues"
-	},
-	"license": "Apache-2.0",
-	"author": "iCrawl <icrawltogo@gmail.com>",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/iCrawl/eslint-config-neon.git"
-	},
-	"files": [
-		"dist/",
-		"oxlint-configs/"
-	],
-	"type": "module",
-	"main": "dist/cjs/common.cjs",
-	"module": "dist/esm/common.mjs",
-	"types": "dist/cjs/common.d.cts",
-	"exports": {
-		".": {
-			"import": {
-				"types": "./dist/esm/index.d.mts",
-				"default": "./dist/esm/index.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/index.d.cts",
-				"default": "./dist/cjs/index.cjs"
-			}
-		},
-		"./angular": {
-			"import": {
-				"types": "./dist/esm/angular.d.mts",
-				"default": "./dist/esm/angular.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/angular.d.cts",
-				"default": "./dist/cjs/angular.cjs"
-			}
-		},
-		"./astro": {
-			"import": {
-				"types": "./dist/esm/astro.d.mts",
-				"default": "./dist/esm/astro.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/astro.d.cts",
-				"default": "./dist/cjs/astro.cjs"
-			}
-		},
-		"./browser": {
-			"import": {
-				"types": "./dist/esm/browser.d.mts",
-				"default": "./dist/esm/browser.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/browser.d.cts",
-				"default": "./dist/cjs/browser.cjs"
-			}
-		},
-		"./common": {
-			"import": {
-				"types": "./dist/esm/common.d.mts",
-				"default": "./dist/esm/common.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/common.d.cts",
-				"default": "./dist/cjs/common.cjs"
-			}
-		},
-		"./cypress": {
-			"import": {
-				"types": "./dist/esm/cypress.d.mts",
-				"default": "./dist/esm/cypress.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/cypress.d.cts",
-				"default": "./dist/cjs/cypress.cjs"
-			}
-		},
-		"./edge": {
-			"import": {
-				"types": "./dist/esm/edge.d.mts",
-				"default": "./dist/esm/edge.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/edge.d.cts",
-				"default": "./dist/cjs/edge.cjs"
-			}
-		},
-		"./jsx-a11y": {
-			"import": {
-				"types": "./dist/esm/jsx-a11y.d.mts",
-				"default": "./dist/esm/jsx-a11y.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/jsx-a11y.d.cts",
-				"default": "./dist/cjs/jsx-a11y.cjs"
-			}
-		},
-		"./jsx": {
-			"import": {
-				"types": "./dist/esm/jsx.d.mts",
-				"default": "./dist/esm/jsx.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/jsx.d.cts",
-				"default": "./dist/cjs/jsx.cjs"
-			}
-		},
-		"./mdx": {
-			"import": {
-				"types": "./dist/esm/mdx.d.mts",
-				"default": "./dist/esm/mdx.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/mdx.d.cts",
-				"default": "./dist/cjs/mdx.cjs"
-			}
-		},
-		"./module": {
-			"import": {
-				"types": "./dist/esm/module.d.mts",
-				"default": "./dist/esm/module.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/module.d.cts",
-				"default": "./dist/cjs/module.cjs"
-			}
-		},
-		"./next": {
-			"import": {
-				"types": "./dist/esm/next.d.mts",
-				"default": "./dist/esm/next.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/next.d.cts",
-				"default": "./dist/cjs/next.cjs"
-			}
-		},
-		"./no-deprecated": {
-			"import": {
-				"types": "./dist/esm/no-deprecated.d.mts",
-				"default": "./dist/esm/no-deprecated.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/no-deprecated.d.cts",
-				"default": "./dist/cjs/no-deprecated.cjs"
-			}
-		},
-		"./node": {
-			"import": {
-				"types": "./dist/esm/node.d.mts",
-				"default": "./dist/esm/node.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/node.d.cts",
-				"default": "./dist/cjs/node.cjs"
-			}
-		},
-		"./prettier": {
-			"import": {
-				"types": "./dist/esm/prettier.d.mts",
-				"default": "./dist/esm/prettier.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/prettier.d.cts",
-				"default": "./dist/cjs/prettier.cjs"
-			}
-		},
-		"./react": {
-			"import": {
-				"types": "./dist/esm/react.d.mts",
-				"default": "./dist/esm/react.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/react.d.cts",
-				"default": "./dist/cjs/react.cjs"
-			}
-		},
-		"./rxjs-angular": {
-			"import": {
-				"types": "./dist/esm/rxjs-angular.d.mts",
-				"default": "./dist/esm/rxjs-angular.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/rxjs-angular.d.cts",
-				"default": "./dist/cjs/rxjs-angular.cjs"
-			}
-		},
-		"./rxjs": {
-			"import": {
-				"types": "./dist/esm/rxjs.d.mts",
-				"default": "./dist/esm/rxjs.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/rxjs.d.cts",
-				"default": "./dist/cjs/rxjs.cjs"
-			}
-		},
-		"./svelte-typescript": {
-			"import": {
-				"types": "./dist/esm/svelte-typescript.d.mts",
-				"default": "./dist/esm/svelte-typescript.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/svelte-typescript.d.cts",
-				"default": "./dist/cjs/svelte-typescript.cjs"
-			}
-		},
-		"./svelte": {
-			"import": {
-				"types": "./dist/esm/svelte.d.mts",
-				"default": "./dist/esm/svelte.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/svelte.d.cts",
-				"default": "./dist/cjs/svelte.cjs"
-			}
-		},
-		"./typescript": {
-			"import": {
-				"types": "./dist/esm/typescript.d.mts",
-				"default": "./dist/esm/typescript.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/typescript.d.cts",
-				"default": "./dist/cjs/typescript.cjs"
-			}
-		},
-		"./vue-typescript": {
-			"import": {
-				"types": "./dist/esm/vue-typescript.d.mts",
-				"default": "./dist/esm/vue-typescript.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/vue-typescript.d.cts",
-				"default": "./dist/cjs/vue-typescript.cjs"
-			}
-		},
-		"./vue": {
-			"import": {
-				"types": "./dist/esm/vue.d.mts",
-				"default": "./dist/esm/vue.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/vue.d.cts",
-				"default": "./dist/cjs/vue.cjs"
-			}
-		},
-		"./oxlint": {
-			"import": {
-				"types": "./dist/esm/oxlint/index.d.mts",
-				"default": "./dist/esm/oxlint/index.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/oxlint/index.d.cts",
-				"default": "./dist/cjs/oxlint/index.cjs"
-			}
-		},
-		"./oxlint/*.json": {
-			"default": "./oxlint-configs/*.json"
-		},
-		"./oxlint/*": {
-			"import": {
-				"types": "./dist/esm/oxlint/*.d.mts",
-				"default": "./dist/esm/oxlint/*.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/oxlint/*.d.cts",
-				"default": "./dist/cjs/oxlint/*.cjs"
-			}
-		}
-	},
-	"scripts": {
-		"gen-index": "tsx scripts/gen-index.ts",
-		"gen-oxlintrc": "tsx scripts/generate-oxlintrc.ts",
-		"build": "yarn gen-index && yarn gen-oxlintrc && tsdown",
-		"lint": "yarn build && oxfmt --check && oxlint --type-aware src scripts",
-		"format": "yarn build && oxfmt && oxlint --type-aware src scripts --fix --fix-suggestions",
-		"fmt": "yarn format",
-		"prepack": "yarn build",
-		"update": "yarn upgrade-interactive"
-	},
-	"dependencies": {
-		"@angular-eslint/eslint-plugin": "^21.4.0",
-		"@angular-eslint/eslint-plugin-template": "^21.4.0",
-		"@angular-eslint/template-parser": "^21.4.0",
-		"@eslint/compat": "^2.1.0",
-		"@next/eslint-plugin-next": "^16.2.7",
-		"@stylistic/eslint-plugin": "^5.10.0",
-		"@types/lodash.merge": "^4.6.9",
-		"@typescript-eslint/eslint-plugin": "^8.60.1",
-		"@typescript-eslint/parser": "^8.60.1",
-		"astro-eslint-parser": "^1.4.0",
-		"eslint-config-prettier": "^10.1.8",
-		"eslint-import-resolver-typescript": "^4.4.5",
-		"eslint-mdx": "^3.8.1",
-		"eslint-plugin-astro": "^1.7.0",
-		"eslint-plugin-cypress": "^6.4.1",
-		"eslint-plugin-import-x": "^4.16.2",
-		"eslint-plugin-jsdoc": "^63.0.1",
-		"eslint-plugin-jsx-a11y": "^6.10.2",
-		"eslint-plugin-mdx": "^3.8.1",
-		"eslint-plugin-n": "^18.0.1",
-		"eslint-plugin-promise": "^7.3.0",
-		"eslint-plugin-react": "^7.37.5",
-		"eslint-plugin-react-hooks": "^7.1.1",
-		"eslint-plugin-react-refresh": "^0.5.2",
-		"eslint-plugin-rxjs-angular-x": "^1.0.1",
-		"eslint-plugin-rxjs-x": "^1.0.2",
-		"eslint-plugin-sonarjs": "^4.0.3",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"eslint-plugin-tsdoc": "^0.5.2",
-		"eslint-plugin-typescript-sort-keys": "^3.3.0",
-		"eslint-plugin-unicorn": "^64.0.0",
-		"eslint-plugin-vue": "^10.9.1",
-		"globals": "^17.6.0",
-		"lodash.merge": "^4.6.2",
-		"oxlint-tsgolint": "^0.23.0",
-		"typescript-eslint": "^8.60.1",
-		"vue-eslint-parser": "^10.4.1"
-	},
-	"devDependencies": {
-		"@sapphire/node-utilities": "^1.0.2",
-		"cross-env": "^10.1.0",
-		"eslint": "^10.4.1",
-		"eslint-plugin-oxlint": "^1.68.0",
-		"oxfmt": "^0.53.0",
-		"oxlint": "^1.68.0",
-		"prettier": "^3.8.3",
-		"tsdown": "^0.22.1",
-		"tsx": "^4.22.4",
-		"typescript": "^6.0.3",
-		"unrun": "^0.3.0"
-	},
-	"engines": {
-		"node": "^20.19.0 || ^22.13.0 || >=24"
-	},
-	"packageManager": "yarn@4.16.0"
+  "name": "eslint-config-neon",
+  "version": "0.5.2",
+  "homepage": "https://github.com/iCrawl/eslint-config-neon",
+  "description": "The ultimate ESLint shareable config",
+  "keywords": [
+    "config",
+    "eslint",
+    "eslintconfig",
+    "lint",
+    "linter",
+    "typescript",
+    "validate"
+  ],
+  "bugs": {
+    "url": "https://github.com/iCrawl/eslint-config-neon/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "iCrawl <icrawltogo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iCrawl/eslint-config-neon.git"
+  },
+  "files": [
+    "dist/",
+    "oxlint-configs/"
+  ],
+  "type": "module",
+  "main": "dist/cjs/common.cjs",
+  "module": "dist/esm/common.mjs",
+  "types": "dist/cjs/common.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./angular": {
+      "import": {
+        "types": "./dist/esm/angular.d.mts",
+        "default": "./dist/esm/angular.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/angular.d.cts",
+        "default": "./dist/cjs/angular.cjs"
+      }
+    },
+    "./astro": {
+      "import": {
+        "types": "./dist/esm/astro.d.mts",
+        "default": "./dist/esm/astro.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/astro.d.cts",
+        "default": "./dist/cjs/astro.cjs"
+      }
+    },
+    "./browser": {
+      "import": {
+        "types": "./dist/esm/browser.d.mts",
+        "default": "./dist/esm/browser.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/browser.d.cts",
+        "default": "./dist/cjs/browser.cjs"
+      }
+    },
+    "./common": {
+      "import": {
+        "types": "./dist/esm/common.d.mts",
+        "default": "./dist/esm/common.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/common.d.cts",
+        "default": "./dist/cjs/common.cjs"
+      }
+    },
+    "./cypress": {
+      "import": {
+        "types": "./dist/esm/cypress.d.mts",
+        "default": "./dist/esm/cypress.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/cypress.d.cts",
+        "default": "./dist/cjs/cypress.cjs"
+      }
+    },
+    "./edge": {
+      "import": {
+        "types": "./dist/esm/edge.d.mts",
+        "default": "./dist/esm/edge.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/edge.d.cts",
+        "default": "./dist/cjs/edge.cjs"
+      }
+    },
+    "./jsx-a11y": {
+      "import": {
+        "types": "./dist/esm/jsx-a11y.d.mts",
+        "default": "./dist/esm/jsx-a11y.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/jsx-a11y.d.cts",
+        "default": "./dist/cjs/jsx-a11y.cjs"
+      }
+    },
+    "./jsx": {
+      "import": {
+        "types": "./dist/esm/jsx.d.mts",
+        "default": "./dist/esm/jsx.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/jsx.d.cts",
+        "default": "./dist/cjs/jsx.cjs"
+      }
+    },
+    "./mdx": {
+      "import": {
+        "types": "./dist/esm/mdx.d.mts",
+        "default": "./dist/esm/mdx.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/mdx.d.cts",
+        "default": "./dist/cjs/mdx.cjs"
+      }
+    },
+    "./module": {
+      "import": {
+        "types": "./dist/esm/module.d.mts",
+        "default": "./dist/esm/module.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/module.d.cts",
+        "default": "./dist/cjs/module.cjs"
+      }
+    },
+    "./next": {
+      "import": {
+        "types": "./dist/esm/next.d.mts",
+        "default": "./dist/esm/next.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/next.d.cts",
+        "default": "./dist/cjs/next.cjs"
+      }
+    },
+    "./no-deprecated": {
+      "import": {
+        "types": "./dist/esm/no-deprecated.d.mts",
+        "default": "./dist/esm/no-deprecated.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/no-deprecated.d.cts",
+        "default": "./dist/cjs/no-deprecated.cjs"
+      }
+    },
+    "./node": {
+      "import": {
+        "types": "./dist/esm/node.d.mts",
+        "default": "./dist/esm/node.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/node.d.cts",
+        "default": "./dist/cjs/node.cjs"
+      }
+    },
+    "./prettier": {
+      "import": {
+        "types": "./dist/esm/prettier.d.mts",
+        "default": "./dist/esm/prettier.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/prettier.d.cts",
+        "default": "./dist/cjs/prettier.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/esm/react.d.mts",
+        "default": "./dist/esm/react.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/react.d.cts",
+        "default": "./dist/cjs/react.cjs"
+      }
+    },
+    "./rxjs-angular": {
+      "import": {
+        "types": "./dist/esm/rxjs-angular.d.mts",
+        "default": "./dist/esm/rxjs-angular.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/rxjs-angular.d.cts",
+        "default": "./dist/cjs/rxjs-angular.cjs"
+      }
+    },
+    "./rxjs": {
+      "import": {
+        "types": "./dist/esm/rxjs.d.mts",
+        "default": "./dist/esm/rxjs.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/rxjs.d.cts",
+        "default": "./dist/cjs/rxjs.cjs"
+      }
+    },
+    "./svelte-typescript": {
+      "import": {
+        "types": "./dist/esm/svelte-typescript.d.mts",
+        "default": "./dist/esm/svelte-typescript.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/svelte-typescript.d.cts",
+        "default": "./dist/cjs/svelte-typescript.cjs"
+      }
+    },
+    "./svelte": {
+      "import": {
+        "types": "./dist/esm/svelte.d.mts",
+        "default": "./dist/esm/svelte.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/svelte.d.cts",
+        "default": "./dist/cjs/svelte.cjs"
+      }
+    },
+    "./typescript": {
+      "import": {
+        "types": "./dist/esm/typescript.d.mts",
+        "default": "./dist/esm/typescript.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/typescript.d.cts",
+        "default": "./dist/cjs/typescript.cjs"
+      }
+    },
+    "./vue-typescript": {
+      "import": {
+        "types": "./dist/esm/vue-typescript.d.mts",
+        "default": "./dist/esm/vue-typescript.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/vue-typescript.d.cts",
+        "default": "./dist/cjs/vue-typescript.cjs"
+      }
+    },
+    "./vue": {
+      "import": {
+        "types": "./dist/esm/vue.d.mts",
+        "default": "./dist/esm/vue.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/vue.d.cts",
+        "default": "./dist/cjs/vue.cjs"
+      }
+    },
+    "./oxlint": {
+      "import": {
+        "types": "./dist/esm/oxlint/index.d.mts",
+        "default": "./dist/esm/oxlint/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/oxlint/index.d.cts",
+        "default": "./dist/cjs/oxlint/index.cjs"
+      }
+    },
+    "./oxlint/*.json": {
+      "default": "./oxlint-configs/*.json"
+    },
+    "./oxlint/*": {
+      "import": {
+        "types": "./dist/esm/oxlint/*.d.mts",
+        "default": "./dist/esm/oxlint/*.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/oxlint/*.d.cts",
+        "default": "./dist/cjs/oxlint/*.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "gen-index": "tsx scripts/gen-index.ts",
+    "gen-oxlintrc": "tsx scripts/generate-oxlintrc.ts",
+    "build": "yarn gen-index && yarn gen-oxlintrc && tsdown",
+    "lint": "yarn build && oxfmt --check && oxlint --type-aware src scripts",
+    "format": "yarn build && oxfmt && oxlint --type-aware src scripts --fix --fix-suggestions",
+    "fmt": "yarn format",
+    "prepack": "yarn build",
+    "update": "yarn upgrade-interactive"
+  },
+  "dependencies": {
+    "@angular-eslint/eslint-plugin": "^21.4.0",
+    "@angular-eslint/eslint-plugin-template": "^21.4.0",
+    "@angular-eslint/template-parser": "^21.4.0",
+    "@eslint/compat": "^2.1.0",
+    "@next/eslint-plugin-next": "^16.2.7",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/lodash.merge": "^4.6.9",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "astro-eslint-parser": "^1.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-mdx": "^3.8.1",
+    "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-cypress": "^6.4.1",
+    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-jsdoc": "^63.0.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-mdx": "^3.8.1",
+    "eslint-plugin-n": "^18.0.1",
+    "eslint-plugin-promise": "^7.3.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-rxjs-angular-x": "^1.0.1",
+    "eslint-plugin-rxjs-x": "^1.0.2",
+    "eslint-plugin-sonarjs": "^4.0.3",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "eslint-plugin-tsdoc": "^0.5.2",
+    "eslint-plugin-typescript-sort-keys": "^3.3.0",
+    "eslint-plugin-unicorn": "^64.0.0",
+    "eslint-plugin-vue": "^10.9.1",
+    "globals": "^17.6.0",
+    "lodash.merge": "^4.6.2",
+    "oxlint-tsgolint": "^0.23.0",
+    "typescript-eslint": "^8.60.1",
+    "vue-eslint-parser": "^10.4.1"
+  },
+  "devDependencies": {
+    "@sapphire/node-utilities": "^1.0.2",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.4.1",
+    "eslint-plugin-oxlint": "^1.68.0",
+    "oxfmt": "^0.53.0",
+    "oxlint": "^1.68.0",
+    "prettier": "^3.8.3",
+    "tsdown": "^0.22.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "unrun": "^0.3.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "packageManager": "yarn@4.16.0"
 }
