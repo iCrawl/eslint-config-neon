@@ -11,6 +11,7 @@
 		"typescript",
 		"validate"
 	],
+	"homepage": "https://github.com/iCrawl/eslint-config-neon#readme",
 	"bugs": {
 		"url": "https://github.com/iCrawl/eslint-config-neon/issues"
 	},
