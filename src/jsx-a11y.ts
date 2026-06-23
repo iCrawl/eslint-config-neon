@@ -52,7 +52,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'jsx-a11y/no-noninteractive-element-to-interactive-role': [
 		2,
 		{
-			fieldset: ['radiogroup', 'presentation'],
 			li: ['menuitem', 'option', 'row', 'tab', 'treeitem'],
 			ol: ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
 			table: ['grid'],

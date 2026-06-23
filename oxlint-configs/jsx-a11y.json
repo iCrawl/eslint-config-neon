@@ -91,10 +91,6 @@
     "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       2,
       {
-        "fieldset": [
-          "radiogroup",
-          "presentation"
-        ],
         "li": [
           "menuitem",
           "option",
