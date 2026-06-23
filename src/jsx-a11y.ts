@@ -49,16 +49,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			img: ['onError', 'onLoad'],
 		},
 	],
-	'jsx-a11y/no-noninteractive-element-to-interactive-role': [
-		2,
-		{
-			li: ['menuitem', 'option', 'row', 'tab', 'treeitem'],
-			ol: ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
-			table: ['grid'],
-			td: ['gridcell'],
-			ul: ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
-		},
-	],
+	'jsx-a11y/no-noninteractive-element-to-interactive-role': 2,
 	'jsx-a11y/no-noninteractive-tabindex': [
 		2,
 		{
