@@ -14,6 +14,7 @@
 	"bugs": {
 		"url": "https://github.com/iCrawl/eslint-config-neon/issues"
 	},
+	"homepage": "https://github.com/iCrawl/eslint-config-neon#readme",
 	"license": "Apache-2.0",
 	"author": "iCrawl <icrawltogo@gmail.com>",
 	"repository": {
