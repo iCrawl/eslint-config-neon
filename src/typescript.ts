@@ -1,10 +1,8 @@
-import { fixupPluginRules } from '@eslint/compat';
 import type { TSESLint } from '@typescript-eslint/utils';
 import { createTypeScriptImportResolver, defaultExtensions } from 'eslint-import-resolver-typescript';
+import eslintPluginPerfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginSonarjs from 'eslint-plugin-sonarjs';
 import eslintPluginTsdoc from 'eslint-plugin-tsdoc';
-// @ts-expect-error eslint-plugin-typescript-sort-keys is not typed
-import eslintPluginTypescriptSortKeys from 'eslint-plugin-typescript-sort-keys';
 import tseslint from 'typescript-eslint';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -327,6 +325,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'jsdoc/require-property-type': 0,
 	'no-undef': 0,
 	'n/global-require': 0,
+	'perfectionist/sort-enums': [2, { type: 'alphabetical', order: 'asc', ignoreCase: false }],
+	'perfectionist/sort-interfaces': [2, { type: 'alphabetical', order: 'asc', ignoreCase: false }],
 	'sonarjs/no-all-duplicated-branches': 2,
 	'sonarjs/no-element-overwrite': 2,
 	'sonarjs/no-empty-collection': 2,
@@ -358,8 +358,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'sonarjs/prefer-single-boolean-return': 2,
 	'sonarjs/prefer-while': 2,
 	'tsdoc/syntax': 1,
-	'typescript-sort-keys/interface': 2,
-	'typescript-sort-keys/string-enum': 2,
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -387,9 +385,9 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	...tseslint.configs.recommended,
 	{
 		plugins: {
+			perfectionist: eslintPluginPerfectionist,
 			sonarjs: eslintPluginSonarjs,
 			tsdoc: eslintPluginTsdoc,
-			'typescript-sort-keys': fixupPluginRules(eslintPluginTypescriptSortKeys),
 		},
 		rules,
 		settings,

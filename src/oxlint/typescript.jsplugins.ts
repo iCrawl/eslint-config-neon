@@ -7,6 +7,10 @@ const config = {
 			specifier: 'eslint-plugin-import-x',
 		},
 		{
+			name: '@neon/eslint-perfectionist',
+			specifier: 'eslint-plugin-perfectionist',
+		},
+		{
 			name: '@neon/eslint-sonarjs',
 			specifier: 'eslint-plugin-sonarjs',
 		},
@@ -17,10 +21,6 @@ const config = {
 		{
 			name: '@neon/eslint-tsdoc',
 			specifier: 'eslint-plugin-tsdoc',
-		},
-		{
-			name: '@neon/eslint-typescript-sort-keys',
-			specifier: 'eslint-plugin-typescript-sort-keys',
 		},
 	],
 	overrides: [
@@ -149,9 +149,23 @@ const config = {
 		{
 			files: ['**/*.{ts,tsx,cts,mts}'],
 			rules: {
+				'@neon/eslint-perfectionist/sort-enums': [
+					2,
+					{
+						type: 'alphabetical',
+						order: 'asc',
+						ignoreCase: false,
+					},
+				],
+				'@neon/eslint-perfectionist/sort-interfaces': [
+					2,
+					{
+						type: 'alphabetical',
+						order: 'asc',
+						ignoreCase: false,
+					},
+				],
 				'@neon/eslint-tsdoc/syntax': 1,
-				'@neon/eslint-typescript-sort-keys/interface': 2,
-				'@neon/eslint-typescript-sort-keys/string-enum': 2,
 			},
 		},
 		{

@@ -92,6 +92,7 @@ const JS_PLUGIN_SPECIFIER_BY_NAMESPACE: Record<string, string> = {
 
 	// Unscoped plugins
 	'import-x': 'eslint-plugin-import-x',
+	perfectionist: 'eslint-plugin-perfectionist',
 	react: 'eslint-plugin-react',
 	'react-hooks': 'eslint-plugin-react-hooks',
 	'react-refresh': 'eslint-plugin-react-refresh',
@@ -100,7 +101,6 @@ const JS_PLUGIN_SPECIFIER_BY_NAMESPACE: Record<string, string> = {
 	sonarjs: 'eslint-plugin-sonarjs',
 	svelte3: 'eslint-plugin-svelte3',
 	tsdoc: 'eslint-plugin-tsdoc',
-	'typescript-sort-keys': 'eslint-plugin-typescript-sort-keys',
 	unicorn: 'eslint-plugin-unicorn',
 	vue: 'eslint-plugin-vue',
 	// Note: native oxlint plugins (import/jsdoc/node/...) are supported and will be matched first.
@@ -316,7 +316,7 @@ const JS_PLUGIN_FILES_BY_NAMESPACE: Record<string, string[]> = {
 
 	// Code plugins
 	'@angular-eslint': ['**/*.ts'],
-	'typescript-sort-keys': ['**/*.{ts,tsx,cts,mts}'],
+	perfectionist: ['**/*.{ts,tsx,cts,mts}'],
 	tsdoc: ['**/*.{ts,tsx,cts,mts}'],
 
 	// Defaults (JS/TS)
